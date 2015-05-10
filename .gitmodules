@@ -10,3 +10,7 @@
 	path = labs/malware
 	url = https://github.com/dbosk/malwarelab.git
 	branch = master
+[submodule "labs/toolslab"]
+	path = labs/tools
+	url = https://github.com/dbosk/toolslab.git
+	branch = master
