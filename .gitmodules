@@ -1,13 +1,13 @@
 [submodule "labs/drm"]
-	path = labs/drm
+	path = hackathons/drm
 	url = https://github.com/dbosk/drmlab.git
 	branch = master
 [submodule "labs/stacksmash"]
-	path = labs/stacksmash
+	path = hackathons/stacksmash
 	url = https://github.com/dbosk/stacksmashlab.git
 	branch = master
 [submodule "labs/malware"]
-	path = labs/malware
+	path = hackathons/malware
 	url = https://github.com/dbosk/malwarelab.git
 	branch = master
 [submodule "labs/toolslab"]
