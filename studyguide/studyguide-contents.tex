@@ -1,0 +1,365 @@
+\title{%
+  The Complete Study Guide for a First Course in
+  Computer Security
+}
+\author{%
+  Daniel Bosk
+}
+\institute{%
+  Department of Information and Communication Systems\\
+  Mid Sweden University, SE-851\,70 Sundsvall
+}
+
+\maketitle
+
+
+\section{Scope and Aims}
+\label{sec:aim}
+The course aims towards a good understanding for the requirements of a secure 
+computer system.
+Problems such as authentication and access control; software security, such as 
+buffer overflows; as well as operating system, library and application security 
+mechanisms are treated in the course.
+
+More specifically, after taking this course you should be able to:
+\begin{itemize}
+%  \input{spuriouslab-aim.tex}
+%  \input{passwd-aim.tex}
+%  \input{tools-aim.tex}
+%  \input{malware-aim.tex}
+%  \input{drm-aim.tex}
+%  \input{stacksmash-aim.tex}
+%  \input{pwdpol-aim.tex}
+%  \input{ethics-aim.tex}
+%  \item \dots
+  \item apply different cryptosystems and explain how these work,
+  \item analyse the problems of authentication, access control and different 
+  solutions,
+  \item explain how some common attacks on software works,
+  \item analyse different operating system security mechanisms,
+  \item analyse the functionality of different types of malware,
+  \item explain different malware protection mechanisms,
+  \item evaluate strengths and weaknesses of hardware-based security and 
+    full-disk encryption, as well as
+  \item value and argue about different ethical aspects of computer security, 
+    e.g.\ surveillance.
+\end{itemize}
+
+
+\section{Overview of Structure and Content}
+\label{sec:outline}
+% - Basic cryptography: block ciphers, asymmetric cryptosystems, digital 
+%   signatures, hash functions.
+% - User authentication, access control and intrusion detection.
+% - Software security: buffer overflow, handling input, interaction between 
+%   programs.
+% - Operating system security.
+% - Malware.
+% - Trusted computing, hardware based security and whole disk encryption.
+% - Ethical aspects of computer security.
+The course covers
+applied cryptography used in computer security, e.g.~uses of cryptography for 
+code obfuscation or digital rights management;
+authentication mechanisms, access control, and intrusion detection;
+software security, e.g.~buffer overruns and interaction between programs;
+some security mechanisms provided by operating system and hardware;
+and malicious software and how these utilise the above weaknesses.
+Finally we discuss some ethical implications for computer engineers.
+
+\subsection{Teaching}
+
+The main course literature is \citetitle{Gollmann2011cs} by 
+\citeauthor{Gollmann2011cs}~\cite{Gollmann2011cs}.
+This is complemented by \citetitle{Anderson2008sea} by 
+\citeauthor{Anderson2008sea}~\cite{Anderson2008sea}.
+The course is taught using lectures, individual laboratory assignments, 
+workshops (\enquote{hackathon labs}), seminars, and finally a written exam.
+You can find a more detailed timetable, containing lab sessions etc., in the 
+following subsection.
+All assignments are numbered consecutively prefixed with an \enquote{L} for 
+laboratory assignments, \enquote{H} for hackathons and \enquote{S} for seminar 
+assignments.
+For general information about the examination of these and deadlines, see 
+\cref{Examination}.
+For detailed information, please see the instructions found in the course 
+platform.
+
+
+\subsection{Schedule}
+\label{Schedule}
+To make your reading of the course easier, you are presented with a suggested 
+schedule in this section.
+You are free to follow this schedule or any schedule you make for yourself, but 
+the deadlines, laboratory sessions, and lectures will follow this schedule.
+You will find a short summary of the schedule in \cref{TimeTable}.
+The detailed reading instructions for each item in the schedule can be found in 
+the following sections.
+
+\begin{table}
+	\centering
+  \caption{%
+    A summary of the parts of the course and when they will (or should) be 
+    covered.
+    The table is adapted to taking this course on half-time study rate, i.e.\ 
+    over ten weeks.
+  }\label{TimeTable}
+  \begin{tabular}{rp{9cm}}
+    \toprule
+    \textbf{Course Week}	& \textbf{Work} \\
+    \midrule
+    1
+      & Course Start/Foundations of Security\\
+    \midrule
+    2
+      & Lecture on Information Theory\\
+      & Lecture on Cryptographic Mechanisms, Part I\\
+      & Lecture on Cryptographic Mechanisms, Part II\\
+      & Lab session L0 (spuriouslab)\\
+    \midrule
+    3
+      & Lecture on Identification and Authentication\\
+      & Lecture on Security Usability\\
+      & Lab session L0 (spuriouslab)\\
+    \midrule
+    4
+      & Lecture on Access Control\\
+      & Lecture on Reference Monitors\\
+      %& Lecture on UNIX and Windows Security\\
+      & Lecture on Secure Protocols\\
+      & Lecture on Accountability and Non-Repudiation\\
+      & Lab session L1 (pwdguess)\\
+      & Lab session L3 (pricomlab)\\
+      & First seminar session S2 (pwdpolicies)\\
+    \midrule
+    5
+      & Lecture on Software Security\\
+      & Lecture on DRM and Trusted Computing\\
+      & Lecture on Side-Channels\\
+      & Lab session L1 (pwdguess)\\
+      & Lab session L3 (pricomlab)\\
+      & Lab session L4 (tools)\\
+    \midrule
+    6
+      %& Lecture on Database Security\\
+      & Hackathon session L5 (drm)\\
+      & Lab session L1 (pwdguess)\\
+      & Lab session L3 (pricomlab)\\
+      & Lab session L4 (tools)\\
+    \midrule
+    7
+      & Hackathon session L6 (stacksmash)\\
+      & Lab session L1 (pwdguess)\\
+      & Lab session L3 (pricomlab)\\
+      & Lab session L4 (tools)\\
+    \midrule
+    8
+      & Presentation L3 (tools)\\
+      & Seminar session S7 (ethics)\\
+    \midrule
+    9
+      & Individual studying\\
+    \midrule
+    10
+      & First exam \\
+      & Final lab session (pwdguess, pricomlab, drm, stacksmash)\\
+      & Second seminar session S2 (pwdpolicies), L4 (tools), S7 (ethics)\\
+    \midrule
+    +3 months
+      & Second exam \\
+      & Final seminar session S2 (pwdpolicies), L4 (tools), S7 (ethics)\\
+    \midrule
+    +6 months
+      & Final exam\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\section{Course Content}
+
+This section summarizes the material covered by the lectures and assignments, 
+i.e.\ what you should read for each of them.
+It is divided by topics and ordered according to progression of the course.
+
+\subsection{Foundations of Security}
+\input{foundations-lit.tex}
+
+\subsection{L0 May the (Brute) Force be with You}
+\input{spuriouslab-lit.tex}
+
+\subsection{Information Theory}
+\input{infotheory-lit.tex}
+
+\subsection{Cryptographic Mechanisms}
+\input{crypto-lit.tex}
+
+\subsection{Identification and Authentication}
+\input{auth-lit.tex}
+
+\subsection{Security Usability}
+\input{usability-lit.tex}
+
+\subsection{L1 Password Cracking and Social Engineering}
+\input{pwdguess-lit.tex}
+
+\subsection{S2 Password Policies}
+\input{pwdpolicies-lit.tex}
+
+\subsection{Access Control}
+\input{accessctrl-lit.tex}
+
+\subsection{Reference Monitors}
+\input{refmon-lit.tex}
+
+%\subsection{UNIX Security}
+%\input{unix-lit.tex}
+
+\subsection{Secure Protocols}
+\input{fverif-lit.tex}
+
+\subsection{Accountability and Non-Repudiation}
+\input{accountability-lit.tex}
+
+\subsection{L3 Private Communication}
+\input{pricomlab-lit.tex}
+
+\subsection{Software Security}
+\input{software-lit.tex}
+
+\subsection{Trusted Computing}
+\input{trustcomp-lit.tex}
+
+\subsection{Side-Channels}
+\input{sidechannels-lit.tex}
+
+\subsection{L4 Tools of the Trade}
+\input{tools-lit.tex}
+
+%\subsection{L4 Malicous Software}
+%\input{malware-lit.tex}
+
+\subsection{H5 Digital Rights Management}
+\input{drm-lit.tex}
+
+\subsection{H6 Smashing the Stack}
+\input{stacksmash-lit.tex}
+
+\subsection{S7 The Computer Engineer's Code of Ethics}
+\input{ethics-lit.tex}
+
+\subsection{Final exam}
+
+The final exam will examine your knowledge from taking this course.
+Hence, it covers all the content given above.
+
+
+\section{Examination}
+\label{Examination}
+
+This section explains how the course modules are graded and mapped to LADOK\@.
+\Cref{LADOKTable} visualizes the relations between modules, credits, grades and 
+LADOK\@.
+
+\begin{table}
+  \centering
+  \caption{%
+    Table summarizing course modules and their mapping to LADOK\@.
+    P means pass, F means fail.
+    A--E are also passing grades, where A is the best.
+  }\label{LADOKTable}
+  \begin{tabular}{rrll}
+    \toprule
+    LADOK & Credits (ECTS)  & Grade       & Course Assignments\\
+    \midrule
+    I104  & 0.0             & P, F        & L0\\
+    L104  & 3.0             & P, F        & L1, L3, L4, H5, H6\\
+    S104  & 1.5             & P, F        & S2, S7\\
+    T104  & 3.0             & A--F        & Exam\\
+    \midrule
+    Total & 7.5             & A--F        & (Determined by exam)\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The written exam will be graded A--E for passing grades, F or Fx for failing 
+grades.
+You will receive an Fx if you are very close to passing.
+In this case you may complement your written exam with an oral exam within 
+a week from receiving the result.
+If you do not take this chance within a week you must retake the exam the next 
+time it is given.
+The grade of the exam will also be the grade of the course total.
+
+\subsection{Handed-In Assignments}                                              
+
+In general, all hand-ins in the course must be in a \enquote{passable} 
+condition; i.e.\ they must be well-written, grammatically correct and without 
+spelling errors, have citations and references according to~\cite{IEEEcitation} 
+(see also~\cite{PurdueCitation} for a tutorial), and finally fulfil all 
+requirements from the assignment instruction.
+If you hand something in which is not in this condition, you will receive an 
+F with the comment \enquote{incomplete}.
+
+All handed-in material must be created by yourself, or, in the case of group 
+assignments, created by you or one of the group members.
+When you refer to or quote other texts, then you must provide a correct list of 
+references and, in the case of quotations, the quoted text must be clearly 
+marked as quoted.
+If any part of the document is plagiarized you risk being suspended from study  
+for a predetermined time, not exceeding six months, due to disciplinary 
+offence.
+If it is a group assignment, all group members will be held accountable for 
+disciplinary offence unless it is clearly marked in the work who is responsible 
+for the part containing the plagiarism.
+
+If cooperation takes place without the assignment instruction explicitly 
+allowing this, this will be regarded as a disciplinary offence with the risk of 
+being suspended for a predetermined time, not exceeding six months.
+Unless otherwise stated, all assignments are to be done individually.
+
+\subsection{\enquote{What if I'm not done in time?}}
+\label{sec:late}
+
+The deadlines on this course are of great importance, make sure to keep these!
+You must have completed the introductory assignment within its deadline.
+If you do not do this you will be deregistered from the course and your place 
+will be open to other students.
+
+For seminars and presentations there will be three sessions during the course 
+of a year, if you cannot make it to any of those you will have to return the 
+next time the course is given; i.e.\ up to a year later.
+All of these sessions will be in the course schedule (in the Student Portal).
+If you miss a deadline for the preparation for a seminar session, then you have 
+to go for the next seminar even if the first seminar has not passed yet.
+
+Written assignments are graded once during the course, most often shortly after 
+the deadline of the assignment.
+After the course you are offered two more attempts within a year.
+In total you have three chances for having your assignments graded over the 
+period of a year.
+After that you should come back the next time the course is given.
+
+No tutoring is planned after the end of the course, i.e.\ after the last 
+tutoring session scheduled in the course schedule.
+If you are not done with your assignments during the course and want to be 
+guaranteed tutoring you have to reregister for the next time the course is 
+given.
+Reregistration is a lower priority class of applicants for a course, all 
+students applying for the course the first time have higher priority --- this 
+includes reserves too.
+
+%If you by the end of the course have a majority of the assignments left undone 
+%you will have to reregister for the course the next time it is given.
+%Whether you have completed the majority of the assignments or not is up to the 
+%teacher to decide.
+%Talk to the teacher to see if you have to reregister or can just hand in the 
+%missing assignments.
+
+Thus, if you feel that you will not be done with the course on time, it is 
+better to stop the course at an early stage.
+If you register a break within three weeks of the course start, you will be in 
+the higher priority class of applicants the next time you apply for the course.
+You can register such a break yourself in the Student Portal.
+
+
+\printbibliography{}

@@ -14,3 +14,59 @@
 	path = labs/tools
 	url = https://github.com/dbosk/toolslab.git
 	branch = master
+[submodule "makefiles"]
+	path = makefiles
+	url = https://github.com/dbosk/makefiles.git
+	branch = master
+[submodule "modules/ethics"]
+	path = modules/ethics
+	url = https://github.com/OpenSecEd/ethics.git
+	branch = master
+[submodule "modules/appliedcrypto"]
+	path = modules/appliedcrypto
+	url = https://github.com/OpenSecEd/appliedcrypto.git
+	branch = master
+[submodule "modules/foundations"]
+	path = modules/foundations
+	url = https://github.com/OpenSecEd/foundations.git
+	branch = master
+[submodule "modules/infotheory"]
+	path = modules/infotheory
+	url = https://github.com/OpenSecEd/infotheory.git
+	branch = master
+[submodule "labs/pricomlab"]
+	path = labs/pricomlab
+	url = https://github.com/OpenSecEd/pricomlab.git
+	branch = master
+[submodule "modules/auth"]
+	path = modules/auth
+	url = https://github.com/OpenSecEd/auth.git
+	branch = master
+[submodule "modules/usability"]
+	path = modules/usability
+	url = https://github.com/OpenSecEd/usability.git
+	branch = master
+[submodule "modules/ac"]
+	path = modules/ac
+	url = https://github.com/OpenSecEd/ac.git
+	branch = master
+[submodule "modules/accountability"]
+	path = modules/accountability
+	url = https://github.com/OpenSecEd/accountability.git
+	branch = master
+[submodule "modules/software"]
+	path = modules/software
+	url = https://github.com/OpenSecEd/software.git
+	branch = master
+[submodule "modules/trustcomp"]
+	path = modules/trustcomp
+	url = https://github.com/OpenSecEd/trustcomp.git
+	branch = master
+[submodule "modules/sidechannels"]
+	path = modules/sidechannels
+	url = https://github.com/OpenSecEd/sidechannels.git
+	branch = master
+[submodule "modules/fverif"]
+	path = modules/fverif
+	url = https://github.com/OpenSecEd/fverif.git
+	branch = master
