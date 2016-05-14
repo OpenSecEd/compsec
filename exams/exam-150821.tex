@@ -1,0 +1,422 @@
+% $Id$
+% Author:  Daniel Bosk <daniel.bosk@miun.se>
+\documentclass[svv,addpoints]{miunexam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish,english]{babel}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{prettyref,varioref}
+\usepackage{subfigure}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{authblk}
+
+\usepackage{csquotes}
+\MakeBlockQuote{<}{|}{>}
+\EnableQuotes
+
+\usepackage[natbib,style=alphabetic,maxbibnames=99,backend=bibtexu]{biblatex}
+\addbibresource{literature.bib}
+
+\usepackage[varioref,prettyref,listings]{miunmisc}
+
+%\printanswers
+
+\examtype{Final exam}
+\courseid{DT145G}
+\course{Computer Security}
+\date{2015-08-21}
+\author{%
+  Daniel Bosk
+}
+\affil{%
+  Department of Information and Communication Systems,\\
+  Mid Sweden University, SE-851\,70 Sundsvall\\
+  Email: \href{mailto:daniel.bosk@miun.se}{daniel.bosk@miun.se}\\
+  Phone: 010-142\,8709
+}
+
+\DeclareMathOperator{\hmac}{HMAC}
+\DeclareMathOperator{\xor}{\oplus}
+\DeclareMathOperator{\concat}{||}
+
+\begin{document}
+\maketitle
+\thispagestyle{foot}
+
+\section*{Instructions}
+\label{sec:Instructions}
+Carefully read the questions before you start answering them.
+Note the time limit of the exam and plan your answers accordingly.
+Only answer the question, do not write about subjects remotely related to the
+question.
+
+Write your answers on separate sheets, not on the exam paper.
+Only write on one side of the sheets.
+Start each question on a new sheet.
+Do not forget to \emph{motivate your answers.}
+
+Make sure you write your answers clearly, if I cannot read an answer the answer
+will be awarded no points---even if the answer is correct.
+The questions are \emph{not} sorted by difficulty.
+
+\begin{description}
+  \item[Time] 5 hours.
+  \item[Aids] Dictionary.
+  \item[Maximum points] \numpoints
+  \item[Questions] \numquestions
+\end{description}
+
+\subsection*{Preliminary grades}
+The following grading criteria applies:
+E \(\geq 50\%\),
+D \(\geq 60\%\),
+C \(\geq 70\%\), 
+B \(\geq 80\%\),
+A \(\geq 90\%\).
+
+
+\clearpage
+\section*{Questions}
+The questions are given below.
+They are not given in any particular order.
+
+\begin{questions}
+\question\label{q:infotheory:passwd:E:C}
+  Explain how information theory can be used to estimate the strength of 
+  passwords chosen under a given password composition policy:
+  \begin{parts}
+    \part[2] How can you estimate the upper bound, i.e.~the maximum possible 
+    entropy?
+
+    \part[2] Why can't you estimate any (useful) lower bound, i.e.~the minimum 
+    possible entropy?
+
+    \part[2] How can you estimate the average case, i.e.~what is usually the 
+    case when users choose the passwords?
+  \end{parts}
+
+  \begin{solution}
+    You assume that every part of the password is chosen uniformly randomly.
+    This gives the maximum entropy, i.e.~it is an upper bound.
+    You have to account for all choices the password composition policy allows.
+    Or rather, all choices the policy removes.
+
+    This is hard because a user can choose a very easy to guess password, which 
+    has almost no entropy.
+    Similarly, if all users choose the same password, then the entropy would be 
+    zero.
+
+    The average case can be estimated as in~\cite{Komanduri2011opa}.
+    You have to \emph{sample a lot of user-generated passwords}, then you can 
+    perform a frequency analysis to find the probabilities and compute the 
+    entropy.
+    The users are the stochastic variable (random output) and you must get 
+    a large enough sample to estimate the probability distribution.
+  \end{solution}
+
+
+  
+\question\label{q:crypto:accessctrl:E:C}
+  A user wishes to provide confidentiality to a file.
+  \begin{parts}
+    \part[3] She can accomplish this through mechanisms provided in the 
+    operating system.
+    Explain how this works and what are the limits.
+
+    \part[3] She can also accomplish this through purely cryptographic 
+    mechanisms.
+    Explain how this works and what are the limits.
+  \end{parts}
+  \begin{solution}
+    The first way she's securing her file is by using access control mechanisms 
+    in the operating system (OS).
+
+    Assuming we have physical access to the computer, then we can just read the 
+    raw data from the disk.
+    This can be accomplished by either booting our own OS on her computer, or 
+    by removing the disk.
+
+    If we don't have physical access we can always try to bypass the access 
+    control mechanisms in other ways, e.g.\ by gaining privileges in the system 
+    or seeing if the OS has failed to protect reading from the raw disk (i.e.\ 
+    not using the file system).
+
+    The main point here is that the operating system must be working correctly 
+    for its mechanisms to be effective.
+    The \emph{running} operating system will provide confidentiality by not 
+    allowing other users' requests to open the file.
+
+    The most obvious way to have system independent security for this file is 
+    to encrypt it, i.e.~using cryptographic mechanisms.
+    This way no one can read it unless they have access to the key, and this is 
+    true no matter if you change the environment.
+    (Of course, if the system is untrusted someone can get to the key that way, 
+    but that's outside the scope of this question.)
+  \end{solution}
+
+
+  
+\question\label{q:usability:E:C:A}
+  Human psychology is important in security.
+  It is used in both security usability and social engineering.
+  \begin{parts}
+    \part[2] Give an overview of why psychology is important in 
+    security.
+
+    \begin{solution}
+      Då systemen vi är beroende av och som ska upprätthålla vår säkerhet 
+      handhas av människor blir psykologin genast viktig.
+      Vi behöver psykologin inom säkerhetsområdet för att kunna ta hänsyn till 
+      hur människor fungerar när vi konstruerar säkerhetssystem.
+      Exempelvis, om vi gör ett system för komplext och användaren tycker att 
+      komplexiteten är onödig, då kommer denne användare att aktivt försöka att 
+      ta sig runt systemet --- kanske genom att skriva upp långa lösenord 
+      istället för att lära sig dem utantill.
+
+      Om vi däremot tar hänsyn till användarnas kognitiva begränsningar, då kan 
+      vi konstruera system som både är säkra och enkla att använda.
+    \end{solution}
+
+    \part[4] Give an example of an attack which exploits weaknesses in human 
+    psychology.
+    Also explain why it works.
+
+    \begin{solution}
+      En psykologibaserad attack utnyttjar svagheter hos användarna för att ta 
+      sig runt ett säkerhetssystem, det är alltså inte säkerhetssystemen som 
+      angrips.
+
+      Ett exempel på en sådan attack kan vara att en användare får ett e-brev 
+      som till synes är från banken och som innehåller en länk till en 
+      inloggningssida, kallat nätfiske.
+      Brevet kan be användaren att uppdatera någonting hos banken via internet.
+      Ett förfarande beskrivs och sedan läggs till \enquote{eller klicka på 
+        länken}.
+      Med en förfarande som låter som att det kan ta fem till tio klick kommer 
+      användaren sannolikt att välja enklicksalternativet.
+      Notera att förfarandet måste vara korrekt för banken medan länken är till 
+      en phishingsida.
+      Utformandet kan leda till vad litteraturen~\cite[s. 23]{Anderson2008sea} 
+      kallar \emph{\foreignlanguage{english}{capture errors}}, att användaren 
+      använder ett invant beteende: i detta fall att användaren klickar på 
+      direktlänkar.
+
+      Därutöver försöker nätfiskaren att få användaren att tillämpa fel regler 
+      i situationen.
+      Exempelvis, användaren kanske (omedvetet) lägger större vikt vid att ett 
+      hänglås syns i webbläsaren för säker anslutning än att bankens namn är 
+      rätt stavat i URL:en.
+      Även att bankens namn finns med någonstans i URL:en kan vara en 
+      tillräckligt stark regel för att användaren ska undvika att detektera den 
+      felaktiga fiske-URL:en.
+    \end{solution}
+  \end{parts}
+
+
+  
+\question\label{q:drm:trustcomp:A}
+  The apps in the Google Play store or Apple's AppStore are provided with some 
+  DRM, e.g.~you cannot copy a paid-for app from one phone to another etc.
+  There are also other things you are not allowed to do with these smartphones, 
+  e.g.~installing whatever software you like, modifying the software in any way 
+  you like, etc.
+  (However, many know of the terms <jail-breaking> or <rooting> their phones, 
+  which bypasses these mechanisms on the phones.)
+
+  \begin{parts}
+    \part[3] Explain how this type of protection system works, including the 
+    fundamental assumptions needed for it to fulfil its purpose.
+
+    \part[3] Explain how the above system can be broken and whether it could be 
+    fully solved or not.
+  \end{parts}
+  
+  \begin{solution}
+    The fundamental assumption is based on the fact that the operating system 
+    remains in control and that it cannot be modified.
+    This is accomplished by the operating system being the only provided 
+    interface with which the user can interact with the device.
+
+    Essentially the user is allowed to use the operating system as an 
+    unprivileged user, whereas the system keeps superuser (or root) privileges 
+    for itself.
+    Hence, as soon as the user gains these privileges, the system breaks down.
+    This can be accomplished in many ways, e.g.~exploiting bugs in privileged 
+    applications or the OS itself---and is thus called <rooting the device>.
+  \end{solution}
+
+
+  
+\question\label{q:software:stacksmash:C}
+  Look at the C code in \prettyref{lst:overrun}.
+  \begin{parts}
+    \part[3] Identify all vulnerabilities in that code and motivate by stating 
+    how they can be exploited.
+
+    \part[3] Suggest improvements to remedy these vulnerabilities, you must 
+    motivate why they work.
+  \end{parts}
+  \begin{solution}
+    There is a possibility for stack smashing in \code{get_some_input} and 
+    \code{main}.
+    Check the boundaries of buffers, never let scanf(3) read more data than the 
+    buffer can hold.
+
+    There is an integer overflow in \code{make_full_name}.
+    A size can never be negative, hence don't use signed integers.
+    Use the \code{size_t} data type, which is defined as unsigned.
+    This way we can only overflow using twice the data.
+    Another way is to check if we expect an overflow to occur, e.g.~if both 
+    sizes are larger than half of the maximum value.
+  \end{solution}
+
+  \begin{src}[float,caption={Some vulnerable C code.},label={lst:overrun}]
+#include <stdio.h>
+
+int
+get_some_input( void )
+{
+  char buffer[128];
+
+  printf( "Please enter the key: " );
+  scanf( "%s", buffer );
+
+  /* process input */
+
+  return 0;
+}
+
+void
+make_full_name( char *dst, int dstlen,
+                const char *src, int srclen,
+                int maxsize )
+{
+  if ( dstlen + srclen + 1 >= maxsize )
+    return -1;
+
+  strncat( dst, " ", 1 );
+  return strncat( dst, src, srclen );
+}
+
+int
+main( int argc, char **argv )
+{
+  char first[256];
+  char last[256];
+
+  printf( "Please enter your first name: " );
+  scanf( "%s", first );
+  printf( "Please enter you last name: " );
+  scanf( "%s", last );
+
+  make_full_name( first, strlen( first ),
+                  last, strlen( last ), 256 );
+
+  if ( get_some_input() < 0 )
+    return -1;
+
+  return 0;
+}
+  \end{src}
+
+
+\question\label{q:passwd:auth:E}
+  Explain the following terms:
+  \begin{parts}
+    \part[1] Brute force
+    \part[1] Dictionary attack
+    \part[1] Hash table
+    \part[1] Social engineering
+    \part[1] Two-factor authentication
+    \part[1] Phishing
+  \end{parts}
+
+
+ 
+\question\label{q:accountability:E:C}
+  Separation of duties is a core concept for security.
+  \begin{parts}
+    \part[2] Describe the two types of separation of duties.
+    \part[1] What is the main reason for separation of duties?
+  \end{parts}
+
+  \begin{solution}
+    There are two types of separation of duties:
+    dual control and functional separation.
+    Dual control means that two or more subjects must act together (at the same 
+    time) to authorize a transaction.
+    Functional separation means that several functions are needed to authorize 
+    a transaction---e.g.~create a transaction and verify it---and one subject 
+    is not allowed to do both functions.
+
+    The reason for separation of duties to make it impossible for one malicious 
+    subject to compromise a system.
+    With separation of duties the malicious subject must persuade one or more 
+    other subjects to collude.
+  \end{solution}
+
+
+  
+\question\label{q:crypto:foundations:E}
+  Explain the following terms:
+  \begin{parts}
+    \part[1] Confidentiality
+    \part[1] Integrity
+    \part[1] Availability
+    \part[1] Accountability
+    \part[1] Non-Repudiation
+  \end{parts}
+
+  \begin{solution}
+    See~\cite{Gollmann2011cs} and~\cite{Anderson2008sea} for definitions.
+  \end{solution}
+
+
+  
+\question\label{q:trustcomp:C:A}
+  The company you work for want to implement extra features as in-app purchases 
+  for the company's main product.
+  You are currently in a meeting about that particular topic, the chairperson 
+  of the meeting points at you and asks:
+  \enquote{%
+    How would you design this system?
+    The customers must pay for the features, for every installation, we cannot 
+    allow them to just buy once and copy later.
+    Give us an overview.
+  }
+  \begin{parts}
+    \part[2] Outline the main points in your strategy.
+    \part[2] There are some things you simply cannot protect against.
+    Explain the limits of systems such as these, so that everyone present 
+    understands the limits.
+  \end{parts}
+
+  \begin{solution}
+    If possible, put the features on a server and execute them remotely.
+    This requires proper authentication.
+    Ensure this authentication cannot be broken, so that two devices can use 
+    the same credentials.
+    Try to use a platform where a user must \enquote{root} their phones to 
+    violate this.
+
+    The limitations of these systems are that they try to protect code running 
+    in a hostile environment.
+    If the user has total control of the hardware, then the user can simply 
+    copy the software to another device.
+    The user can even make arbitrary changes to the running code.
+    This means that any keys can be copied from one device to another.
+    Even if the app is programmed to transmit the device ID, the app can be 
+    reprogrammed to transmit a hard-coded static device ID\@.
+  \end{solution}
+
+
+ 
+\end{questions}
+
+
+\printbibliography
+\end{document}
+

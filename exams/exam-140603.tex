@@ -1,0 +1,325 @@
+% $Id$
+% Author:  Daniel Bosk <daniel.bosk@miun.se>
+\documentclass[svv,addpoints]{miunexam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish,english]{babel}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{prettyref,varioref}
+\usepackage{subfigure}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage[natbib,style=alphabetic,maxbibnames=99,sorting=none,backend=bibtex8]{biblatex}
+\addbibresource{literature.bib}
+\usepackage[varioref,prettyref,listings]{miunmisc}
+
+\examtype{Final exam}
+\courseid{DT145G}
+\course{Computer Security}
+\date{2014-06-03}
+%\printanswers
+\author{%
+  Daniel Bosk\\
+  {\small\texttt{\href{mailto:daniel.bosk@miun.se}{daniel.bosk@miun.se}}}\\
+  {\small\textit{Phone:} 060\,-\,14\,8709}
+}
+
+\DeclareMathOperator{\hmac}{HMAC}
+\DeclareMathOperator{\xor}{\oplus}
+\DeclareMathOperator{\concat}{||}
+
+\begin{document}
+\maketitle
+\thispagestyle{foot}
+
+\section*{Instructions}
+\label{sec:Instructions}
+Carefully read the questions before you start answering them.
+Note the time limit of the exam and plan your answers accordingly.
+Only answer the question, do not write about subjects remotely related to the
+question.
+
+Write your answers on separate sheets, not on the exam paper.
+Only write on one side of the sheets.
+Start each question on a new sheet.
+Do not forget to \emph{motivate your answers.}
+
+Make sure you write your answers clearly, if I cannot read an answer the answer
+will be awarded no points -- even if the answer is correct.
+The questions are \emph{not} sorted by difficulty.
+
+\begin{description}
+  \item[Time] 5 hours.
+  \item[Aids] Dictionary.
+  \item[Maximum points] \numpoints
+  \item[Questions] \numquestions
+\end{description}
+
+%\subsection*{Bonus points}
+%\noindent
+%You must get an E or higher, to get the bonus points added to your final grade.
+%Bonus points will be added to this exam and the first re-exam.
+
+\subsection*{Preliminary grades}
+The following grading criteria applies:
+E \(\geq 50\%\),
+D \(\geq 60\%\),
+C \(\geq 70\%\), 
+B \(\geq 80\%\),
+A \(\geq 90\%\).%;
+%with no question awarded zero points.
+
+%To pass this exam you need to have at least an average of one (1) point per 
+%question, and no question may be awarded zero points.
+%The averages for the grades can be summarised as follows:
+%E \(\geq 1\),
+%D \(\geq 1.5\),
+%C \(\geq 2\),
+%B \(\geq 2.5\),
+%A \(\geq 3\),
+%with no question awarded zero points.
+
+
+\clearpage
+\section*{Questions}
+The questions are given below.
+They are not given in any particular order.
+
+\begin{questions}
+
+  \question\label{q:terminology}
+  Explain the following terms:
+  \begin{parts}
+    \part[1] Confidentiality
+    \part[1] Integrity
+    \part[1] Availability
+    \part[1] Accountability
+    \part[1] Non-Repudiation
+  \end{parts}
+  \begin{solution}
+    See \cite{Gollmann2011cs} and \cite{Anderson2008sea} for definitions.
+  \end{solution}
+
+
+  \question\label{q:non-repudiation}
+  A user has set the access control list of a file in such a way that only she 
+  has access to this file.
+  \begin{parts}
+    \part[3] If you would like to read this file you can, explain how you would 
+    do and why it works (also what assumptions you need).
+
+    \part[3] Suggest how the user must do to guarantee that no one but herself 
+    can read this file, also motivate why this protection works.
+  \end{parts}
+  \begin{solution}
+    The way she's securing her file is by using access control mechanisms in 
+    the operating system (OS).
+
+    Assuming we have physical access to the computer, then we can just read the 
+    raw data from the disk.
+    This can be accomplished by either booting our own OS on her computer, or 
+    by removing the disk.
+
+    If we don't have physical access we can always try to bypass the access 
+    control mechanisms in other ways, e.g.\ by gaining privileges in the system 
+    or seeing if the OS has failed to protect reading from the raw disk (i.e.\ 
+    not using the file system).
+
+    The most obvious way to have system independent security for this file is 
+    to encrypt it.
+    This way no one can read it unless they have access to the key, and this is 
+    true no matter if you change the environment.
+    (Of course, if the system is untrusted someone can get to the key that way, 
+    but that's outside the scope of this question.)
+  \end{solution}
+
+
+  \question\label{q:infogain}
+  The University password composition policy is as follows\footnote{%
+    It's slightly more advanced than this, but it's simplified here for reasons 
+    of convenience.
+    Also, the effect might actually be the same anyway, depending on if users 
+    actually use the extension or not.
+  }:
+  The password must be at least eight (8) characters long, further, the first 
+  eight characters must contain two uppercase and two lowercase letters as well 
+  as two numbers.
+
+  \begin{parts}
+    \part[3] Compute the information gained by an attacker from knowing this 
+    policy.
+
+    \part[3] Compare this to the information gained if the policy would have 
+    been ``the password must be at least 16 characters long''.
+  \end{parts}
+  \begin{solution}
+    We assume uniform randomness, this yields the highest entropy.
+    We know that users don't use uniform randomness, so the actual entropy will 
+    be lower and thus this will be the upper bound.
+
+    The entropy per lower-case letter in the alphabet is approximately 5 bits, 
+    the same for the upper-case letters, it's approximately 3 bits for the 
+    numbers, it's approximately 6 bits for all letters and numbers together 
+    (\(64 = 2^6\)).
+    Hence, a password of length 8 would yield \(6\times 8 = 48\) bits of 
+    entropy.
+    However, we know from \cite{Komanduri2011opa} that this is more around 30 
+    bits.
+
+    If the attacker learns the password composition policy, this reduces 
+    entropy by:
+    2 bits for lower-case,
+    2 bits for upper-case,
+    6 bits for numbers.
+    I.e.\ a total of 10 bits reduction of entropy.
+    This leaves us with a maximal entropy of 38 bits.
+    We know from \cite{Komanduri2011opa} that this is closer to 34 bits of 
+    entropy.
+
+    If we look at passwords of length 16 we get a maximum entropy of \(6\times 
+    16\) bits.
+    However, we know from \cite{Komanduri2011opa} that this is closer to 45 
+    bits.
+  \end{solution}
+
+
+  \question\label{q:drm}
+  The DRM manager in a company claims to have devised a secure DRM for the 
+  company's software product.
+
+  It works as follow:
+  To use the software the user has to enter a authentication code provided with 
+  the software.
+  If valid the software will connect to the servers and use some functionality 
+  stored there.
+
+  For the connection the software computes a MAC of itself (the executable 
+  file) using HMAC-SHA256 and a secret key \(k\) shared with the company 
+  servers, this is to prevent modification attempts of the executable file.
+  It then connects to one of these servers, it verifies the server's 
+  certificate to establish a secure connection, then sends the MAC which is 
+  verified by the server, the server verifies and performs the software's 
+  request if the MAC is valid.
+
+  There are several flaws in this DRM scheme.
+  \begin{parts}
+    \part[3] Explain what can be done to work around this DRM.
+    (A solution which doesn't need a copy of a valid authentication code is of 
+    course better than a solution which does.)
+
+    \part[3] Suggest some improvements of this DRM and motivate what 
+    vulnerabilities each improvement removes.
+    Also motivate whether your improved version is totally secure or not.
+  \end{parts}
+  \begin{solution}
+    The authentication step is a mechanism only implemented in the software 
+    itself, hence, it can be bypassed since we control the software -- we just 
+    remove that code.
+
+    This is supposed to be countered by the MAC in the connection step, 
+    however, this mechanism is also implemented in the software itself.
+    The secret key \(k\) must be available to the software, and hence to us 
+    too.
+    We can compute the MAC using \(k\) and the unmodified version of the 
+    software, then we rewrite this part of the software to only send this 
+    hard-coded MAC and not do any new computations.
+
+    This way we can still use the remote functionality without ever seeing 
+    a valid authentication code.
+
+    The obvious way to improve security here is to verify the authentication 
+    code on the server side.
+    This way we need a valid authentication code to use the software, hence we 
+    can have some liability for those sharing their authentication code -- if 
+    these are connected to some person.
+
+    There is still the possibility to reverse engineer the part done by the 
+    server, then we could use the software without authentication again.
+    However, this probably requires enough effort to rewrite the entire program 
+    anyway, so it's not likely anyone would do it.
+
+    There are of course other ways to secure this too, this is just an example, 
+    and research is ongoing in this area as well.
+  \end{solution}
+
+
+  \question\label{q:stacksmash}
+  Look at the C code in \prettyref{lst:overrun}.
+  \begin{parts}
+    \part[3] Identify all vulnerabilities in that code and motivate by stating 
+    how they can be exploited.
+
+    \part[3] Suggest improvements to remedy these vulnerabilities, you must 
+    motivate why they work.
+  \end{parts}
+  \begin{solution}
+    There is a possibility for stack smashing in \code{get_some_input} and 
+    \code{main}.
+    Check the boundaries of buffers, never let scanf(3) read more data than the 
+    buffer can hold.
+
+    There is an integer overflow in \code{make_full_name}.
+    A size can never be negative, hence don't use signed integers.
+    Use the \code{size_t} datatype, which is defined as unsigned.
+    This way we can only overflow using twice the data.
+    Another way is to check if we expect an overflow to occur, e.g.\ if both 
+    sizes are larger than half of the maximum value.
+  \end{solution}
+
+  \begin{src}[float,caption={Some vulnerable C code.},label={lst:overrun}]
+#include <stdio.h>
+
+int
+get_some_input( void )
+{
+  char buffer[128];
+
+  printf( "Please enter the key: " );
+  scanf( "%s", buffer );
+
+  /* process input */
+
+  return 0;
+}
+
+void
+make_full_name( char *dst, int dstlen,
+                const char *src, int srclen,
+                int maxsize )
+{
+  if ( dstlen + srclen + 1 >= maxsize )
+    return -1;
+
+  strncat( dst, " ", 1 );
+  return strncat( dst, src, srclen );
+}
+
+int
+main( int argc, char **argv )
+{
+  char first[256];
+  char last[256];
+
+  printf( "Please enter your first name: " );
+  scanf( "%s", first );
+  printf( "Please enter you last name: " );
+  scanf( "%s", last );
+
+  make_full_name( first, strlen( first ),
+                  last, strlen( last ), 256 );
+
+  if ( get_some_input() < 0 )
+    return -1;
+
+  return 0;
+}
+  \end{src}
+
+\end{questions}
+
+
+\printbibliography
+\end{document}
+
