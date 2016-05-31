@@ -70,3 +70,6 @@
 	path = modules/fverif
 	url = https://github.com/OpenSecEd/fverif.git
 	branch = master
+[submodule "miuntex"]
+	path = miuntex
+	url = https://github.com/dbosk/miuntex.git
