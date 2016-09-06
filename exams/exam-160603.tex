@@ -20,7 +20,7 @@
 \usepackage[natbib,style=alphabetic,maxbibnames=99,backend=bibtexu]{biblatex}
 \addbibresource{literature.bib}
 
-%\printanswers
+\printanswers
 
 \examtype{Final exam}
 \courseid{DT145G}
@@ -165,7 +165,7 @@ They are not given in any particular order.
 
   
 \question[4]\label{q:trustcomp}
-% examgen: trustcomp:E:C:A
+% tags: trustcomp:E:C:A
 Give an example of a DRM system, the idea behind it and why it works or not.
 
 \begin{solution}
@@ -248,7 +248,7 @@ Give an example of a DRM system, the idea behind it and why it works or not.
 
   
 \question[4]\label{q:sidechannels}
-% examgen: sidechannels:E
+% tags: sidechannels:E
 Give an example of a side-channel attack and motivate why it is a side channel.
 
 \begin{solution}
@@ -300,6 +300,22 @@ Give an example of a side-channel attack and motivate why it is a side channel.
     \part[4] Estimate the entropy for the password policies.
     (You may rely on the results in certain published research papers discussed 
     in the course for certain estimates.)
+
+    \begin{solution}
+      Basic12 requires at least 12 characters.
+      We can use upper and lower case, as well as numbers.
+      This yields an \emph{upper bound} of \(\log( 26+26+10 )\cdot 12\approx 
+        71\) bits of entropy.
+
+      Randswedict4 requires at least four words from the Swedish dictionary.
+      This yield an \emph{upper bound} of \(\log( 125000 )\cdot 4\approx 68\) 
+      bits of entropy.
+
+      To achieve these upper bounds we must choose uniformly randomly.
+      Most likely passwords under basic12 will yield an entropy somewhere 
+      between that of basic8 and basic16 in \cite{Komanduri2011opa}.
+    \end{solution}
+
     \part[2] Decide how suitable they are for use in the home environment.
     \part[2] Decide how suitable they are for use in a web application.
   \end{parts}
@@ -308,7 +324,7 @@ Give an example of a side-channel attack and motivate why it is a side channel.
 
   
 \question[3]\label{q:software}
-% examgen: software:E:C:A
+% tags: software:E:C:A
 Give an example where \enquote{data} can be mistaken for \enquote{code}.
 
 \begin{solution}
