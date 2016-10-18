@@ -1,49 +1,69 @@
-.PHONY: all
-all: exam-160603.pdf exam-160822.pdf exam-161024.pdf
+EXAM_TAGS+= A C E
 
-exam-161024.pdf: exam-161024.tex miunexam
+EXAM_DBS+=		infosak-questions.tex
+EXAM_TAGS+=		foundations
+EXAM_TAGS+=		infotheory crypto
+EXAM_TAGS+=		auth
+#EXAM_TAGS+=		ac refmon
+EXAM_TAGS+=		usability
+#EXAM_TAGS+=		fverif
+
+EXAM_DBS+= 		../modules/accountability/overview/questions.tex
+EXAM_TAGS+= 	accountability
+
+EXAM_DBS+= 		../modules/software/overview/questions.tex
+EXAM_TAGS+= 	software
+
+EXAM_DBS+= 		../modules/trustcomp/overview/questions.tex
+EXAM_TAGS+= 	trustcomp
+
+EXAM_DBS+=		../modules/sidechannels/overview/questions.tex
+EXAM_TAGS+=		sidechannels
+
+EXAM_TAGS+=		passwd
+
+
+.PHONY: 2017
+2017: exam-170609.pdf
+
+exam-170609.pdf: miunexam
+EXAM_DATE+=		170609
+
+.PHONY: 2016
+2016: exam-160603.pdf exam-160822.pdf exam-161024.pdf
+
+exam-161024.pdf: miunexam
+EXAM_DATE+=		161024
 exam-160822.pdf: exam-160822.tex miunexam
 exam-160603.pdf: exam-160603.tex miunexam
 
-all: exam-150604.pdf exam-150821.pdf exam-151030.pdf
+.PHONY: 2015
+2015: exam-150604.pdf exam-150821.pdf exam-151030.pdf
 
 exam-151030.pdf: exam-151030.tex literature.bib miunexam
 exam-150821.pdf: exam-150821.tex literature.bib miunexam
 exam-150604.pdf: exam-150604.tex literature.bib miunexam
 
-all: exam-140603.pdf exam-140826.pdf exam-141028.pdf
+.PHONY: 2014
+2014: exam-140603.pdf exam-140826.pdf exam-141028.pdf
 
 exam-141028.pdf: exam-141028.tex literature.bib miunexam
 exam-140826.pdf: exam-140826.tex literature.bib miunexam
 exam-140603.pdf: exam-140603.tex literature.bib miunexam
 
 
-EXAM_TAGS+= A C E
+define exams
+exam-$(1).pdf: exam-$(1).tex questions-$(1).tex
+endef
 
-MODULE_QUESTION_DBs+=	infosak-questions.tex
-EXAM_TAGS+=				foundations
-EXAM_TAGS+=				infotheory crypto
-EXAM_TAGS+=				auth
-#EXAM_TAGS+=				ac refmon
-EXAM_TAGS+=				usability
-#EXAM_TAGS+=				fverif
+$(foreach date,${EXAM_DATES},$(eval $(call exams,${date})))
 
-MODULE_QUESTION_DBs+= 	../modules/accountability/overview/questions.tex
-EXAM_TAGS+= 			accountability
+define questions
+questions-$(1).tex: ${EXAM_DBS}
+	examgen -NCE -d ${EXAM_DBS} -t ${EXAM_TAGS} > $@
+endef
 
-MODULE_QUESTION_DBs+= 	../modules/software/overview/questions.tex
-EXAM_TAGS+= 			software
-
-MODULE_QUESTION_DBs+= 	../modules/trustcomp/overview/questions.tex
-EXAM_TAGS+= 			trustcomp
-
-MODULE_QUESTION_DBs+=	../modules/sidechannels/overview/questions.tex
-EXAM_TAGS+=				sidechannels
-
-EXAM_TAGS+=				passwd
-
-questions.tex: ${MODULE_QUESTION_DBs}
-	examgen -d ${MODULE_QUESTION_DBs} -t ${EXAM_TAGS} > $@
+$(foreach date,${EXAM_DATES},$(eval $(call questions,${date})))
 
 
 .PHONY: clean
