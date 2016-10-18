@@ -1,0 +1,91 @@
+% $Id$
+% Author:  Daniel Bosk <daniel.bosk@miun.se>
+\documentclass[svv,addpoints]{miunexam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish,english]{babel}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{prettyref,varioref}
+\usepackage{subfigure}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{authblk}
+
+\usepackage{csquotes}
+\MakeBlockQuote{<}{|}{>}
+\EnableQuotes
+
+\usepackage[natbib,style=alphabetic,maxbibnames=99]{biblatex}
+\addbibresource{literature.bib}
+
+\printanswers
+
+\examtype{Final exam}
+\courseid{DT145G}
+\course{Computer Security}
+\date{2016-10-24}
+\author{%
+  Daniel Bosk
+}
+\affil{%
+  Department of Information and Communication Systems,\\
+  Mid Sweden University, SE-851\,70 Sundsvall\\
+  Email: \href{mailto:daniel.bosk@miun.se}{daniel.bosk@miun.se}\\
+  Phone: 010-142\,8709
+}
+
+\DeclareMathOperator{\hmac}{HMAC}
+\DeclareMathOperator{\xor}{\oplus}
+\DeclareMathOperator{\concat}{||}
+
+\begin{document}
+\maketitle
+\thispagestyle{foot}
+
+\section*{Instructions}
+\label{sec:Instructions}
+Carefully read the questions before you start answering them.
+Note the time limit of the exam and plan your answers accordingly.
+Only answer the question, do not write about subjects remotely related to the
+question.
+
+Write your answers on separate sheets, not on the exam paper.
+Only write on one side of the sheets.
+Start each question on a new sheet.
+Do not forget to \emph{motivate your answers.}
+
+Make sure you write your answers clearly, if I cannot read an answer the answer
+will be awarded no points---even if the answer is correct.
+The questions are \emph{not} sorted by difficulty.
+
+\begin{description}
+  \item[Time] 5 hours.
+  \item[Aids] Dictionary.
+  \item[Maximum points] \numpoints
+  \item[Questions] \numquestions
+\end{description}
+
+\subsection*{Preliminary grades}
+The following grading criteria applies:
+E \(\geq 50\%\),
+D \(\geq 60\%\),
+C \(\geq 70\%\), 
+B \(\geq 80\%\),
+A \(\geq 90\%\).
+
+
+\clearpage
+\section*{Questions}
+The questions are given below.
+They are not given in any particular order.
+
+\begin{questions}
+  \input{questions-161024.tex}
+\end{questions}
+
+
+\printbibliography
+\end{document}
+
