@@ -66,11 +66,6 @@ endef
 $(foreach date,${EXAM_DATES},$(eval $(call questions,${date})))
 
 
-.PHONY: clean
-clean:
-	${RM} questions.tex
-
-
 INCLUDE_MIUNTEX=../miuntex
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
