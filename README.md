@@ -49,8 +49,8 @@ prefixed with L are individual laboratory assignments, H are hackathon labs
  - S2: Password Policies (`passwd/pwdpolicies`)
  - L3: Privacy of Communication (`pricomlab`)
  - L4: Tools of the Trade (`toolslab`)
- - H5: Digital Rights Management (`drmlab`)
- - H6: Smashing the Stack (`stacksmashlab`)
+ - H5: Digital Rights Management (`trustcomp/drmlab`)
+ - H6: Smashing the Stack (`software/stacksmashlab`)
  - S7: The Computer Engineer's Code of Ethics (`ethics/profession`)
 
 
