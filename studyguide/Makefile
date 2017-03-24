@@ -140,8 +140,12 @@ studyguide.pdf: studyguide.tex ${SRC}
 studyguide.pdf: lncs
 
 
-.PHONY: clean-depends
-clean-depends:
+.PHONY: clean
+clean:
+	${RM} studyguide.pdf
+
+.PHONY: distclean
+distclean:
 	${RM} ${MODULE_FILES}
 
 
