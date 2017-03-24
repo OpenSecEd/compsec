@@ -1,7 +1,7 @@
 .PHONY: all
 all: studyguide.pdf
 
-SRC+=		studyguide-preamble.tex studyguide-contents.tex
+SRC+=		preamble.tex contents.tex
 SRC+=		${MODULE_FILES}
 
 MODULE_FILES+= 	foundations-lit.tex foundations.bib
