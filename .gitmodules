@@ -1,6 +1,6 @@
 [submodule "labs/toolslab"]
 	path = labs/tools
-	url = https://github.com/dbosk/toolslab.git
+	url = https://github.com/OpenSecEd/toolslab.git
 	branch = master
 [submodule "makefiles"]
 	path = makefiles

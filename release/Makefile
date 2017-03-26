@@ -50,7 +50,7 @@ RELEASE_FILES+=	pricomlab.pdf
 SRC-pricomlab.pdf=../labs/pricomlab/pricomlab.pdf
 
 RELEASE_FILES+=	toolslab.pdf
-SRC-toolslab.pdf=../labs/toolslab/toolslab.pdf
+SRC-toolslab.pdf=../labs/tools/tools.pdf
 
 RELEASE_FILES+=	trustcomp-slides.pdf
 SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
