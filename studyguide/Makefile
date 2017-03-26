@@ -53,7 +53,7 @@ pwdpolicies-aim.tex: ../modules/auth/passwd/pwdpolicies/aims.tex
 pwdpolicies-lit.tex: ../modules/auth/passwd/pwdpolicies/literature.tex
 pwdpolicies.bib: ../modules/auth/passwd/pwdpolicies/pwdpolicies.bib
 
-MODULE_FILES+= 	accessctrl-lit.tex ac.bib
+MODULE_FILES+= 	accessctrl-lit.tex accessctrl.bib
 MODULE_FILES+= 	lvlltrl-lit.tex lvlltrl.bib
 
 accessctrl-lit.tex: ../modules/ac/overview/abstract.tex
