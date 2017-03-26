@@ -37,9 +37,6 @@ SRC-pwdguess.pdf=../modules/auth/passwd/pwdguess/pwdguess.pdf
 RELEASE_FILES+=	pwdpolicies.pdf
 SRC-pwdpolicies.pdf=../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
 
-RELEASE_FILES+=	fverif-slides.pdf
-SRC-fverif-slides.pdf=../modules/fverif/intro/intro.pdf
-
 RELEASE_FILES+=	ac-slides.pdf
 SRC-ac-slides.pdf=../modules/ac/overview/overview.pdf
 
@@ -50,10 +47,10 @@ RELEASE_FILES+=	accountability-slides.pdf
 SRC-accountability-slides.pdf=../modules/accountability/overview/overview.pdf
 
 RELEASE_FILES+=	pricomlab.pdf
-SRC-pricomlab.pdf=../modules/pricomlab/pricomlab.pdf
+SRC-pricomlab.pdf=../labs/pricomlab/pricomlab.pdf
 
 RELEASE_FILES+=	toolslab.pdf
-SRC-toolslab.pdf=../modules/toolslab/toolslab.pdf
+SRC-toolslab.pdf=../labs/toolslab/toolslab.pdf
 
 RELEASE_FILES+=	trustcomp-slides.pdf
 SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
