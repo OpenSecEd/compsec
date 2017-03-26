@@ -7,8 +7,8 @@ PUB_METHOD?=	ssh
 PUB_VCS?=		git
 PUB_AUTOTAG?=	true
 
-.PHONY: release
-release: ${RELEASE_FILES}
+.PHONY: all
+all: ${RELEASE_FILES}
 
 RELEASE_FILES+=	studyguide.pdf
 SRC-studyguide.pdf=../studyguide/studyguide.pdf
@@ -81,7 +81,7 @@ print: ${RELEASE_FILES}
 .PHONY: clean distclean
 
 define target_rules
-release: $(1)
+all: $(1)
 
 $(1): ${SRC-$(1)}
 	cp $$^ $$@
