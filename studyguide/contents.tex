@@ -13,7 +13,7 @@
 \maketitle
 
 
-\section{Scope and Aims}
+\section{Scope and aims}
 \label{sec:aim}
 The course aims towards a good understanding for the requirements of a secure 
 computer system.
@@ -37,8 +37,8 @@ More specifically, after taking this course you should be able to:
 \end{itemize}
 
 
-\section{Overview of Structure and Content}
-\label{sec:outline}
+\section{Overview of structure and content}
+\label{CourseOutline}
 % - Basic cryptography: block ciphers, asymmetric cryptosystems, digital 
 %   signatures, hash functions.
 % - User authentication, access control and intrusion detection.
@@ -71,13 +71,13 @@ All assignments are numbered consecutively prefixed with an \enquote{L} for
 laboratory assignments, \enquote{H} for hackathons and \enquote{S} for seminar 
 assignments.
 For general information about the examination of these and deadlines, see 
-\cref{Examination}.
+\cref{Assessment}.
 For detailed information, please see the instructions found in the course 
 platform.
 
-
 \subsection{Schedule}
 \label{Schedule}
+
 To make your reading of the course easier, you are presented with a suggested 
 schedule in this section.
 You are free to follow this schedule or any schedule you make for yourself, but 
@@ -94,158 +94,151 @@ the following sections.
     The table is adapted to taking this course on half-time study rate, i.e.\ 
     over ten weeks.
   }\label{TimeTable}
-  \begin{tabular}{rp{9cm}}
+  \begin{tabular}{lp{9cm}}
     \toprule
-    \textbf{Course Week}	& \textbf{Work} \\
+    \textbf{Course week}	& \textbf{Work} \\
     \midrule
     1
-      & Course Start/Foundations of Security\\
+    & Lecture: Course start/Foundations of security\\
+    & Lecture: Security usability\\
     \midrule
     2
-      & Lecture on Information Theory\\
-      & Lecture on Cryptographic Mechanisms, Part I\\
-      & Lecture on Cryptographic Mechanisms, Part II\\
-      & Lab session L0 (spuriouslab)\\
+    & Individual study\\
     \midrule
     3
-      & Lecture on Identification and Authentication\\
-      & Lecture on Security Usability\\
-      & Lab session L0 (spuriouslab)\\
+    & Lecture: Information theory\\
+    & Lecture: Cryptography, part I\\
+    & Lecture: Cryptography, part II\\
+    & Lab: L0 (spuriouslab)\\
     \midrule
     4
-      & Lecture on Access Control\\
-      & Lecture on Reference Monitors\\
-      %& Lecture on UNIX and Windows Security\\
-      & Lecture on Secure Protocols\\
-      & Lecture on Accountability and Non-Repudiation\\
-      & Lab session L1 (pwdguess)\\
-      & Lab session L3 (pricomlab)\\
-      & First seminar session S2 (pwdpolicies)\\
+    & Lecture on Identification and authentication\\
+    & Seminar: S2 (pwdpolicies)\\
+    & Lab: L0 (spuriouslab), L1 (pwdguess), L3 (pricomlab)\\
     \midrule
     5
-      & Lecture on Software Security\\
-      & Lecture on DRM and Trusted Computing\\
-      & Lecture on Side-Channels\\
-      & Lab session L1 (pwdguess)\\
-      & Lab session L3 (pricomlab)\\
-      & Lab session L4 (tools)\\
+    & Lecture: Access control\\
+    & Lecture: Reference monitors\\
+    %& Lecture: UNIX and Windows Security\\
+    %& Lecture: Database Security\\
+    & Lecture: Accountability\\
+    & Lab: L1 (pwdguess), L3 (pricomlab), L4 (tools)\\
     \midrule
     6
-      %& Lecture on Database Security\\
-      & Hackathon session L5 (drm)\\
-      & Lab session L1 (pwdguess)\\
-      & Lab session L3 (pricomlab)\\
-      & Lab session L4 (tools)\\
+    & Lecture on Trusted computing\\
+    & Lecture on Side-channels\\
+    & Lecture on Software security\\
+    & Lab: L1 (pwdguess), L3 (pricomlab), L4 (tools)\\
     \midrule
     7
-      & Hackathon session L6 (stacksmash)\\
-      & Lab session L1 (pwdguess)\\
-      & Lab session L3 (pricomlab)\\
-      & Lab session L4 (tools)\\
+    & Hackathon: H5 (drmlab)\\
+    & Hackathon: H6 (stacksmash)\\
+    & Lab: L1 (pwdguess), L3 (pricomlab), L4 (tools)\\
     \midrule
     8
-      & Presentation L3 (tools)\\
-      & Seminar session S7 (ethics)\\
+    & Hackathon: H7 (malwarelab)\\
     \midrule
     9
-      & Individual studying\\
+    & Presentation: L3 (tools)\\
+    & Seminar: S8 (ethics)\\
     \midrule
     10
-      & First exam \\
-      & Final lab session (pwdguess, pricomlab, drm, stacksmash)\\
-      & Second seminar session S2 (pwdpolicies), L4 (tools), S7 (ethics)\\
+    & Exam: course exam\\
+    & Lab: last call for all labs\\
+    & Seminar: second call on all seminars, incl L4 presentation\\
     \midrule
     +3 months
-      & Second exam \\
-      & Final seminar session S2 (pwdpolicies), L4 (tools), S7 (ethics)\\
+    & Exam: re-exam\\
+    & Seminar: final call on all seminars, incl L4 presentation\\
     \midrule
     +6 months
-      & Final exam\\
+    & Exam: last re-exam until next course\\
     \bottomrule
   \end{tabular}
 \end{table}
 
 
-\section{Course Content}
+\section{Course content}
 
 This section summarizes the material covered by the lectures and assignments, 
 i.e.\ what you should read for each of them.
 It is divided by topics and ordered according to progression of the course.
 
-\subsection{Foundations of Security}
+\subsection{Foundations of security}
 \input{foundations-lit.tex}
 
-\subsection{L0 May the (Brute) Force be with You}
+\subsection{L0 May the (brute) force be with you}
 \input{spuriouslab-lit.tex}
 
-\subsection{Information Theory}
+\subsection{Information theory}
 \input{infotheory-lit.tex}
 
-\subsection{Cryptographic Mechanisms}
+\subsection{Cryptography}
 \input{crypto-lit.tex}
 
-\subsection{Identification and Authentication}
+\subsection{Identification and authentication}
 \input{auth-lit.tex}
 
-\subsection{Security Usability}
+\subsection{Security usability}
 \input{usability-lit.tex}
 
-\subsection{L1 Password Cracking and Social Engineering}
+\subsection{L1 Password cracking and social engineering}
 \input{pwdguess-lit.tex}
 
-\subsection{S2 Password Policies}
+\subsection{S2 Password policies}
 \input{pwdpolicies-lit.tex}
 
-\subsection{Access Control}
-\input{accessctrl-lit.tex}
-
-\subsection{Reference Monitors}
-\input{refmon-lit.tex}
-
-%\subsection{UNIX Security}
-%\input{unix-lit.tex}
-
-\subsection{Secure Protocols}
-\input{fverif-lit.tex}
-
-\subsection{Accountability and Non-Repudiation}
-\input{accountability-lit.tex}
-
-\subsection{L3 Private Communication}
+\subsection{L3 Private communication}
 \input{pricomlab-lit.tex}
 
-\subsection{Software Security}
-\input{software-lit.tex}
+\subsection{Access control}
+\input{accessctrl-lit.tex}
 
-\subsection{Trusted Computing}
-\input{trustcomp-lit.tex}
+\subsection{Reference monitors}
+\input{refmon-lit.tex}
 
-\subsection{Side-Channels}
-\input{sidechannels-lit.tex}
+%\subsection{UNIX security}
+%\input{unix-lit.tex}
 
-\subsection{L4 Tools of the Trade}
+%\subsection{Windows security}
+%\input{windows-lit.tex}
+
+\subsection{Accountability}
+\input{accountability-lit.tex}
+
+\subsection{L4 Tools of the trade}
 \input{tools-lit.tex}
 
-%\subsection{L4 Malicous Software}
-%\input{malware-lit.tex}
+\subsection{Trusted computing}
+\input{trustcomp-lit.tex}
 
-\subsection{H5 Digital Rights Management}
+\subsection{H5 Digital rights management}
 \input{drm-lit.tex}
 
-\subsection{H6 Smashing the Stack}
+\subsection{Side-channels}
+\input{sidechannels-lit.tex}
+
+\subsection{Software security}
+\input{software-lit.tex}
+
+\subsection{H6 Smashing the stack}
 \input{stacksmash-lit.tex}
 
-\subsection{S7 The Computer Engineer's Code of Ethics}
+\subsection{H7 Malicous software}
+\input{malware-lit.tex}
+
+\subsection{S8 The computer engineer's code of ethics}
 \input{ethics-lit.tex}
 
 \subsection{Final exam}
 
-The final exam will examine your knowledge from taking this course.
+The final exam will assess how well you have achieved the intended learning 
+outcomes of the course.
 Hence, it covers all the content given above.
 
 
-\section{Examination}
-\label{Examination}
+\section{Assessment}
+\label{Assessment}
 
 This section explains how the course modules are graded and mapped to LADOK\@.
 \Cref{LADOKTable} visualizes the relations between modules, credits, grades and 
@@ -281,7 +274,7 @@ If you do not take this chance within a week you must retake the exam the next
 time it is given.
 The grade of the exam will also be the grade of the course total.
 
-\subsection{Handed-In Assignments}                                              
+\subsection{Handed-in assignments}
 
 In general, all hand-ins in the course must be in a \enquote{passable} 
 condition; i.e.\ they must be well-written, grammatically correct and without 
