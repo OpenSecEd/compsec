@@ -28,17 +28,16 @@ contains lectures, assignments etc.  Currently the course comprises the
 following topics:
 
  - Foundations of Security (`foundations`)
+ - Security Usability (`usability`)
  - Information Theory (`infotheory`)
  - Cryptography (`appliedcrypto`)
  - Identification and Authentication (`auth`)
- - Security Usability (`usability`)
  - Access Control (`ac`)
  - Reference Monitors (`refmon`)
- - Secure Protocols (`fverif`)
- - Accountability and Non-Repudiation (`accountability`)
- - Software Security (`software`)
+ - Accountability (`accountability`)
  - Trusted Computing (`trustcomp`)
  - Side-Channels (`sidechannels`)
+ - Software Security (`software`)
 
 These topics are examined using the following assignments.  The assignments 
 prefixed with L are individual laboratory assignments, H are hackathon labs 
@@ -51,7 +50,8 @@ prefixed with L are individual laboratory assignments, H are hackathon labs
  - L4: Tools of the Trade (`toolslab`)
  - H5: Digital Rights Management (`trustcomp/drmlab`)
  - H6: Smashing the Stack (`software/stacksmashlab`)
- - S7: The Computer Engineer's Code of Ethics (`ethics/profession`)
+ - H7: Malware (`software/malwarelab`)
+ - S8: The Computer Engineer's Code of Ethics (`ethics/profession`)
 
 
 Building

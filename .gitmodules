@@ -1,6 +1,6 @@
 [submodule "labs/toolslab"]
 	path = labs/tools
-	url = https://github.com/dbosk/toolslab.git
+	url = https://github.com/OpenSecEd/toolslab.git
 	branch = master
 [submodule "makefiles"]
 	path = makefiles
@@ -53,10 +53,6 @@
 [submodule "modules/sidechannels"]
 	path = modules/sidechannels
 	url = https://github.com/OpenSecEd/sidechannels.git
-	branch = master
-[submodule "modules/fverif"]
-	path = modules/fverif
-	url = https://github.com/OpenSecEd/fverif.git
 	branch = master
 [submodule "miuntex"]
 	path = miuntex
