@@ -79,6 +79,8 @@ print: ${RELEASE_FILES}
 
 
 .PHONY: clean distclean
+clean:
+	${RM} ${RELEASE_FILES}
 
 define target_rules
 all: $(1)
