@@ -1,5 +1,3 @@
-.DELETE_ON_ERROR:
-
 .PHONY: 2017
 2017:			exam-170526.pdf exam-170830.pdf exam-180109.pdf
 EXAM_IDS+=		170526 170830 180109
@@ -79,7 +77,8 @@ EXAM_TAGS+=		sidechannels
 
 # Questions databases from previously generated exams
 
-EXAM_DBS+=		$(foreach id,${EXAM_IDS}, questions-${id}.tex)
+#EXAM_DBS+=		$(foreach id,${EXAM_IDS}, questions-${id}.tex)
+EXAM_DBS+=		questions-170526.tex
 EXAM_DBS+=		questions-161024.tex exam-160822.tex exam-160603.tex
 EXAM_DBS+=		exam-151030.tex exam-150821.tex exam-150604.tex
 EXAM_DBS+=		exam-141028.tex exam-140826.tex exam-140603.tex
