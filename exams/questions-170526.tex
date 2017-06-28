@@ -1,0 +1,253 @@
+\question[3]
+% tags: sidechannels:E:C:A
+\begin{parts}
+  \part Give an example of a covert channel and
+  \begin{solution}
+    A server is anonymous (e.g.\ a Tor hidden service), i.e.\ you may access 
+    the server but not know its location.
+    Part of the server's service is giving the time.
+    It has been shown that the variations in the system clock depend on the 
+    ambient temperature.
+    This means that by studying how the time on the server varies over day and 
+    night and over the seasons, we can eventually figure out the ambient 
+    temperature.
+    From the ambient temperature we can later deduce the geographical location 
+    of the server.
+  \end{solution}
+
+  \part what we can do about it.
+  \begin{solution}
+    We can lower the resolution in the time-stamps the server gives, e.g.\ by 
+    not giving seconds.
+    This lowers the bandwidth of the covert channel, perhaps so that the attack 
+    is infeasible.
+    We could also sync the servers clock more often, e.g.\ by using the Network 
+    Time Protocol.
+    However, the only way to prevent it is by not revealing the time of the 
+    server's system clock.
+  \end{solution}
+\end{parts}
+
+
+
+\question[3]
+  % tags: foundations
+  The terms \enquote{data} and \enquote{information} are related but not the 
+  same.
+  Discuss how they are related and how this affects the term 
+  \enquote{security}, as in \enquote{data security} and \enquote{information 
+  security}.
+
+  \begin{solution}
+  Data is an encoded representation of information.
+  Data can be manipulated by formal rules to infer new information.
+  E.g.\ the data \enquote{\(x+1 = 0\)} does not directly reveal the value of 
+  \(x\), but we can manipulate the data with formal rules (equation solving) 
+  and infer the value of \(x\) (\(x = -1\)).
+
+  The same applies for other situations:
+  When sending data over an anonymizing network (e.g.\ Tor), we only reveal the 
+  size and timing of the packets sent.
+  However, these can be statistically correlated to the packets exiting the 
+  network, thus the sender and recipient can be inferred.
+  \end{solution}
+\question[3]
+% tags: ac
+% tags: E:C:A
+\begin{parts}
+\part What is discretionary access control?
+\part Discuss some of its advantages and disadvantages.
+\end{parts}
+
+\begin{solution}
+  The owner (creator) of the object may set the access policy for the data 
+  object.
+  This is what is common in normal file systems and systems like Facebook.
+
+  This puts more responsibility on the user than mandatory access control 
+  would: it's the responsibility of the user to analyse and prevent information 
+  leaks.
+  From a usability perspective, it's of course possible to add a layer on top 
+  which does this analysis and presents it to the user.
+\end{solution}
+
+
+\question[3]
+  % tags: usability:E:C:A
+  Discuss why usability is important for security.
+
+  \begin{solution}
+    Då systemen vi är beroende av och som ska upprätthålla vår säkerhet 
+    handhas av människor blir psykologin genast viktig.
+    Vi behöver psykologin inom säkerhetsområdet för att kunna ta hänsyn till 
+    hur människor fungerar när vi konstruerar säkerhetssystem.
+    Exempelvis, om vi gör ett system för komplext och användaren tycker att 
+    komplexiteten är onödig, då kommer denne användare att aktivt försöka att 
+    ta sig runt systemet --- kanske genom att skriva upp långa lösenord 
+    istället för att lära sig dem utantill.
+
+    Om vi däremot tar hänsyn till användarnas kognitiva begränsningar, då kan 
+    vi konstruera system som både är säkra och enkla att använda.
+  \end{solution}
+\question
+% tags: software:E
+Describe the three malware reproduction techniques
+\begin{parts}
+  \part[1] virus,
+  \begin{solution}
+    The virus inserts its own code into other programs code.
+    When the other programs are run the virus' payload is run too and the 
+    infection can spread further.
+  \end{solution}
+
+  \part[1] worm,
+  \begin{solution}
+    The worm spreads by its own means, e.g.\ by utilizing networks (shared file 
+    systems, remote executions bugs in network services) or emailing itself 
+    using available programs on the computer.
+  \end{solution}
+
+  \part[1] trojan horse.
+  \begin{solution}
+    The trojan horse is a legitimate-looking program which contains unwanted 
+    functionality.
+    E.g.\ it is a flash-light app, but in the background it uploads the contact 
+    list to the app's developer.
+  \end{solution}
+\end{parts}
+
+
+\question[3]
+  % tags: trustcomp:crypto:E:C:A
+  Alice wants to provide confidentiality to a file.
+  \begin{parts}
+    \part She can accomplish this through mechanisms provided in the operating 
+    system.
+    Explain how this works and what the limits are.
+
+    \part She can also accomplish this through purely cryptographic mechanisms.
+    Explain how this works and what the limits are.
+  \end{parts}
+
+  \begin{solution}
+    The first way she's securing her file is by using access control mechanisms 
+    in the operating system (OS).
+
+    Assuming we have physical access to the computer, then we can just read the 
+    raw data from the disk.
+    This can be accomplished by either booting our own OS on her computer, or 
+    by removing the disk.
+
+    If we don't have physical access we can always try to bypass the access 
+    control mechanisms in other ways, e.g.\ by gaining privileges in the system 
+    or seeing if the OS has failed to protect reading from the raw disk (i.e.\ 
+    not using the file system).
+
+    The main point here is that the operating system must be working correctly 
+    for its mechanisms to be effective.
+    The \emph{running} operating system will provide confidentiality by not 
+    allowing other users' requests to open the file.
+
+    The most obvious way to have system independent security for this file is 
+    to encrypt it, i.e.~using cryptographic mechanisms.
+    This way no one can read it unless they have access to the key, and this is 
+    true no matter if you change the environment.
+    (Of course, if the system is untrusted someone can get to the key that way, 
+    but that's outside the scope of this question.)
+  \end{solution}
+
+
+  
+\question[3]
+  % tags: auth:E:C:A
+  You work for a start-up company which offers low-cost flat-rate subscriptions 
+  for live streaming.
+  This will require authentication.
+  \begin{parts}
+    \part Analyse what data must be authenticated on registration (i.e.\ the 
+    set-up of a new subscription).
+    Suggest how to do the authentication.
+
+    \begin{solution}
+    That the user doing the registration is the user owning the payment data.
+    This is usually stipulated by the payment service, e.g.\ Visa or 
+    MasterCard: card number as identifier and CVV code as \enquote{password}.
+
+    We must also bootstrap our authentication system in this stage.
+    But that only requires that we know that it's the same person paying and 
+    setting that up.
+    \end{solution}
+
+    \part Analyse what data must be authenticated during streaming.
+    Suggest how to do the authentication.
+
+    \begin{solution}
+    First, we must to know that the user has a paid subscription.
+    Second, we might also need to enforce some age requirements.
+    We can use anonymous credentials to reveal as little information as 
+    possible.
+    \end{solution}
+  \end{parts}
+
+
+\question[3]
+  % tags: accountability:E:C:A
+  The systems administrator has (due to their role) unlimited access to all 
+  computer systems in the organization --- they set up and configure all 
+  systems.
+  How can you ensure accountability for the systems administrator?
+
+  \begin{solution}
+    This can be solved with separation of duties.
+    The systems must log to a system that the systems administrator cannot 
+    access.
+    Thus the systems administrator can be held accountable for what he does.
+
+    Of course, we cannot trust the systems administrator to set this up 
+    himself, so we need functional separation.
+  \end{solution}
+
+
+  
+\question[3]
+  % tags: E:C:A:infotheory:passwd
+  Shannon entropy can be used to estimate how well the users choose passwords 
+  under a given password composition policy:
+  \begin{parts}
+    \part How can you estimate the upper bound, i.e.\ the maximum possible 
+    entropy?
+    And what does the upper bound mean?
+
+    \part Why can't you estimate any (useful) lower bound, i.e.\ the minimum 
+    possible entropy?
+    What would a lower bound mean?
+
+    \part How can you estimate the actual entropy of when users choose the 
+    passwords?
+  \end{parts}
+
+  \begin{solution}
+    You assume that every part of the password is chosen uniformly randomly.
+    This gives the maximum entropy, i.e.~it is an upper bound.
+    This means that users cannot do any better than this.
+    You have to account for all choices the password composition policy allows.
+    Or rather, all choices the policy removes.
+
+    A lower bound would provide a guarantee that users choose passwords 
+    sufficiently randomly.
+    This is hard because a user can choose a very easy to guess password for 
+    any static password policy, which has almost no entropy.
+    Similarly, if all users choose the same password, then the entropy would be 
+    zero.
+    This is why a lower bound is not very useful, it will be zero.
+
+    The average case can be estimated as in~\cite{Komanduri2011opa}.
+    You have to \emph{sample a lot of user-generated passwords}, then you can 
+    perform a frequency analysis to find the probabilities and compute the 
+    entropy.
+    The users are the stochastic variable (random output) and you must get 
+    a large enough sample to estimate the probability distribution.
+  \end{solution}
+
+
+  
