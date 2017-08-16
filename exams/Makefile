@@ -34,6 +34,8 @@ exam-140603.pdf: exam-140603.tex literature.bib miunexam
 -include individuals.mk
 
 
+EXAM_FLAGS=		-NCEi
+
 EXAM_TAGS+=		A C E
 
 EXAM_DBS+=		infosak-questions.tex
