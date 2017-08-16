@@ -6,6 +6,30 @@ exam-170526.pdf: miunexam
 exam-170830.pdf: miunexam
 exam-180109.pdf: miunexam
 
+EXAM_IDS+=			008-02
+EXAM_DBS-008-02=	questions-170526.tex
+EXAM_TAGS-008-02=	usability accountability
+
+EXAM_IDS+=			007-03
+EXAM_DBS-007-03=	questions-170526.tex
+EXAM_TAGS-007-03=	ac accountability
+
+EXAM_IDS+=			009-01
+EXAM_DBS-009-01=	questions-170526.tex
+EXAM_TAGS-009-01=	ac
+
+EXAM_IDS+=			005-05
+EXAM_DBS-005-05=	questions-170526.tex
+EXAM_TAGS-005-05=	foundations ac
+
+EXAM_IDS+=			002-08
+EXAM_DBS-002-08=	questions-170526.tex
+EXAM_TAGS-002-08=	trustcomp crypto
+
+EXAM_IDS+=			006-04
+EXAM_DBS-006-04=	questions-170526.tex
+EXAM_TAGS-006-04=	ac accountability
+
 
 .PHONY: 2016
 2016: exam-160603.pdf exam-160822.pdf exam-161024.pdf
@@ -77,8 +101,7 @@ EXAM_TAGS+=		sidechannels
 
 # Questions databases from previously generated exams
 
-#EXAM_DBS+=		$(foreach id,${EXAM_IDS}, questions-${id}.tex)
-EXAM_DBS+=		questions-170526.tex
+EXAM_DBS+=		$(foreach id,${EXAM_IDS}, questions-${id}.tex)
 EXAM_DBS+=		questions-161024.tex exam-160822.tex exam-160603.tex
 EXAM_DBS+=		exam-151030.tex exam-150821.tex exam-150604.tex
 EXAM_DBS+=		exam-141028.tex exam-140826.tex exam-140603.tex
