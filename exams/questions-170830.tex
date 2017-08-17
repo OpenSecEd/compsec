@@ -1,0 +1,203 @@
+\question[3]
+% tags: auth:E:C:A
+  Describe the terms identification and authentication and how they relate to 
+  each other.
+  Make sure to illustrate your explanations with examples.
+
+  \begin{solution}
+    In identification you claim an identity.
+    This can be done using e.g.\ a username, fingerprint or DNA sequence.
+    Anyone can do this.
+
+    In authentication you prove you are who you claim you are.
+    This can be done using e.g.\ \emph{who} you are (biometric), \emph{where} 
+    you are (location) or what you \emph{do} (biometric), something you 
+    \emph{have} (e.g.~BankID), or something you \emph{know} (password).
+    One important part of authentication is freshness.
+  \end{solution}
+
+
+  
+\question[3]
+% tags: foundations:E:C:A
+Discuss the relation between the following pairs of terms:
+  \begin{parts}
+    \part Trusted and trustworthy
+    \part Confidentiality and privacy
+    \part Integrity and authenticity
+  \end{parts}
+
+  \begin{solution}
+    \citet[ss.\ 13--14]{Anderson2008sea} definierar begreppen enligt följande:
+    \begin{description}
+      \item[Pålitlighet] Ett system eller principal som innehar pålitlighet 
+        (\foreignlanguage{english}{is trusted}) är ett system eller principal 
+        som kan bryta din säkerhetspolicy.
+
+      \item[Pålitlig] Ett system eller principal som är pålitlig 
+        (\foreignlanguage{english}{is trustworthy}) är ett system eller 
+        principal som inte kommer att misslyckas.
+        (Den kommer alltså inte att bryta din säkerhetspolicy.)
+
+        Ett exempel för att illustrera skillnaden ges av följande citat: 
+        \blockcquote[s.\ 13]{Anderson2008sea}{%
+          if an NSA employee is observed in a toilet stall at Baltimore 
+          Washington airport selling key material to a Chinese diplomat, then 
+          (assuming his operation was not authorized) we can describe him as 
+          \enquote{trusted but not trustworthy}%
+        }.
+
+      \item[Sekretess] Sekretess är en teknisk term för effekten av en mekanism 
+        som begränsar antalet principals som kan ta del av information.
+
+      \item[Konfidentialitet] Konfidentialitet syftar till att tillhandahålla 
+        sekretess för andra principals hemliga information.
+
+      \item[Personlig integritet] Detta är förmågan eller rätten att kunna 
+        skydda sin personliga information.
+        Det gäller alltså bara individer, exempelvis företag har ingen 
+        personlig integritet.
+
+      \item[Integritet] Detta är en teknisk term för egenskapen att data 
+        förblir oförändrat, eller, om förändring sker ska den inte förbli 
+        obemärkt.
+
+      \item[Autenticitet] Detta begrepp innefattar integritet och fräshhet.
+        Om kommunikation spelas in och sedan spelas upp vid ett annat 
+        tillfälle, då kommer integriteten att ha bevarats men inte fräshheten 
+        --- alltså är en återuppspelning inte autentisk.
+    \end{description}
+    Dessa definitioner stämmer även överens med RFC 4949~\cite{rfc4949}.
+  \end{solution}
+
+
+  
+\question[2]\label{q:sidechannels}
+% tags: sidechannels:E:C:A
+Describe an attack scenario where a side-channel is of central interest.
+
+\begin{solution}
+  The adversary is interested in learning classified information.
+  They set up a device which records electromagnetic emissions to reconstruct 
+  the image on a screen, thus when a target works with the classified data on 
+  the computer the adversary sees the same image.
+  This is a passive attack.
+\end{solution}
+
+\question[3]
+% tags: trustcomp:crypto
+% tags: E:C:A
+  Explain why it is not possible to \emph{securely} embedd a cryptographic key 
+  in a program (e.g. a smartphone app), i.e.\ why the adversary can steal the 
+  key.
+  Also describe the requirements for a solution and possibly some example.
+
+  \begin{solution}
+    Since the software might run in a hostile environment, the adversary can 
+    extract the key.
+
+    The only way to prevent an adversary from extracting the key is to store it 
+    in special-purpose hardware.
+    If you can ensure the integrity of the operating system, then sandboxing 
+    the applications will protect the key from other (malicious) applications 
+    who tries to steal the key.
+  \end{solution}
+
+\question[3]
+% tags: accountability:E:C:A
+What is the purpose of separation of duty?
+Explain and illustrate your explanation with an example.
+
+\begin{solution}
+  The purpose of separation of duty is to make it more difficult for 
+  a malicious entity to subvert the system.
+  E.g.\ a systems developer at the bank should not be able to add a back-door 
+  for himself so that he later can steal money without anyone noticing.
+  If he is only allowed to write the code, but not to certify its correct 
+  function --- then there is a higher chance that he is caught before the 
+  system is launched.
+  So to subvert the system a malicious actor must act together with others.
+\end{solution}
+
+
+\question[3]
+% tags: software:E:C:A
+Give an example where \enquote{data} can be mistaken for \enquote{code}.
+
+\begin{solution}
+  Shell scripting is an easy example.
+  Here you can store part of the code in variables, the simply substitute them.
+  Consider the following \texttt{/bin/echo -e \$\{1\}}.
+  The variable \texttt{\$\{1\}} will be substituted and the result will be 
+  interpreted as code.
+\end{solution}
+
+
+\question[3]
+% tags: ac
+% tags: E:C:A
+Bell-LaPadula (BLP) is a mandatory access-control (MAC) model for 
+confidentiality.
+Biba is also a MAC model, but for integrity.
+(It is sometimes called \enquote{BLP upside-down}.)
+
+Explain how you can use MAC (e.g.\ Biba) to ensure the integrity of a system, 
+e.g.\ to prevent malware from infecting a system.
+(Microsoft actually introduced such a technique in Windows Vista.)
+
+\begin{solution}
+  We assign different objects to different levels of integrity.
+  E.g.\ system files have a high level of integrity, the users documents have 
+  lower, but still higher than temporary files.
+
+  When we download files from untrusted sources they will get the lowest level 
+  of integrity.
+  Thus if we download executable files they will execute with the lowest level 
+  of integrity.
+  As such they can not modify system files, since those are on a higher level.
+  Possibly they cannot modify user-generated files either, since output from 
+  local programs (which do not communicate with the outside world) might have a 
+  higher level of integrity.
+\end{solution}
+
+
+\question[3]
+% tags: passwd:infotheory:usability
+% tags: E:C:A
+  The National Institute of Standards and Technology (NIST) updated their 
+  recommendations on password policies in June 2017.
+  Among the changes are:
+  \begin{itemize}
+    \item Forced password changes should only happen when a breach has 
+    occurred.
+    \item Long passphrases are favoured over complex passwords, i.e.\ a mix of 
+    special characters, upper- and lowercase letters is no longer a 
+    requirement.
+  \end{itemize}
+  Explain why this is a better recommendation.
+  Illustrate your explanation with examples.
+
+  \begin{solution}
+    The increased security can easily be demonstrated.
+    E.g.\ a password of four randomly chosen words forming a passphrase will 
+    have \(4\log_2 125\,000 \approx 4\cdot 16.9 \approx 67.7\) bits of entropy.
+    (We assume a word list of 125\,000 words, e.g.\ the standard Swedish 
+    dictionary.)
+    A completely randomly generated password consisting of eight upper- and 
+    lowercase letters, numbers and special characters will yield 
+    \(8\log_2(26\cdot 2 + 10\cdot 2) \approx 8\cdot 6.2 \approx 49.3\) bits of 
+    entropy.
+
+    User will not choose entirely randomly.
+    There are studies on how well users choose passwords under these two 
+    policies.
+    The results favour passphrases.
+    In the same study, the conclusion is that passphrases also provide better 
+    usability.
+
+    Removing the requirement to periodically change the password further 
+    improves usability.
+    The periodic change of passwords simply forced users to adapt easy-to-guess 
+    systems for their password choices.
+  \end{solution}
+
