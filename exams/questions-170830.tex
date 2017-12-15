@@ -72,7 +72,7 @@ Discuss the relation between the following pairs of terms:
 
 
   
-\question[2]\label{q:sidechannels}
+\question[3]\label{q:sidechannels}
 % tags: sidechannels:E:C:A
 Describe an attack scenario where a side-channel is of central interest.
 
@@ -130,6 +130,12 @@ Give an example where \enquote{data} can be mistaken for \enquote{code}.
   Consider the following \texttt{/bin/echo -e \$\{1\}}.
   The variable \texttt{\$\{1\}} will be substituted and the result will be 
   interpreted as code.
+
+  A more general example: any time a program interacts with a database using 
+  SQL.
+  The database cannot differentiate which parts of the SQL-query comes from the 
+  program code the programmer wrote and the input provided to that program by 
+  the user.
 \end{solution}
 
 
