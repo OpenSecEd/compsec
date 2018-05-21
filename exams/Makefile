@@ -1,3 +1,18 @@
+YEARS+= 		2018
+EXAM_IDS-2018= 	180607 180827 190109
+
+EXAM_DATE-180607= 	2018-06-07
+EXAM_DATE-180827= 	2018-08-27
+EXAM_DATE-190109= 	2019-01-09
+
+define exam_id_template=
+.PHONY: $(1)
+EXAM_IDS+= 		${EXAM_IDS-$(1)}
+$(1): 			$(foreach d,${EXAM_IDS-$(1)}, exam-$d.pdf)
+endef
+
+$(foreach y,${YEARS},$(eval $(call exam_id_template,$y)))
+
 .PHONY: 2017
 2017:			exam-170526.pdf exam-170830.pdf exam-180109.pdf
 EXAM_IDS+=		170526 170830 180109
