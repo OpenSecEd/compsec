@@ -75,11 +75,14 @@ situations.
 \begin{solution}
   Mandatory access control sets the access policy for created objects based on 
   fixed rules in the system.
+  Two examples are the Bell-LaPadula and Biba models.
+  BLP prevents information flow that can violate confidentiality and Biba 
+  prevents information flow that can violate integrity.
 
-  This helps enforcing the policy and avoid mistakes.
-  On the other hand, it will prevent communication downwards, which might be 
-  necessary sometimes (this is usaully solved by special procedures for 
-  declassification).
+  Mandatory access control helps enforcing the policy and to avoid mistakes.
+  On the other hand, it will prevent communication downwards (or upwards), 
+  which might be necessary sometimes (this is usaully solved by special 
+  procedures for declassification).
 
   However, whether it is good or bad depends on the situation.
   Sometimes it's good to have a combination of mandatory and discretionary 
