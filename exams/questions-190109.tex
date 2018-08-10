@@ -1,0 +1,193 @@
+\question\label{q:auth:E:C}
+  Describe the terms
+  \begin{parts}
+    \part[2] identification and
+    \part[2] authentication.
+  \end{parts}
+  Make sure to illustrate your explanations by examples.
+  You must also give an example of a mechanism for each of the terms.
+
+  \begin{solution}
+    In identification you claim an identity.
+    This can be done using e.g.~a username, fingerprint or DNA sequence.
+
+    In authentication you prove you are who you claim you are.
+    This can be done using e.g.~\emph{who} you are (biometric), \emph{where} 
+    you are (location) or what you \emph{do} (biometric), something you 
+    \emph{have} (e.g.~BankID), or something you \emph{know} (password).
+  \end{solution}
+
+
+  
+\question\label{q:accountability:E:C}
+  Separation of duties is a core concept for security.
+  \begin{parts}
+    \part[2] Describe the two types of separation of duties.
+    \part[1] What is the main reason for separation of duties?
+  \end{parts}
+
+  \begin{solution}
+    There are two types of separation of duties:
+    dual control and functional separation.
+    Dual control means that two or more subjects must act together (at the same 
+    time) to authorize a transaction.
+    Functional separation means that several functions are needed to authorize 
+    a transaction---e.g.~create a transaction and verify it---and one subject 
+    is not allowed to do both functions.
+
+    The reason for separation of duties to make it impossible for one malicious 
+    subject to compromise a system.
+    With separation of duties the malicious subject must persuade one or more 
+    other subjects to collude.
+  \end{solution}
+
+
+  
+\question[3]\label{q:sidechannels}
+% examgen: sidechannels:E
+Give an example of a passive side-channel attack.
+
+\begin{solution}
+  The adversary is interested in learning classified information.
+  They set up a device which records electromagnetic emissions to reconstruct 
+  the image on a screen, thus when a target works with the classified data on 
+  the computer the adversary sees the same image.
+  This is a passive attack since we only need to record.
+\end{solution}
+
+
+\question[3]
+  % tags: foundations:E:C:A
+  There are three approaches to security: prevention, detection and reaction.
+  Discuss why security is not all about prevention, how do the three approaches 
+  complement each other.
+
+  \begin{solution}
+    The reason for having these three approaches is partly economy and partly 
+    that it is impossible to do prevention for certain things.
+    Thus, if we cannot prevent an attack, we must be able to detect it.
+    When we have detected it we must be able to recover.
+
+    In some cases it's impossible to recover, however.
+    For instance, if the attacker gets the personal data of clients.
+    We simply cannot take back this data, there will always be a copy somewhere.
+    Thus prevention is the main approach for protecting personal data.
+    Prevention in this case comes both in terms of protecting the stored data, 
+    but also through data minimization, i.e.\ storing only the necessary data, 
+    nothing more.
+
+    In other cases, the recovery might be in terms of insurance paying for the 
+    costs of the damage, e.g.\ financial loss.
+
+    In some cases, prevention is possible, but detection and recovery is 
+    cheaper.
+    For instance, the lunch coupons for restaurants can easily be frauded.
+    But this will also be easily detectable, thus the cost of prevention might 
+    be higher than the cost of the fraud before detection.
+
+    In other cases, e.g.\ electronic communication, then prevention is cheap --- 
+    simply use encryption --- whereas detecting a passive eavesdropper is 
+    impossible.
+  \end{solution}
+\question[3]
+  % tags: usability:E:C:A
+  Discuss why usability is important for security.
+
+  \begin{solution}
+    Då systemen vi är beroende av och som ska upprätthålla vår säkerhet 
+    handhas av människor blir psykologin genast viktig.
+    Vi behöver psykologin inom säkerhetsområdet för att kunna ta hänsyn till 
+    hur människor fungerar när vi konstruerar säkerhetssystem.
+    Exempelvis, om vi gör ett system för komplext och användaren tycker att 
+    komplexiteten är onödig, då kommer denne användare att aktivt försöka att 
+    ta sig runt systemet --- kanske genom att skriva upp långa lösenord 
+    istället för att lära sig dem utantill.
+
+    Om vi däremot tar hänsyn till användarnas kognitiva begränsningar, då kan 
+    vi konstruera system som både är säkra och enkla att använda.
+  \end{solution}
+\question[3]\label{q:trustcomp:crypto:E:C}
+  A user wishes to provide confidentiality to a file.
+  \begin{parts}
+    \part She can accomplish this through mechanisms provided in the operating 
+    system.
+    Explain how this works and what are the limits.
+
+    \part She can also accomplish this through purely cryptographic mechanisms.
+    Explain how this works and what are the limits.
+  \end{parts}
+
+  \begin{solution}
+    The first way she's securing her file is by using access control mechanisms 
+    in the operating system (OS).
+
+    Assuming we have physical access to the computer, then we can just read the 
+    raw data from the disk.
+    This can be accomplished by either booting our own OS on her computer, or 
+    by removing the disk.
+
+    If we don't have physical access we can always try to bypass the access 
+    control mechanisms in other ways, e.g.\ by gaining privileges in the system 
+    or seeing if the OS has failed to protect reading from the raw disk (i.e.\ 
+    not using the file system).
+
+    The main point here is that the operating system must be working correctly 
+    for its mechanisms to be effective.
+    The \emph{running} operating system will provide confidentiality by not 
+    allowing other users' requests to open the file.
+
+    The most obvious way to have system independent security for this file is 
+    to encrypt it, i.e.~using cryptographic mechanisms.
+    This way no one can read it unless they have access to the key, and this is 
+    true no matter if you change the environment.
+    (Of course, if the system is untrusted someone can get to the key that way, 
+    but that's outside the scope of this question.)
+  \end{solution}
+
+
+  
+\question[3]\label{q:software}
+% tags: software:A
+Can a files such as images (e.g.\ JPEGs) and other data be dangerous?
+
+\begin{solution}
+  Yes, they can contain machine code which can be executed if there is e.g.\ 
+  a buffer overrun vulnerability in the software that reads the data.
+\end{solution}
+
+
+
+\question[2]
+% tags: ac
+% tags: E:C
+What is mandatory access control?
+
+\begin{solution}
+  Mandatory access control sets the access policy for created objects based on 
+  fixed rules in the system.
+\end{solution}
+
+
+\question\label{q:passwd:infotheory:E:C:A}
+  You are asked to estimate some password policies.
+  The policies are the following:
+  \begin{description}
+    \item[basic12]
+      At least 12 characters consisting of upper and lower case, and numbers.
+    \item[randswedict4]
+      Randomly choose four words from the Dictionary of the Swedish Language 
+      (SAOL).
+      This dictionary contains approximately 125\,000 words.
+  \end{description}
+  You should answer the following:
+  \begin{parts}
+    \part[4] Estimate the entropy for the passsword policies.
+    (You may rely on the results in certain published research papers discussed 
+    in the course for certain estimates.)
+    \part[2] Decide how suitable they are for use in a large organization.
+    \part[2] Decide how suitable they are for use in a web application.
+  \end{parts}
+  Note that you will not get any points without a motivation.
+
+
+  
