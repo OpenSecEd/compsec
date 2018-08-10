@@ -50,6 +50,9 @@ ${EXAM_NAME}-140826.pdf: ${EXAM_NAME}-140826.tex literature.bib miunexam
 ${EXAM_NAME}-140603.pdf: ${EXAM_NAME}-140603.tex literature.bib miunexam
 
 
+.PHONY: all
+all: 2014 2015 2016 2017 2018
+
 -include individuals.mk
 
 
