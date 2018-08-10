@@ -56,7 +56,7 @@ all: 2014 2015 2016 2017 2018
 -include individuals.mk
 
 
-EXAM_FLAGS=		-NCEi
+EXAM_FLAGS?=	-NCEi
 
 EXAM_TAGS+=		A C E
 
