@@ -1,3 +1,5 @@
+EXAM_NAME= 		DT145G
+
 YEARS+= 		2018
 EXAM_IDS-2018= 	180607 180827 190109
 
@@ -8,42 +10,44 @@ EXAM_DATE-190109= 	2019-01-09
 define exam_id_template=
 .PHONY: $(1)
 EXAM_IDS+= 		${EXAM_IDS-$(1)}
-$(1): 			$(foreach d,${EXAM_IDS-$(1)}, exam-$d.pdf)
+$(1): 			$(foreach d,${EXAM_IDS-$(1)}, ${EXAM_NAME}-$d.pdf)
 endef
 
 $(foreach y,${YEARS},$(eval $(call exam_id_template,$y)))
 
 .PHONY: 2017
-2017:			exam-170526.pdf exam-170830.pdf exam-180109.pdf
+2017:			${EXAM_NAME}-170526.pdf
+2017: 			${EXAM_NAME}-170830.pdf
+2017: 			${EXAM_NAME}-180109.pdf
 EXAM_IDS+=		170526 170830 180109
 
-exam-170526.pdf: miunexam
-exam-170830.pdf: miunexam
-exam-180109.pdf: miunexam
+${EXAM_NAME}-170526.pdf: miunexam
+${EXAM_NAME}-170830.pdf: miunexam
+${EXAM_NAME}-180109.pdf: miunexam
 
 
 .PHONY: 2016
-2016: exam-160603.pdf exam-160822.pdf exam-161024.pdf
+2016: ${EXAM_NAME}-160603.pdf ${EXAM_NAME}-160822.pdf ${EXAM_NAME}-161024.pdf
 
-exam-161024.pdf: questions-161024.tex miunexam
-exam-160822.pdf: exam-160822.tex miunexam
-exam-160603.pdf: exam-160603.tex miunexam
+${EXAM_NAME}-161024.pdf: questions-161024.tex miunexam
+${EXAM_NAME}-160822.pdf: ${EXAM_NAME}-160822.tex miunexam
+${EXAM_NAME}-160603.pdf: ${EXAM_NAME}-160603.tex miunexam
 
 
 .PHONY: 2015
-2015: exam-150604.pdf exam-150821.pdf exam-151030.pdf
+2015: ${EXAM_NAME}-150604.pdf ${EXAM_NAME}-150821.pdf ${EXAM_NAME}-151030.pdf
 
-exam-151030.pdf: exam-151030.tex literature.bib miunexam
-exam-150821.pdf: exam-150821.tex literature.bib miunexam
-exam-150604.pdf: exam-150604.tex literature.bib miunexam
+${EXAM_NAME}-151030.pdf: ${EXAM_NAME}-151030.tex literature.bib miunexam
+${EXAM_NAME}-150821.pdf: ${EXAM_NAME}-150821.tex literature.bib miunexam
+${EXAM_NAME}-150604.pdf: ${EXAM_NAME}-150604.tex literature.bib miunexam
 
 
 .PHONY: 2014
-2014: exam-140603.pdf exam-140826.pdf exam-141028.pdf
+2014: ${EXAM_NAME}-140603.pdf ${EXAM_NAME}-140826.pdf ${EXAM_NAME}-141028.pdf
 
-exam-141028.pdf: exam-141028.tex literature.bib miunexam
-exam-140826.pdf: exam-140826.tex literature.bib miunexam
-exam-140603.pdf: exam-140603.tex literature.bib miunexam
+${EXAM_NAME}-141028.pdf: ${EXAM_NAME}-141028.tex literature.bib miunexam
+${EXAM_NAME}-140826.pdf: ${EXAM_NAME}-140826.tex literature.bib miunexam
+${EXAM_NAME}-140603.pdf: ${EXAM_NAME}-140603.tex literature.bib miunexam
 
 
 -include individuals.mk
@@ -96,10 +100,16 @@ EXAM_TAGS+=		sidechannels
 
 # Questions databases from previously generated exams
 
-EXAM_DBS+=		$(foreach id,${EXAM_IDS}, questions-${id}.tex)
-EXAM_DBS+=		questions-161024.tex exam-160822.tex exam-160603.tex
-EXAM_DBS+=		exam-151030.tex exam-150821.tex exam-150604.tex
-EXAM_DBS+=		exam-141028.tex exam-140826.tex exam-140603.tex
+EXAM_DBS+=		$(foreach id,${EXAM_IDS}, ${EXAM_QNAME}-${id}.tex)
+EXAM_DBS+=		${EXAM_QNAME}-161024.tex
+EXAM_DBS+= 		${EXAM_NAME}-160822.tex
+EXAM_DBS+= 		${EXAM_NAME}-160603.tex
+EXAM_DBS+=		${EXAM_NAME}-151030.tex
+EXAM_DBS+= 		${EXAM_NAME}-150821.tex
+EXAM_DBS+= 		${EXAM_NAME}-150604.tex
+EXAM_DBS+=		${EXAM_NAME}-141028.tex
+EXAM_DBS+= 		${EXAM_NAME}-140826.tex
+EXAM_DBS+= 		${EXAM_NAME}-140603.tex
 
 
 
