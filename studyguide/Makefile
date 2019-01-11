@@ -1,13 +1,48 @@
 .PHONY: all
-all: studyguide.pdf
+all: studyguide.pdf studyguide-slides.pdf
 
-SRC+=		preamble.tex contents.tex
+SRC=		studyguide.tex preamble.tex contents.tex
+SRC+= 		schedule.tex
 SRC+=		${MODULE_FILES}
 
-MODULE_FILES+= 	foundations-lit.tex foundations.bib
+MODULE_FILES+= 	pricomlab-aim.tex pricomlab-lit.tex pricomlab.bib
 
-foundations-lit.tex: ../modules/foundations/overview/abstract.tex
-foundations.bib: ../modules/foundations/overview/overview.bib
+pricomlab-aim.tex: ../modules/pricomlab/aims.tex
+pricomlab-lit.tex: ../modules/pricomlab/literature.tex
+pricomlab.bib: ../modules/pricomlab/pricomlab.bib
+
+MODULE_FILES+= 	ismsmemo-aim.tex ismsmemo-lit.tex ismsmemo.bib
+MODULE_FILES+= 	risksem-aim.tex risksem-lit.tex risksem.bib
+
+ismsmemo-aim.tex: ../modules/ism/ismsmemo/aims.tex
+ismsmemo-lit.tex: ../modules/ism/ismsmemo/abstract.tex
+ismsmemo.bib: ../modules/ism/ismsmemo/ismsmemo.bib
+risksem-aim.tex: ../modules/ism/risksem/aims.tex
+risksem-lit.tex: ../modules/ism/risksem/abstract.tex
+risksem.bib: ../modules/ism/risksem/risksem.bib
+
+MODULE_FILES+= 	msbintro-lit.tex msbintro.bib
+MODULE_FILES+= 	msbforts-lit.tex msbforts.bib
+
+msbintro-lit.tex: ../modules/ism/msbframework/msbintro/literature.tex
+msbintro.bib: ../modules/ism/msbframework/msbintro/msbintro.bib
+msbforts-lit.tex: ../modules/ism/msbframework/msbforts/literature.tex
+msbforts.bib: ../modules/ism/msbframework/msbforts/msbforts.bib
+
+MODULE_FILES+=	recmgmt-abstract.tex recmgmt.bib
+
+recmgmt-abstract.tex: ../modules/ism/recmgmt/abstract.tex
+recmgmt.bib: ../modules/ism/recmgmt/recmgmt.bib
+
+MODULE_FILES+= 	crypto-lit.tex cryptomodule.bib
+
+crypto-lit.tex: ../modules/appliedcrypto/overview/abstract.tex
+cryptomodule.bib: ../modules/appliedcrypto/overview/overview.bib
+
+MODULE_FILES+= 	software-lit.tex software.bib
+
+software-lit.tex: ../modules/software/overview/abstract.tex
+software.bib: ../modules/software/overview/overview.bib
 
 MODULE_FILES+= 	usability-lit.tex usability.bib
 
@@ -19,27 +54,20 @@ MODULE_FILES+= 	infotheory-lit.tex infotheory.bib
 infotheory-lit.tex: ../modules/infotheory/basics/abstract.tex
 infotheory.bib: ../modules/infotheory/basics/basics.bib
 
-MODULE_FILES+= 	crypto-lit.tex crypto.bib
+MODULE_FILES+= 	trustcomp-lit.tex trustcomp.bib
 
-crypto-lit.tex: ../modules/appliedcrypto/overview/abstract.tex
-crypto.bib: ../modules/appliedcrypto/overview/overview.bib
+trustcomp-lit.tex: ../modules/trustcomp/overview/abstract.tex
+trustcomp.bib: ../modules/trustcomp/overview/overview.bib
 
-MODULE_FILES+=	spuriouslab-lit.tex spuriouslab-aim.tex spuriouslab.bib
+MODULE_FILES+= 	fverif-lit.tex fverif.bib
 
-spuriouslab-aim.tex: ../modules/appliedcrypto/spuriouslab/aims.tex
-spuriouslab-lit.tex: ../modules/appliedcrypto/spuriouslab/abstract.tex
-spuriouslab.bib: ../modules/appliedcrypto/spuriouslab/spuriouslab.bib
+fverif-lit.tex: ../modules/fverif/intro/abstract.tex
+fverif.bib: ../modules/fverif/intro/intro.bib
 
-MODULE_FILES+= 	pricomlab-aim.tex pricomlab-lit.tex pricomlab.bib
-
-pricomlab-aim.tex: ../labs/pricomlab/aims.tex
-pricomlab-lit.tex: ../labs/pricomlab/literature.tex
-pricomlab.bib: ../labs/pricomlab/pricomlab.bib
-
-MODULE_FILES+= 	auth-lit.tex auth.bib
+MODULE_FILES+= 	auth-lit.tex authmodule.bib
 
 auth-lit.tex: ../modules/auth/overview/abstract.tex
-auth.bib: ../modules/auth/overview/overview.bib
+authmodule.bib: ../modules/auth/overview/overview.bib
 
 MODULE_FILES+= 	pwdguess-aim.tex pwdguess-lit.tex pwdguess.bib
 
@@ -50,103 +78,59 @@ pwdguess.bib: ../modules/auth/passwd/pwdguess/pwdguess.bib
 MODULE_FILES+= 	pwdpolicies-aim.tex pwdpolicies-lit.tex pwdpolicies.bib
 
 pwdpolicies-aim.tex: ../modules/auth/passwd/pwdpolicies/aims.tex
-pwdpolicies-lit.tex: ../modules/auth/passwd/pwdpolicies/literature.tex
+pwdpolicies-lit.tex: ../modules/auth/passwd/pwdpolicies/abstract.tex
 pwdpolicies.bib: ../modules/auth/passwd/pwdpolicies/pwdpolicies.bib
 
 MODULE_FILES+= 	accessctrl-lit.tex accessctrl.bib
-MODULE_FILES+= 	lvlltrl-lit.tex lvlltrl.bib
+#MODULE_FILES+= 	lvlltrl-lit.tex lvlltrl.bib
 
 accessctrl-lit.tex: ../modules/ac/overview/abstract.tex
 accessctrl.bib: ../modules/ac/overview/overview.bib
-lvlltrl-lit.tex: ../modules/ac/lvlltrl/abstract.tex
-lvlltrl.bib: ../modules/ac/lvlltrl/lvlltrl.bib
+#lvlltrl-lit.tex: ../modules/ac/lvlltrl/abstract.tex
 
-MODULE_FILES+= 	refmon-lit.tex refmon.bib
+MODULE_FILES+= 	foundations-lit.tex foundations.bib
 
-refmon-lit.tex: ../modules/ac/refmon/abstract.tex
-refmon.bib: ../modules/ac/refmon/refmon.bib
-
-#MODULE_FILES+= 	unix-lit.tex unix.bib
-#
-#unix-lit.tex: ../modules/ac/unix/literature.tex
-#unix.bib: ../modules/ac/unix/unix.bib
-#
-#MODULE_FILES+= 	windows-lit.tex windows.bib
-#
-#windows-lit.tex: ../modules/ac/windows/literature.tex
-#windows.bib: ../modules/ac/windows/windows.bib
+foundations-lit.tex: ../modules/foundations/overview/abstract.tex
+foundations.bib: ../modules/foundations/overview/overview.bib
 
 MODULE_FILES+= 	accountability-lit.tex accountability.bib
 
 accountability-lit.tex: ../modules/accountability/overview/abstract.tex
 accountability.bib: ../modules/accountability/overview/overview.bib
 
-#MODULE_FILES+= 	database-lit.tex database.bib
-#
-#database-lit.tex: ../modules/database/overview/literature.tex
-#database.bib: ../modules/database/overview/database.bib
+MODULE_FILES+= 	project-aim.tex
 
-MODULE_FILES+=	tools-aim.tex tools-lit.tex tools.bib
-
-tools-aim.tex: ../labs/tools/aims.tex
-tools-lit.tex: ../labs/tools/literature.tex
-tools.bib: ../labs/tools/tools.bib
-
-MODULE_FILES+= 	trustcomp-lit.tex trustcomp.bib
-
-trustcomp-lit.tex: ../modules/trustcomp/overview/abstract.tex
-trustcomp.bib: ../modules/trustcomp/overview/overview.bib
-
-MODULE_FILES+=	drm-aim.tex drm-lit.tex drm.bib
-
-drm-aim.tex: ../modules/trustcomp/drmlab/aims.tex
-drm-lit.tex: ../modules/trustcomp/drmlab/literature.tex
-drm.bib: ../modules/trustcomp/drmlab/drm.bib
-
-MODULE_FILES+= 	sidechannels-lit.tex sidechannels.bib
-
-sidechannels-lit.tex: ../modules/sidechannels/overview/abstract.tex
-sidechannels.bib: ../modules/sidechannels/overview/overview.bib
-
-MODULE_FILES+= 	software-lit.tex software.bib
-
-software-lit.tex: ../modules/software/overview/abstract.tex
-software.bib: ../modules/software/overview/overview.bib
-
-MODULE_FILES+=	stacksmash-aim.tex stacksmash-lit.tex stacksmash.bib
-
-stacksmash-aim.tex: ../modules/software/stacksmashlab/aims.tex
-stacksmash-lit.tex: ../modules/software/stacksmashlab/literature.tex
-stacksmash.bib: ../modules/software/stacksmashlab/stacksmash.bib
-
-MODULE_FILES+=	malware-aim.tex malware-lit.tex malware.bib
-
-malware-aim.tex: ../modules/software/malwarelab/aims.tex
-malware-lit.tex: ../modules/software/malwarelab/literature.tex
-malware.bib: ../modules/software/malwarelab/malware.bib
-
-MODULE_FILES+= 	ethics-aim.tex ethics-lit.tex ethics.bib
-
-ethics-aim.tex: ../modules/ethics/profession/aims.tex
-ethics-lit.tex: ../modules/ethics/profession/literature.tex
-ethics.bib: ../modules/ethics/profession/profession.bib
+project-aim.tex: ../modules/research/prestudy/aims.tex
 
 
 ${MODULE_FILES}:
 	ln -s $^ $@
 
 
-studyguide.pdf: studyguide.tex ${SRC}
+studyguide.pdf: ${SRC}
+studyguide.pdf: bibsp.sty assessment.sty
+
+studyguide-slides.pdf: ${SRC}
+studyguide-slides.pdf: bibsp.sty assessment.sty
 
 
 .PHONY: clean
 clean:
-	${RM} studyguide.pdf
+	${RM} studyguide.pdf studyguide-slides.pdf
 
-.PHONY: distclean
-distclean:
+.PHONY: clean-depends distclean
+clean-depends distclean:
 	${RM} ${MODULE_FILES}
+	${RM} llncs2e.zip
+	${RM} bibsp.sty
+	${RM} -R biblatex-lncs-src
 
+
+### INCLUDES ###
 
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
+INCLUDE_BIBSP=../bibsp
+include ${INCLUDE_BIBSP}/bibsp.mk
+INCLUDE_BIBEDU=../bibedu
+include ${INCLUDE_BIBEDU}/bibedu.mk

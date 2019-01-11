@@ -1,42 +1,44 @@
 \usepackage[utf8]{inputenc}
 \usepackage[swedish,british]{babel}
+\usepackage{varioref}
+\usepackage[capitalize]{cleveref}
 \usepackage{booktabs}
-\usepackage{SIunits}
+\usepackage[binary,squaren]{SIunits}
 \usepackage[strict]{csquotes}
-\usepackage[all]{foreign}
-\renewcommand{\foreignfullfont}{\relax}
-\renewcommand{\foreignabbrfont}{\relax}
+\usepackage{acro}
 
-\usepackage[natbib,style=numeric-comp,maxbibnames=99]{biblatex}
-\addbibresource{spuriouslab.bib}
-\addbibresource{tools.bib}
-\addbibresource{malware.bib}
-\addbibresource{drm.bib}
-\addbibresource{stacksmash.bib}
-\addbibresource{ethics.bib}
-\addbibresource{foundations.bib}
-\addbibresource{infotheory.bib}
-\addbibresource{crypto.bib}
+\usepackage[all]{foreign}
+\renewcommand{\foreignfullfont}{}
+\renewcommand{\foreignabbrfont}{}
+
+\usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none]{biblatex}
 \addbibresource{pricomlab.bib}
-\addbibresource{auth.bib}
-\addbibresource{usability.bib}
 \addbibresource{pwdguess.bib}
 \addbibresource{pwdpolicies.bib}
-\addbibresource{accessctrl.bib}
-\addbibresource{lvlltrl.bib}
-\addbibresource{refmon.bib}
-\addbibresource{accountability.bib}
+\addbibresource{ismsmemo.bib}
+\addbibresource{risksem.bib}
+\addbibresource{msbintro.bib}
+\addbibresource{msbforts.bib}
 \addbibresource{software.bib}
+\addbibresource{usability.bib}
+\addbibresource{infotheory.bib}
 \addbibresource{trustcomp.bib}
 \addbibresource{fverif.bib}
-\addbibresource{sidechannels.bib}
+\addbibresource{authmodule.bib}
+\addbibresource{accountability.bib}
+\addbibresource{foundations.bib}
+\addbibresource{accessctrl.bib}
+\addbibresource{cryptomodule.bib}
+\addbibresource{recmgmt.bib}
 
-\usepackage{acro}
-\DeclareAcronym{APT}{%
-  short = {APT},
-  short-indefinite = {an},
-  long = {advanced persistent threat},
-  long-indefinite = {an},
+\usepackage{bibsp}
+\usepackage{assessment}
+
+\DeclareAcronym{ISM}{%
+  short = {ISM},
+  long = {information security management},
 }
-
-\usepackage{cleveref}
+\DeclareAcronym{ISMS}{%
+  short = {ISMS},
+  long = {information system management system},
+}

@@ -57,3 +57,9 @@
 [submodule "miuntex"]
 	path = miuntex
 	url = https://github.com/dbosk/miuntex.git
+[submodule "bibedu"]
+	path = bibedu
+	url = https://github.com/dbosk/bibedu.git
+[submodule "bibsp"]
+	path = bibsp
+	url = https://github.com/dbosk/bibsp.git

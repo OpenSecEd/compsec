@@ -1,13 +1,31 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
+\usepackage{beamerarticle}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
-\usepackage{authblk}
-\let\institute\affil
-
+\input{preamble.tex}
 \pagestyle{plain}
 
-\input{preamble.tex}
+\usepackage{authblk}
+
+\title{%
+  The Complete Study Guide for\\
+  IG036G Information Security
+}
+\author{%
+  Daniel Bosk
+}
+\affil{%
+  Department of Information Systems and Technology\\
+  Mid Sweden University, Sundsvall
+}
+\affil{%
+  School of Computer Science and Communication\\
+  KTH Royal Institute of Technology, Stockholm\\
+}
+
+\date{\today}
 
 \begin{document}
+\maketitle
 \input{contents.tex}
 \end{document}

@@ -1,296 +1,364 @@
-\title{%
-  A study guide for a first course in\\
-  Computer Security
-}
-\author{%
-  Daniel Bosk
-}
-\institute{%
-  Department of Information and Communication Systems\\
-  Mid Sweden University, SE-851\,70 Sundsvall
-}
-
-\maketitle
-
+\mode*
 
 \section{Scope and aims}%
 \label{sec:aim}
-The course aims towards a good understanding for the requirements of a secure 
-computer system.
-Problems such as authentication and access control; software security, such as 
-buffer overflows; as well as operating system, library and application security 
-mechanisms are treated in the course.
 
-More specifically, after taking this course you should be able to:
+\mode<presentation>{%
+  \subsection{Scope}
+
+  \begin{frame}
+    \begin{itemize}
+
+      \item The course treats a wide interpretation of Information Security.
+      \item It treats both engineering and management.
+
+        \pause
+
+      \item The first part is about management.
+      \item The second part is about engineering.
+
+        \pause
+
+      \item But the principles from the engineering parts can be applied in an 
+        organization's process design too.
+
+    \end{itemize}
+  \end{frame}
+}
+
+The course treats information security from a user, organization and technical 
+perspective.
+The first part of the course concerns security on a strategic level, \ie 
+managing security within an organization.
+The second part of the course focuses on the operative parts, \ie security 
+mechanisms and principles for design of secure systems.
+In full, the course aims at giving you an understanding of threats to security 
+and how to work to protect against these.
+
+\mode<presentation>{%
+  \subsection{Aims}
+}
+
+More concretely, the \acp{ILO} of the course are the following.
+After completing the course, you should be able to:
+\begin{frame}
+\mode<presentation>{You should be able to}
 \begin{itemize}
-  \item apply different cryptosystems and explain how these work,
-  \item analyse the problems of authentication, access control and different 
-  solutions,
-  \item explain how some common attacks on software works,
-  \item analyse different operating system security mechanisms,
-  \item analyse the functionality of different types of malware,
-  \item explain different malware protection mechanisms,
-  \item evaluate strengths and weaknesses of hardware-based security and 
-    full-disk encryption, as well as
-  \item value and argue about different ethical aspects of computer security, 
-    e.g.\ surveillance.
+
+  \item \emph{apply} basic concepts and models in information security.
+
+    \pause
+
+  \item \emph{evaluate} the usability of security solutions and \emph{suggest} 
+    improvements that improve usability and security.
+
+  \item \emph{analyse} threats, possible protection mechanisms and \emph{design} 
+    an approach to protection which considers usability.
+
+    \pause
+
+  \item \emph{apply} the Swedish Civil Contingency Agency's Framework for 
+    Information Security Management Systems to \emph{analyse, assess and 
+      improve} the information security in an organization.
+
+    \pause
+
+  \item \emph{review and apply} the results of published research in the 
+    security field.
+
 \end{itemize}
+\end{frame}
+The course has a variety of learning sessions designed to ensure that you learn 
+these \acp{ILO}.
+Each such session has a set of further specified \acp{ILO}:
+\eg the first outcome above refers to \enquote{basic concepts and models}, 
+the \acp{ILO} of a learning session would specify which concepts and models it 
+covers.
 
 
-\section{Overview of structure and content}%
-\label{CourseOutline}
-% - Basic cryptography: block ciphers, asymmetric cryptosystems, digital 
-%   signatures, hash functions.
-% - User authentication, access control and intrusion detection.
-% - Software security: buffer overflow, handling input, interaction between 
-%   programs.
-% - Operating system security.
-% - Malware.
-% - Trusted computing, hardware based security and whole disk encryption.
-% - Ethical aspects of computer security.
-The course covers
-applied cryptography used in computer security, e.g.~uses of cryptography for 
-code obfuscation or digital rights management;
-authentication mechanisms, access control, and intrusion detection;
-software security, e.g.~buffer overruns and interaction between programs;
-some security mechanisms provided by operating system and hardware;
-and malicious software and how these utilise the above weaknesses.
-Finally we discuss some ethical implications for computer engineers.
+\section{Course structure and content overview}%
+\label{sec:outline}
 
-\subsection{Teaching}
+The first part of the course covers information security on a strategic level, 
+this concerns organizational management systems for information security: how 
+to implement these and how to continuously run them in an organization.
+The main material used for this part~\cite{%
+  MSB2011itm,MSB2011sle,MSB2011p,%
+	MSB2011v,MSB2011r,MSB2011gap,MSB2011gb,%
+	MSB2011vs,MSB2011us,MSB2011upo,%
+	MSB2011pg,MSB2011koa,MSB2011i,%
+	MSB2011o,MSB2011g,MSB2011lg,%
+	MSB2011ulo,MSB2011kf,MSB2011fa%
+} is produced by the Swedish Civil Contingencies Agency (MSB) and is based on 
+the ISO 27000 standard documents.
 
-The main course literature is \citetitle{Gollmann2011cs} by 
-\citeauthor{Gollmann2011cs}~\cite{Gollmann2011cs}.
-This is complemented by \citetitle{Anderson2008sea} by 
-\citeauthor{Anderson2008sea}~\cite{Anderson2008sea}.
-The course is taught using lectures, individual laboratory assignments, 
-workshops (\enquote{hackathon labs}), seminars, and finally a written exam.
-You can find a more detailed timetable, containing lab sessions etc., in the 
-following subsection.
+The second part of the course will focus on the content of Anderson's book 
+\citetitle{Anderson2008sea}~\cite{Anderson2008sea} and Gollmann's book 
+\citetitle{Gollmann2011cs}~\cite{Gollmann2011cs}.
+The focus in the second part of the course is on security mechanisms and how to 
+use these in secure systems.
+There is also some additional material for this part of the course, \eg 
+research papers and some other material.
+
+\subsection{Teaching and tutoring}
+
+\mode<presentation>{%
+  \begin{frame}
+    \begin{itemize}
+
+      \item Teaching consists of several types of learning sessions.
+      \item Most topics are covered only by lectures.
+        
+        \pause
+
+      \item Some are complemented with seminars, hand-ins and labs.
+      \item These are for combined learning and assessment.
+
+        \pause
+
+      \item These are focused to the first six weeks.
+      \item The last four weeks are dedicated to the project.
+      \item These weeks have weekly tutoring sessions.
+        
+    \end{itemize}
+  \end{frame}
+}
+
+The course is taught using lectures, seminars, laboratory assignments and, 
+finally, a project.
 All assignments are numbered consecutively prefixed with an \enquote{L} for 
-laboratory assignments, \enquote{H} for hackathons and \enquote{S} for seminar 
-assignments.
-For general information about the examination of these and deadlines, see 
-\cref{Assessment}.
-For detailed information, please see the instructions found in the course 
-platform.
+laboratory assignments, \enquote{S} for seminar assignments, \enquote{M} for 
+memos and \enquote{P} for projects.
 
-\subsection{Schedule}%
-\label{Schedule}
+\subsection{Schedule}
 
-To make your reading of the course easier, you are presented with a suggested 
-schedule in this section.
+You will find an outline for a schedule for the course in \cref{Schedule}.
 You are free to follow this schedule or any schedule you make for yourself, but 
-the deadlines, laboratory sessions, and lectures will follow this schedule.
-You will find a short summary of the schedule in \cref{TimeTable}.
+the learning and tutoring sessions, deadlines etc.\ will follow this schedule.
 The detailed reading instructions for each item in the schedule can be found in 
 the following sections.
 
-\begin{table}
-	\centering
-  \begin{tabular}{lp{9cm}}
-    \toprule
-    \textbf{Course week}	& \textbf{Work} \\
-    \midrule
-    1
-    & Lecture: Course start/Foundations of security\\
-    & Lecture: Security usability\\
-    \midrule
-    2
-    & Individual study\\
-    \midrule
-    3
-    & Lecture: Information theory\\
-    & Lecture: Cryptography, part I\\
-    & Lecture: Cryptography, part II\\
-    & Lab: L0 (spuriouslab)\\
-    \midrule
-    4
-    & Lecture: Identification and authentication, part I\\
-    & Lecture: Identification and authentication, part II\\
-    & Seminar: S2 (pwdpolicies)\\
-    & Lab: L0 (spuriouslab), L1 (pwdguess), L3 (pricomlab)\\
-    \midrule
-    5
-    & Lecture: Access control\\
-    & Lecture: Reference monitors\\
-    %& Lecture: UNIX and Windows Security\\
-    %& Lecture: Database Security\\
-    & Lecture: Accountability\\
-    & Lab: L1 (pwdguess), L3 (pricomlab), L4 (tools)\\
-    \midrule
-    6
-    & Lecture on Trusted computing\\
-    & Lecture on Side-channels\\
-    & Lecture on Software security\\
-    & Lab: L1 (pwdguess), L3 (pricomlab), L4 (tools)\\
-    \midrule
-    7
-    & Hackathon: H5 (drmlab)\\
-    & Hackathon: H6 (stacksmash)\\
-    & Lab: L1 (pwdguess), L3 (pricomlab), L4 (tools)\\
-    \midrule
-    8
-    & Hackathon: H7 (malwarelab)\\
-    \midrule
-    9
-    & Presentation: L3 (tools)\\
-    & Seminar: S8 (ethics)\\
-    \midrule
-    10
-    & Exam: course exam\\
-    & Lab: last call for all labs\\
-    & Seminar: second call on all seminars, incl L4 presentation\\
-    \midrule
-    +3 months
-    & Exam: re-exam\\
-    & Seminar: final call on all seminars, incl L4 presentation\\
-    \midrule
-    +6 months
-    & Exam: last re-exam until next course\\
-    \bottomrule
-  \end{tabular}
-  \caption{%
-    A summary of the parts of the course and when they will (or should) be 
-    covered.
-    The table is adapted to taking this course on half-time study rate, i.e.\ 
-    over ten weeks.
-  }\label{TimeTable}
-\end{table}
+\begin{frame}[allowframebreaks]
+\input{schedule.tex}
+\end{frame}
 
 
 \section{Course content}
 
 This section summarizes the material covered by the lectures and assignments, 
-i.e.\ what you should read for each of them.
+\ie what you should read for each of them.
 It is divided by topics and ordered according to progression of the course.
 
+\mode<article>{%
 \subsection{Foundations of security}
 \input{foundations-lit.tex}
+}
 
-\subsection{Information theory}
-\input{infotheory-lit.tex}
-
-\subsection{Cryptography}
-\input{crypto-lit.tex}
-
-\subsection{L0 May the (brute) force be with you}
-\input{spuriouslab-lit.tex}
-
-\subsection{Identification and authentication}
-\input{auth-lit.tex}
-
+\mode<article>{%
 \subsection{Security usability}
 \input{usability-lit.tex}
+}
 
-\subsection{L1 Password cracking and social engineering}
+%\subsection{L0 Privacy is Dead}
+%\input{privacy-lit.tex}
+
+\mode<article>{%
+\subsection{MSB's framework, part I}
+\input{msbintro-lit.tex}
+}
+
+\mode<article>{%
+\subsection{M1 Information security management system}
+\input{ismsmemo-lit.tex}
+}
+
+\mode<article>{%
+\subsection{MSB's framework, part II}
+\input{msbforts-lit.tex}
+}
+
+\mode<article>{%
+\subsection{M2 and S3 Assessment and risk analysis}
+\input{risksem-lit.tex}
+}
+
+\mode<article>{%
+\subsection{Information security from a records management perspective}
+\input{recmgmt-abstract.tex}
+}
+
+\mode<article>{%
+\subsection{Information theory}
+\input{infotheory-lit.tex}
+}
+
+\mode<article>{%
+\subsection{Cryptography}
+\input{crypto-lit.tex}
+}
+
+\mode<article>{%
+\subsection{Identification and authentication}
+\input{auth-lit.tex}
+}
+
+\mode<article>{%
+\subsection{L4 Password cracking and social engineering}
 \input{pwdguess-lit.tex}
+}
 
-\subsection{S2 Password policies}
+\mode<article>{%
+\subsection{S5 Password policies}
 \input{pwdpolicies-lit.tex}
+}
 
-\subsection{L3 Private communication}
-\input{pricomlab-lit.tex}
+\mode<article>{%
+\subsection{Protocols and formal verification}
+\input{fverif-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Access control}
 \input{accessctrl-lit.tex}
+}
 
-\subsection{Reference monitors}
-\input{refmon-lit.tex}
+%\subsection{Multi-Level and Multi-Lateral Security}
+%\input{lvlltrl-lit.tex}
 
-%\subsection{UNIX security}
-%\input{unix-lit.tex}
-
-%\subsection{Windows security}
-%\input{windows-lit.tex}
-
+\mode<article>{%
 \subsection{Accountability}
 \input{accountability-lit.tex}
+}
 
-\subsection{L4 Tools of the trade}
-\input{tools-lit.tex}
+\mode<article>{%
+\subsection{L6 Private communication}
+\input{pricomlab-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Trusted computing}
 \input{trustcomp-lit.tex}
+}
 
-\subsection{H5 Digital rights management}
-\input{drm-lit.tex}
-
-\subsection{Side-channels}
-\input{sidechannels-lit.tex}
-
+\mode<article>{%
 \subsection{Software security}
 \input{software-lit.tex}
+}
 
-\subsection{H6 Smashing the stack}
-\input{stacksmash-lit.tex}
+\mode<article>{%
+\subsection{Course conclusion}
+}
 
-\subsection{H7 Malicous software}
-\input{malware-lit.tex}
+During this lecture we will shortly review the course and try to fit things into 
+a bigger picture.
 
-\subsection{S8 The computer engineer's code of ethics}
-\input{ethics-lit.tex}
+\subsection{P7 A short study in information security}
 
-\subsection{Final exam}
+\mode<presentation>{%
+  \begin{frame}
+    \begin{itemize}
+      \item Small independent study in information security.
+      \item Aim is to practice your knowledge from the course.
+      \item As well as deepen your knowledge in some parts.
 
-The final exam will assess how well you have achieved the intended learning 
-outcomes of the course.
-Hence, it covers all the content given above.
+        \pause
+
+      \item And to assess that you reach the \acp{ILO} above.
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \begin{itemize}
+      \item You are quite free in choosing.
+      \item But the project must be connected to research.
+      \item You must select and read relevant research papers.
+    \end{itemize}
+  \end{frame}
+}
+
+The project is a smaller study within the area of information security.
+The idea is to deepen your knowledge in some areas of information security, so 
+during the project you must select and read papers which are related to the 
+course.
+For example, you can focus on areas such as:
+\begin{itemize}
+  \item usable security,
+  \item privacy enhancing technologies (PETs), or
+  \item more advanced methods for guessing passwords.
+\end{itemize}
+These are just examples, you are free to choose the area and papers in 
+corroboration with the tutor.
+More details are provided in the separate instruction.
 
 
 \section{Assessment}%
 \label{Assessment}
 
+\mode<presentation>{%
+  \subsection{LADOK modules}
+}
+
 This section explains how the course modules are graded and mapped to LADOK\@.
 \Cref{LADOKTable} visualizes the relations between modules, credits, grades and 
 LADOK\@.
 
+\begin{frame}
 \begin{table}
   \centering
+  \setlength{\tabcolsep}{0.5em}
+  \begin{tabular}{r r l l}
+    \toprule
+    LADOK & Credits (ECTS)  & Grade       & Course Assignments\\
+    \midrule
+    I104  & 1.5             & P, F        & M1, M2, S3, S5\\
+    L104  & 1.5             & P, F        & L4, L6\\
+    R104  & 4.5             & A--F        & P7\\
+    \midrule
+    Total & 7.5             & A--F        & P7\\
+    \bottomrule
+  \end{tabular}
   \caption{%
     Table summarizing course modules and their mapping to LADOK\@.
     P means pass, F means fail.
     A--E are also passing grades, where A is the best.
   }\label{LADOKTable}
-  \begin{tabular}{rrll}
-    \toprule
-    LADOK & Credits (ECTS)  & Grade       & Course Assignments\\
-    \midrule
-    I104  & 0.0             & P, F        & L0\\
-    L104  & 3.0             & P, F        & L1, L3, L4, H5, H6\\
-    S104  & 1.5             & P, F        & S2, S7\\
-    T104  & 3.0             & A--F        & Exam\\
-    \midrule
-    Total & 7.5             & A--F        & (Determined by exam)\\
-    \bottomrule
-  \end{tabular}
 \end{table}
+\end{frame}
 
-The written exam will be graded A--E for passing grades, F or Fx for failing 
-grades.
-You will receive an Fx if you are very close to passing.
-In this case you may complement your written exam with an oral exam within 
-a week from receiving the result.
-If you do not take this chance within a week you must retake the exam the next 
-time it is given.
-The grade of the exam will also be the grade of the course total.
+The project is graded from A to F, where A--E are for passing and F and Fx are 
+for failing.
+The grade of the project will also be the grade of the course total.
 
 \subsection{Handed-in assignments}
 
+\mode<presentation>{%
+  \begin{frame}
+    \begin{itemize}
+      \item Must be in \enquote{passable} condition.
+      \item Otherwise rejection without comment.
+
+        \pause
+
+      \item No plagiarism accepted.
+      \item When working in group: everyone accountable.
+    \end{itemize}
+  \end{frame}
+}
+
 In general, all hand-ins in the course must be in a \enquote{passable} 
-condition; i.e.\ they must be well-written, grammatically correct and without 
+condition; \ie they must be well-written, grammatically correct and without 
 spelling errors, have citations and references according to~\cite{IEEEcitation} 
 (see also~\cite{PurdueCitation} for a tutorial), and finally fulfil all 
 requirements from the assignment instruction.
 If you hand something in which is not in this condition, you will receive an 
-F with the comment \enquote{incomplete}.
+F without further comment.
 
-All handed-in material must be created by yourself, or, in the case of group 
+All material handed-in must be created by yourself, or, in the case of group 
 assignments, created by you or one of the group members.
 When you refer to or quote other texts, then you must provide a correct list of 
 references and, in the case of quotations, the quoted text must be clearly 
 marked as quoted.
-If any part of the document is plagiarized you risk being suspended from study  
+If any part of the document is plagiarized you risk being suspended from study 
 for a predetermined time, not exceeding six months, due to disciplinary 
 offence.
 If it is a group assignment, all group members will be held accountable for 
@@ -298,13 +366,86 @@ disciplinary offence unless it is clearly marked in the work who is responsible
 for the part containing the plagiarism.
 
 If cooperation takes place without the assignment instruction explicitly 
-allowing this, this will be regarded as a disciplinary offence with the risk of 
+allowing this, this will be regarded as a disciplinary offence with the risk of
 being suspended for a predetermined time, not exceeding six months.
 Unless otherwise stated, all assignments are to be done individually.
 
 \subsection{\enquote{What if I'm not done in time?}}%
-\label{WhatIfImLate}
-\input{late.tex}
+\label{sec:late}
+
+\mode<presentation>{%
+  \begin{frame}
+    \begin{itemize}
+      \item You have three chances for grading per year.
+      \item These are marked in the schedule.
+      \item Thus there will be three deadlines per assignment until the next 
+        time the course is given.
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \begin{itemize}
+      \item No tutoring is planned after the course.
+      \item If you want to ensure tutoring, it's during the course.
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \begin{alertblock}{If you predict you will not finish on time}
+      \begin{itemize}
+        \item Within three weeks of course start, deregister from the course.
+        \item This allows you to reregister next time the course is given.
+
+          \pause
+
+        \item You must reregister to get access to the course the following 
+          year.
+        \item If you haven't cancelled, you'll be last in the queue.
+      \end{itemize}
+    \end{alertblock}
+  \end{frame}
+}
+
+The deadlines on this course are of great importance, make sure to keep these!
+%You must have completed the introductory assignment within its deadline.
+%If you do not do this you will be deregistered from the course and your place 
+%will be open to other students.
+
+For seminars and presentations there will be three sessions during the course 
+of a year, if you cannot make it to any of those you will have to return the 
+next time the course is given; \ie up to a year later.
+All of these sessions will be in the course schedule (in the Student Portal).
+If you miss a deadline for the preparation for a seminar session, then you have 
+to go for the next seminar even if the first seminar has not passed yet.
+
+Written assignments are graded once during the course, most often shortly after 
+the deadline of the assignment.
+After the course you are offered two more attempts within a year.
+In total you have three chances for having your assignments graded over the 
+period of a year.
+After that you should come back the next time the course is given.
+
+No tutoring is planned after the end of the course, \ie after the last 
+tutoring session scheduled in the course schedule.
+If you are not done with your assignments during the course and want to be 
+guaranteed tutoring you have to reregister for the next time the course is 
+given.
+Reregistration is a lower priority class of applicants for a course, all 
+students applying for the course the first time have higher priority -- this 
+includes reserves too.
+
+%If you by the end of the course have a majority of the assignments left undone 
+%you will have to reregister for the course the next time it is given.
+%Whether you have completed the majority of the assignments or not is up to the 
+%teacher to decide.
+%Talk to the teacher to see if you have to reregister or can just hand in the 
+%missing assignments.
+
+Thus, if you feel that you will not be done with the course on time, it is 
+better to stop the course at an early stage.
+If you register a break within three weeks of the course start, you will be in 
+the higher priority class of applicants the next time you apply for the course.
+You can register such a break yourself in the Student Portal.
 
 
 \printbibliography{}
