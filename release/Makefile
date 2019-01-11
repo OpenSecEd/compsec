@@ -38,13 +38,13 @@ RELEASE_FILES+=	pwdpolicies.pdf
 SRC-pwdpolicies.pdf=../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
 
 RELEASE_FILES+=	ac-slides.pdf
-SRC-ac-slides.pdf=../modules/ac/overview/overview.pdf
+SRC-ac-slides.pdf=../modules/ac/overview/slides.pdf
 
 RELEASE_FILES+=	refmon-slides.pdf
 SRC-refmon-slides.pdf=../modules/ac/refmon/slides.pdf
 
 RELEASE_FILES+=	accountability-slides.pdf
-SRC-accountability-slides.pdf=../modules/accountability/overview/overview.pdf
+SRC-accountability-slides.pdf=../modules/accountability/overview/slides.pdf
 
 RELEASE_FILES+=	pricomlab.pdf
 SRC-pricomlab.pdf=../labs/pricomlab/pricomlab.pdf

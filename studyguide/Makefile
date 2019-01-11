@@ -137,7 +137,6 @@ ${MODULE_FILES}:
 
 
 studyguide.pdf: studyguide.tex ${SRC}
-studyguide.pdf: lncs
 
 
 .PHONY: clean
