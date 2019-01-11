@@ -2,7 +2,7 @@
 all: studyguide.pdf studyguide-slides.pdf
 
 SRC=		studyguide.tex preamble.tex contents.tex
-SRC+= 		schedule.tex
+SRC+= 		schedule.tex hand-ins.tex late.tex
 SRC+=		${MODULE_FILES}
 
 MODULE_FILES+= 	pricomlab-aim.tex pricomlab-lit.tex pricomlab.bib
