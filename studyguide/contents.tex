@@ -9,31 +9,28 @@
   \begin{frame}
     \begin{itemize}
 
-      \item The course treats a wide interpretation of Information Security.
-      \item It treats both engineering and management.
+      \item We treat computer security.
+      \item \Ie how to secure computer systems.
 
         \pause
 
-      \item The first part is about management.
-      \item The second part is about engineering.
+      \item We cover authentication and access control, software security, 
+        \etc.
 
         \pause
 
-      \item But the principles from the engineering parts can be applied in an 
-        organization's process design too.
+      \item This gives a good foundation that can later be expanded with things 
+        like network security and information security.
 
     \end{itemize}
   \end{frame}
 }
 
-The course treats information security from a user, organization and technical 
-perspective.
-The first part of the course concerns security on a strategic level, \ie 
-managing security within an organization.
-The second part of the course focuses on the operative parts, \ie security 
-mechanisms and principles for design of secure systems.
-In full, the course aims at giving you an understanding of threats to security 
-and how to work to protect against these.
+The course aims towards a good understanding for the requirements of a secure 
+computer system.
+Problems such as authentication and access control; software security, such as 
+buffer overflows; as well as operating system, library and application security 
+mechanisms are treated in the course.
 
 \mode<presentation>{%
   \subsection{Aims}
@@ -45,60 +42,55 @@ After completing the course, you should be able to:
 \mode<presentation>{You should be able to}
 \begin{itemize}
 
-  \item \emph{apply} basic concepts and models in information security.
+  \item \emph{apply} different cryptosystems and \emph{explain} how these work,
 
-    \pause
+  \item \emph{analyse} problems of authentication, access control and different 
+    solutions,
 
-  \item \emph{evaluate} the usability of security solutions and \emph{suggest} 
-    improvements that improve usability and security.
+  \item \emph{explain} how some common attacks on software works,
 
-  \item \emph{analyse} threats, possible protection mechanisms and \emph{design} 
-    an approach to protection which considers usability.
+  \item \emph{analyse} different operating system security mechanisms,
 
-    \pause
+  \item \emph{analyse} the functionality of different types of malware,
 
-  \item \emph{apply} the Swedish Civil Contingency Agency's Framework for 
-    Information Security Management Systems to \emph{analyse, assess and 
-      improve} the information security in an organization.
+  \item \emph{explain} different malware protection mechanisms,
 
-    \pause
+  \item \emph{evaluate} strengths and weaknesses of hardware-based security and 
+    full-disk encryption, as well as
 
-  \item \emph{review and apply} the results of published research in the 
-    security field.
+  \item \emph{value and argue} about different ethical aspects of computer 
+    security.
 
 \end{itemize}
 \end{frame}
 The course has a variety of learning sessions designed to ensure that you learn 
 these \acp{ILO}.
 Each such session has a set of further specified \acp{ILO}:
-\eg the first outcome above refers to \enquote{basic concepts and models}, 
-the \acp{ILO} of a learning session would specify which concepts and models it 
-covers.
+\eg the first outcome above refers to \enquote{different cryptosystems}, the 
+\acp{ILO} of a learning session would specify which cryptosystems it covers.
 
 
 \section{Course structure and content overview}%
 \label{sec:outline}
 
-The first part of the course covers information security on a strategic level, 
-this concerns organizational management systems for information security: how 
-to implement these and how to continuously run them in an organization.
-The main material used for this part~\cite{%
-  MSB2011itm,MSB2011sle,MSB2011p,%
-	MSB2011v,MSB2011r,MSB2011gap,MSB2011gb,%
-	MSB2011vs,MSB2011us,MSB2011upo,%
-	MSB2011pg,MSB2011koa,MSB2011i,%
-	MSB2011o,MSB2011g,MSB2011lg,%
-	MSB2011ulo,MSB2011kf,MSB2011fa%
-} is produced by the Swedish Civil Contingencies Agency (MSB) and is based on 
-the ISO 27000 standard documents.
+% - Basic cryptography: block ciphers, asymmetric cryptosystems, digital 
+%   signatures, hash functions.
+% - User authentication, access control and intrusion detection.
+% - Software security: buffer overflow, handling input, interaction between 
+%   programs.
+% - Operating system security.
+% - Malware.
+% - Trusted computing, hardware based security and whole disk encryption.
+% - Ethical aspects of computer security.
 
-The second part of the course will focus on the content of Anderson's book 
-\citetitle{Anderson2008sea}~\cite{Anderson2008sea} and Gollmann's book 
-\citetitle{Gollmann2011cs}~\cite{Gollmann2011cs}.
-The focus in the second part of the course is on security mechanisms and how to 
-use these in secure systems.
-There is also some additional material for this part of the course, \eg 
-research papers and some other material.
+The course covers
+applied cryptography used in computer security, \eg uses of cryptography for 
+code obfuscation or digital rights management;
+authentication mechanisms, access control, and intrusion detection;
+software security, \eg buffer overruns and interaction between programs;
+some security mechanisms provided by operating system and hardware;
+and malicious software and how these utilise weaknesses in the system.
+Finally, we discuss some ethical implications for computer engineers.
 
 \subsection{Teaching and tutoring}
 
@@ -113,28 +105,35 @@ research papers and some other material.
 
       \item Some are complemented with seminars, hand-ins and labs.
       \item These are for combined learning and assessment.
+      \item We have hackathon labs.
 
-        \pause
+    \end{itemize}
+  \end{frame}
 
-      \item These are focused to the first six weeks.
-      \item The last four weeks are dedicated to the project.
-      \item These weeks have weekly tutoring sessions.
-        
+  \begin{frame}
+    \begin{itemize}
+
+      \item Assignments are labelled in consecutive order.
+      \item Labs are prefixed with \enquote{L}.
+      \item Seminars are prefixed with \enquote{S}.
+      \item Memos are prefixed with \enquote{M}.
+      \item Hackathons are prefixed with \enquote{H}.
+
     \end{itemize}
   \end{frame}
 }
 
-The course is taught using lectures, seminars, laboratory assignments and, 
-finally, a project.
+The course consists of several types of learning sessions:
+lectures, seminars, laboratory work.
 All assignments are numbered consecutively prefixed with an \enquote{L} for 
 laboratory assignments, \enquote{S} for seminar assignments, \enquote{M} for 
-memos and \enquote{P} for projects.
+memos and \enquote{H} for hackathons.
 
 \subsection{Schedule}
 
 You will find an outline for a schedule for the course in \cref{Schedule}.
 You are free to follow this schedule or any schedule you make for yourself, but 
-the learning and tutoring sessions, deadlines etc.\ will follow this schedule.
+the learning and tutoring sessions, deadlines \etc will follow this schedule.
 The detailed reading instructions for each item in the schedule can be found in 
 the following sections.
 
@@ -147,7 +146,8 @@ the following sections.
 
 This section summarizes the material covered by the lectures and assignments, 
 \ie what you should read for each of them.
-It is divided by topics and ordered according to progression of the course.
+It is divided by topics and ordered according to progression of the course, 
+\cref{Schedule} gives an overview along with a schedule.
 
 \mode<article>{%
 \subsection{Foundations of security}
@@ -161,31 +161,6 @@ It is divided by topics and ordered according to progression of the course.
 
 %\subsection{L0 Privacy is Dead}
 %\input{privacy-lit.tex}
-
-\mode<article>{%
-\subsection{MSB's framework, part I}
-\input{msbintro-lit.tex}
-}
-
-\mode<article>{%
-\subsection{M1 Information security management system}
-\input{ismsmemo-lit.tex}
-}
-
-\mode<article>{%
-\subsection{MSB's framework, part II}
-\input{msbforts-lit.tex}
-}
-
-\mode<article>{%
-\subsection{M2 and S3 Assessment and risk analysis}
-\input{risksem-lit.tex}
-}
-
-\mode<article>{%
-\subsection{Information security from a records management perspective}
-\input{recmgmt-abstract.tex}
-}
 
 \mode<article>{%
 \subsection{Information theory}
@@ -203,12 +178,17 @@ It is divided by topics and ordered according to progression of the course.
 }
 
 \mode<article>{%
-\subsection{L4 Password cracking and social engineering}
+\subsection{L1 Password cracking and social engineering}
 \input{pwdguess-lit.tex}
 }
 
 \mode<article>{%
-\subsection{S5 Password policies}
+\subsection{L2 Private communication}
+\input{pricomlab-lit.tex}
+}
+
+\mode<article>{%
+\subsection{S3 Password policies}
 \input{pwdpolicies-lit.tex}
 }
 
@@ -226,13 +206,13 @@ It is divided by topics and ordered according to progression of the course.
 %\input{lvlltrl-lit.tex}
 
 \mode<article>{%
-\subsection{Accountability}
-\input{accountability-lit.tex}
+\subsection{Reference monitors}
+\input{refmon-abstract.tex}
 }
 
 \mode<article>{%
-\subsection{L6 Private communication}
-\input{pricomlab-lit.tex}
+\subsection{Accountability}
+\input{accountability-lit.tex}
 }
 
 \mode<article>{%
@@ -246,49 +226,50 @@ It is divided by topics and ordered according to progression of the course.
 }
 
 \mode<article>{%
+\subsection{L4 Tools of the trade}
+\input{tools-abstract.tex}
+}
+
+\mode<article>{%
+\subsection{H5 Digital rights management}
+\input{drm-abstract.tex}
+}
+
+\mode<article>{%
+\subsection{H6 Smashing the stack}
+\input{stacksmash-abstract.tex}
+}
+
+\mode<article>{%
+\subsection{H7 Malicous software}
+\input{malware-abstract.tex}
+}
+
+\mode<article>{%
+\subsection{S8 The computer engineer's code of ethics}
+\input{ethics-lit.tex}
+}
+
+\mode<article>{%
 \subsection{Course conclusion}
 }
 
 During this lecture we will shortly review the course and try to fit things into 
 a bigger picture.
 
-\subsection{P7 A short study in information security}
+\mode<article>{%
+\subsection{Final exam}
 
-\mode<presentation>{%
-  \begin{frame}
-    \begin{itemize}
-      \item Small independent study in information security.
-      \item Aim is to practice your knowledge from the course.
-      \item As well as deepen your knowledge in some parts.
+The final exam will assess how well you have achieved the intended learning 
+outcomes of the course.
+Hence, it covers all the content given above.
 
-        \pause
+Each question on the exam covers one topic of the course.
+To pass the exam (and thus the course) you must pass all questions (thus all 
+topics), \ie you must not receive zero on any question.
 
-      \item And to assess that you reach the \acp{ILO} above.
-    \end{itemize}
-  \end{frame}
-
-  \begin{frame}
-    \begin{itemize}
-      \item You are quite free in choosing.
-      \item But the project must be connected to research.
-      \item You must select and read relevant research papers.
-    \end{itemize}
-  \end{frame}
+If you receive a zero on one question you qualify for an oral
 }
-
-The project is a smaller study within the area of information security.
-The idea is to deepen your knowledge in some areas of information security, so 
-during the project you must select and read papers which are related to the 
-course.
-For example, you can focus on areas such as:
-\begin{itemize}
-  \item usable security,
-  \item privacy enhancing technologies (PETs), or
-  \item more advanced methods for guessing passwords.
-\end{itemize}
-These are just examples, you are free to choose the area and papers in 
-corroboration with the tutor.
-More details are provided in the separate instruction.
 
 
 \section{Assessment}%
@@ -308,13 +289,7 @@ LADOK\@.
   \setlength{\tabcolsep}{0.5em}
   \begin{tabular}{r r l l}
     \toprule
-    LADOK & Credits (ECTS)  & Grade       & Course Assignments\\
-    \midrule
-    I104  & 1.5             & P, F        & M1, M2, S3, S5\\
-    L104  & 1.5             & P, F        & L4, L6\\
-    R104  & 4.5             & A--F        & P7\\
-    \midrule
-    Total & 7.5             & A--F        & P7\\
+    \input{ladok.tex}
     \bottomrule
   \end{tabular}
   \caption{%
@@ -325,9 +300,13 @@ LADOK\@.
 \end{table}
 \end{frame}
 
-The project is graded from A to F, where A--E are for passing and F and Fx are 
-for failing.
-The grade of the project will also be the grade of the course total.
+The written exam will be graded A--E for passing grades, F or Fx for failing 
+grades.
+You will receive an Fx if you are very close to passing.
+In this case you may complement your written exam with an oral exam.
+If you do not take this chance you must retake the exam the next 
+time it is given.
+The grade of the exam will also be the grade of the course total.
 
 \subsection{Handed-in assignments}
 \input{hand-ins.tex}

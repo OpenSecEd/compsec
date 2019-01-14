@@ -63,3 +63,6 @@
 [submodule "bibsp"]
 	path = bibsp
 	url = https://github.com/dbosk/bibsp.git
+[submodule "modules/fverif"]
+	path = modules/fverif
+	url = https://github.com/OpenSecEd/fverif.git
