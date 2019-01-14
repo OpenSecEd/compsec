@@ -10,8 +10,11 @@ PUB_AUTOTAG?=	true
 .PHONY: all
 all: ${RELEASE_FILES}
 
-RELEASE_FILES+=	studyguide.pdf
+### Lectures
+
+RELEASE_FILES+=	studyguide.pdf studyguide-slides.pdf
 SRC-studyguide.pdf=../studyguide/studyguide.pdf
+SRC-studyguide-slides.pdf=../studyguide/studyguide-slides.pdf
 
 RELEASE_FILES+=	foundations-slides.pdf
 SRC-foundations-slides.pdf=../modules/foundations/overview/overview.pdf
@@ -25,17 +28,8 @@ SRC-infotheory-slides.pdf=../modules/infotheory/basics/basics.pdf
 RELEASE_FILES+=	crypto-slides.pdf
 SRC-crypto-slides.pdf=../modules/appliedcrypto/overview/overview-slides.pdf
 
-RELEASE_FILES+=	spuriouslab.pdf
-SRC-spuriouslab.pdf=../modules/appliedcrypto/spuriouslab/spuriouslab.pdf
-
 RELEASE_FILES+=	auth-slides.pdf
 SRC-auth-slides.pdf=../modules/auth/overview/overview.pdf
-
-RELEASE_FILES+=	pwdguess.pdf
-SRC-pwdguess.pdf=../modules/auth/passwd/pwdguess/pwdguess.pdf
-
-RELEASE_FILES+=	pwdpolicies.pdf
-SRC-pwdpolicies.pdf=../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
 
 RELEASE_FILES+=	ac-slides.pdf
 SRC-ac-slides.pdf=../modules/ac/overview/slides.pdf
@@ -46,23 +40,28 @@ SRC-refmon-slides.pdf=../modules/ac/refmon/slides.pdf
 RELEASE_FILES+=	accountability-slides.pdf
 SRC-accountability-slides.pdf=../modules/accountability/overview/slides.pdf
 
+RELEASE_FILES+=	trustcomp-slides.pdf
+SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
+
+RELEASE_FILES+=	software-slides.pdf
+SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
+
+### Assignments
+
+RELEASE_FILES+=	pwdguess.pdf
+SRC-pwdguess.pdf=../modules/auth/passwd/pwdguess/pwdguess.pdf
+
+RELEASE_FILES+=	pwdpolicies.pdf
+SRC-pwdpolicies.pdf=../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
+
 RELEASE_FILES+=	pricomlab.pdf
 SRC-pricomlab.pdf=../labs/pricomlab/pricomlab.pdf
 
 RELEASE_FILES+=	toolslab.pdf
 SRC-toolslab.pdf=../labs/tools/tools.pdf
 
-RELEASE_FILES+=	trustcomp-slides.pdf
-SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
-
 RELEASE_FILES+=	drmlab.pdf
 SRC-drmlab.pdf=../modules/trustcomp/drmlab/drm.pdf
-
-RELEASE_FILES+=	sidechannels-slides.pdf
-SRC-sidechannels-slides.pdf=../modules/sidechannels/overview/overview.pdf
-
-RELEASE_FILES+=	software-slides.pdf
-SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
 
 RELEASE_FILES+=	stacksmashlab.pdf
 SRC-stacksmashlab.pdf=../modules/software/stacksmashlab/stacksmash.pdf
