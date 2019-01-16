@@ -74,8 +74,8 @@ SRC-ethics.pdf=../modules/ethics/profession/profession.pdf
 
 ### Learning platform
 
-HTML+= information.html
-SRC-information.html=../learning-platform/information.html
+HTML+= introduction.html
+SRC-introduction.html=../learning-platform/introduction.html
 
 
 .PHONY: print

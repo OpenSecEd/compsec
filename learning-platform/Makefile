@@ -1,4 +1,4 @@
-OBJ+= 	information.html
+OBJ+= 	introduction.html
 
 
 .PHONY: all
