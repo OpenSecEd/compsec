@@ -1,4 +1,4 @@
-PUB_FILES?=		${RELEASE_FILES}
+PUB_FILES?=		${DOCUMENTS} ${HTML}
 PUB_SERVER?=	ver.miun.se
 PUB_DIR?=		/srv/web/svn/courses/security/dasak
 PUB_USER?=		
@@ -8,78 +8,83 @@ PUB_VCS?=		git
 PUB_AUTOTAG?=	true
 
 .PHONY: all
-all: ${RELEASE_FILES}
+all: ${DOCUMENTS} ${HTML}
 
 ### Lectures
 
-RELEASE_FILES+=	studyguide.pdf studyguide-slides.pdf
+DOCUMENTS+=	studyguide.pdf studyguide-slides.pdf
 SRC-studyguide.pdf=../studyguide/studyguide.pdf
 SRC-studyguide-slides.pdf=../studyguide/studyguide-slides.pdf
 
-RELEASE_FILES+=	foundations-slides.pdf
+DOCUMENTS+=	foundations-slides.pdf
 SRC-foundations-slides.pdf=../modules/foundations/overview/overview.pdf
 
-RELEASE_FILES+=	usability-slides.pdf
+DOCUMENTS+=	usability-slides.pdf
 SRC-usability-slides.pdf=../modules/usability/overview/overview.pdf
 
-RELEASE_FILES+=	infotheory-slides.pdf
+DOCUMENTS+=	infotheory-slides.pdf
 SRC-infotheory-slides.pdf=../modules/infotheory/basics/basics.pdf
 
-RELEASE_FILES+=	crypto-slides.pdf
+DOCUMENTS+=	crypto-slides.pdf
 SRC-crypto-slides.pdf=../modules/appliedcrypto/overview/overview-slides.pdf
 
-RELEASE_FILES+=	auth-slides.pdf
+DOCUMENTS+=	auth-slides.pdf
 SRC-auth-slides.pdf=../modules/auth/overview/overview.pdf
 
-RELEASE_FILES+=	ac-slides.pdf
+DOCUMENTS+=	ac-slides.pdf
 SRC-ac-slides.pdf=../modules/ac/overview/slides.pdf
 
-RELEASE_FILES+=	refmon-slides.pdf
+DOCUMENTS+=	refmon-slides.pdf
 SRC-refmon-slides.pdf=../modules/ac/refmon/slides.pdf
 
-RELEASE_FILES+=	accountability-slides.pdf
+DOCUMENTS+=	accountability-slides.pdf
 SRC-accountability-slides.pdf=../modules/accountability/overview/slides.pdf
 
-RELEASE_FILES+=	trustcomp-slides.pdf
+DOCUMENTS+=	trustcomp-slides.pdf
 SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
 
-RELEASE_FILES+=	software-slides.pdf
+DOCUMENTS+=	software-slides.pdf
 SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
 
 ### Assignments
 
-RELEASE_FILES+=	pwdguess.pdf
+DOCUMENTS+=	pwdguess.pdf
 SRC-pwdguess.pdf=../modules/auth/passwd/pwdguess/pwdguess.pdf
 
-RELEASE_FILES+=	pwdpolicies.pdf
+DOCUMENTS+=	pwdpolicies.pdf
 SRC-pwdpolicies.pdf=../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
 
-RELEASE_FILES+=	pricomlab.pdf
+DOCUMENTS+=	pricomlab.pdf
 SRC-pricomlab.pdf=../labs/pricomlab/pricomlab.pdf
 
-RELEASE_FILES+=	toolslab.pdf
+DOCUMENTS+=	toolslab.pdf
 SRC-toolslab.pdf=../labs/tools/tools.pdf
 
-RELEASE_FILES+=	drmlab.pdf
+DOCUMENTS+=	drmlab.pdf
 SRC-drmlab.pdf=../modules/trustcomp/drmlab/drm.pdf
 
-RELEASE_FILES+=	stacksmashlab.pdf
+DOCUMENTS+=	stacksmashlab.pdf
 SRC-stacksmashlab.pdf=../modules/software/stacksmashlab/stacksmash.pdf
 
-RELEASE_FILES+=	malwarelab.pdf
+DOCUMENTS+=	malwarelab.pdf
 SRC-malwarelab.pdf=../modules/software/malwarelab/malware.pdf
 
-RELEASE_FILES+=	ethics.pdf
+DOCUMENTS+=	ethics.pdf
 SRC-ethics.pdf=../modules/ethics/profession/profession.pdf
+
+### Learning platform
+
+HTML+= information.html
+SRC-information.html=../learning-platform/information.html
 
 
 .PHONY: print
-print: ${RELEASE_FILES}
+print: ${DOCUMENTS}
 
 
 .PHONY: clean distclean
 clean:
-	${RM} ${RELEASE_FILES}
+	${RM} ${DOCUMENTS} ${HTML}
 
 define target_rules
 all: $(1)
@@ -99,7 +104,7 @@ distclean-$(1):
 	${MAKE} -C $$(dir ${SRC-$(1)}) distclean clean-depends
 endef
 
-$(foreach target,${RELEASE_FILES},$(eval $(call target_rules,${target})))
+$(foreach target,${DOCUMENTS} ${HTML},$(eval $(call target_rules,${target})))
 
 
 INCLUDE_MAKEFILES=../makefiles
