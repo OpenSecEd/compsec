@@ -2,7 +2,7 @@
 all: studyguide.pdf studyguide-slides.pdf
 
 SRC=		studyguide.tex preamble.tex contents.tex
-SRC+= 		schedule.tex hand-ins.tex late.tex
+SRC+= 		schedule.tex ladok.tex hand-ins.tex late.tex
 SRC+=		${MODULE_FILES}
 
 MODULE_FILES+= 	foundations-lit.tex foundations.bib
