@@ -77,6 +77,33 @@ SRC-ethics.pdf=../modules/ethics/profession/profession.pdf
 HTML+= introduction.html
 SRC-introduction.html=../learning-platform/introduction.html
 
+HTML+= foundations-usability.html
+SRC-foundations-usability.html=../learning-platform/foundations-usability.html
+
+HTML+= infotheory-crypto.html
+SRC-infotheory-crypto.html=../learning-platform/infotheory-crypto.html
+
+HTML+= auth.html
+SRC-auth.html=../learning-platform/auth.html
+
+HTML+= ac.html
+SRC-ac.html=../learning-platform/ac.html
+
+HTML+= accountability.html
+SRC-accountability.html=../learning-platform/accountability.html
+
+HTML+= trustcomp.html
+SRC-trustcomp.html=../learning-platform/trustcomp.html
+
+HTML+= software.html
+SRC-software.html=../learning-platform/software.html
+
+HTML+= conclusion.html
+SRC-conclusion.html=../learning-platform/conclusion.html
+
+HTML+= index.html
+SRC-index.html=../learning-platform/index.html
+
 
 .PHONY: print
 print: ${DOCUMENTS}
