@@ -37,6 +37,7 @@ them to the calendar app of your choice.
 To familiarize yourself with the topic and its importance in society, we will 
 start the course with a seminar to discuss the role of security: [What's up 
 with security?][security-news].
+Start by creating or signing up to a group (see Working Groups below).
 
 
 [zoom]: https://miun-se.zoom.us
