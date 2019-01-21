@@ -62,6 +62,11 @@ software.bib: ../modules/software/overview/overview.bib
 
 ### Labs and seminars
 
+MODULE_FILES+= 	security-society-abstract.tex security-society.bib
+
+security-society-abstract.tex: ../modules/ethics/security-society-seminar/abstract.tex
+security-society.bib: ../modules/ethics/security-society-seminar/security-society-seminar.bib
+
 MODULE_FILES+= 	pricomlab-aim.tex pricomlab-lit.tex pricomlab.bib
 
 pricomlab-aim.tex: ../labs/pricomlab/aims.tex
@@ -95,11 +100,6 @@ stacksmash-abstract.tex: ../modules/software/stacksmashlab/literature.tex
 stacksmash.bib: ../modules/software/stacksmashlab/stacksmash.bib
 malware-abstract.tex: ../modules/software/malwarelab/literature.tex
 malware.bib: ../modules/software/malwarelab/malware.bib
-
-MODULE_FILES+= 	ethics-lit.tex ethics.bib
-
-ethics-lit.tex: ../modules/ethics/profession/literature.tex
-ethics.bib: ../modules/ethics/profession/profession.bib
 
 
 ${MODULE_FILES}:

@@ -44,4 +44,4 @@ the assignment [What's up with security?][security-news].
 [schedule]: https://portal.miun.se/web/student/schedule
 [studyguide]: https://ver.miun.se/courses/security/dasak/studyguide.pdf
 [intro-security]: file:///dev/null
-[security-news]: file:///dev/null
+[security-news]: https://ver.miun.se/courses/security/dasak/security-society-seminar.pdf

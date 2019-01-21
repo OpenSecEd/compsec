@@ -48,6 +48,10 @@ SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
 
 ### Assignments
 
+DOCUMENTS+=	security-society-seminar.pdf security-society-slides.pdf
+SRC-security-society-seminar.pdf=../modules/ethics/security-society-seminar/notes.pdf
+SRC-security-society-slides.pdf=../modules/ethics/security-society-seminar/slides.pdf
+
 DOCUMENTS+=	pwdguess.pdf
 SRC-pwdguess.pdf=../modules/auth/passwd/pwdguess/pwdguess.pdf
 
@@ -68,9 +72,6 @@ SRC-stacksmashlab.pdf=../modules/software/stacksmashlab/stacksmash.pdf
 
 DOCUMENTS+=	malwarelab.pdf
 SRC-malwarelab.pdf=../modules/software/malwarelab/malware.pdf
-
-DOCUMENTS+=	ethics.pdf
-SRC-ethics.pdf=../modules/ethics/profession/profession.pdf
 
 ### Learning platform
 
