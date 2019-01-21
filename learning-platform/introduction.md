@@ -34,14 +34,13 @@ them to the calendar app of your choice.
 
 # The topic
 
-To familiarize yourself with the topic, watch [this video][intro-security] for 
-a short introduction to the topic security. When you've watched the video, do 
-the assignment [What's up with security?][security-news].
+To familiarize yourself with the topic and its importance in society, we will 
+start the course with a seminar to discuss the role of security: [What's up 
+with security?][security-news].
 
 
 [zoom]: https://miun-se.zoom.us
 [zoom-room]: https://miun-se.zoom.us/my/dbosk
 [schedule]: https://portal.miun.se/web/student/schedule
 [studyguide]: https://ver.miun.se/courses/security/dasak/studyguide.pdf
-[intro-security]: file:///dev/null
 [security-news]: https://ver.miun.se/courses/security/dasak/security-society-seminar.pdf
