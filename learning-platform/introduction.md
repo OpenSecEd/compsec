@@ -10,9 +10,12 @@ read it!
 Interactive sessions will use [Zoom][zoom], in particular the [this 
 room][zoom-room]. There are clients for the web browser (no installation), the 
 computer (Linux, Mac, Windows) and smartphones (Android, iPhone).
+Note that it is mandatory to have functioning webcam and headset (anyone with a 
+smartphone has this and so does anyone with a laptop).
 
-You can use this tool for yourselves too to have meetings in working groups, 
-practice for presentations etc.
+You can also use this tool for yourselves too to have meetings in working 
+groups, practice for presentations etc.: just start the client and create your 
+own meeting.
 
 
 ## Asynchronous communication
