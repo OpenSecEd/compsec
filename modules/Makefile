@@ -10,8 +10,9 @@ SUBDIR+= conclusion
 
 SUBDIR_ALL_GOALS=no
 
-.PHONY: all print
-all print: ${SUBDIR}
+.PHONY: all print clean distclean
+all print clean distclean: ${SUBDIR}
+
 
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/subdir.mk
