@@ -124,7 +124,7 @@ define target_rules
 all: $(1)
 
 $(1): ${SRC-$(1)}
-	ln -s $$^ $$@
+	ln -sf $$^ $$@
 
 ${SRC-$(1)}::
 	${MAKE} -C $$(dir $$@) $$(notdir $$@)
