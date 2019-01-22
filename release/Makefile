@@ -17,93 +17,93 @@ SRC-studyguide.pdf=../studyguide/studyguide.pdf
 SRC-studyguide-slides.pdf=../studyguide/studyguide-slides.pdf
 
 DOCUMENTS+=	foundations-slides.pdf
-SRC-foundations-slides.pdf=../modules/foundations/overview/overview.pdf
+SRC-foundations-slides.pdf=../modules/foundations/security/overview/overview.pdf
 
 DOCUMENTS+=	usability-slides.pdf
-SRC-usability-slides.pdf=../modules/usability/overview/overview.pdf
+SRC-usability-slides.pdf=../modules/foundations/usability/overview/overview.pdf
 
 DOCUMENTS+=	infotheory-slides.pdf
-SRC-infotheory-slides.pdf=../modules/infotheory/basics/basics.pdf
+SRC-infotheory-slides.pdf=../modules/crypto/infotheory/basics/basics.pdf
 
 DOCUMENTS+=	crypto-slides.pdf
-SRC-crypto-slides.pdf=../modules/appliedcrypto/overview/overview-slides.pdf
+SRC-crypto-slides.pdf=../modules/crypto/appliedcrypto/overview/overview-slides.pdf
 
 DOCUMENTS+=	auth-slides.pdf
-SRC-auth-slides.pdf=../modules/auth/overview/overview.pdf
+SRC-auth-slides.pdf=../modules/auth/auth/overview/overview.pdf
 
 DOCUMENTS+=	ac-slides.pdf
-SRC-ac-slides.pdf=../modules/ac/overview/slides.pdf
+SRC-ac-slides.pdf=../modules/ac/ac/overview/slides.pdf
 
 DOCUMENTS+=	refmon-slides.pdf
-SRC-refmon-slides.pdf=../modules/ac/refmon/slides.pdf
+SRC-refmon-slides.pdf=../modules/ac/ac/refmon/slides.pdf
 
 DOCUMENTS+=	accountability-slides.pdf
-SRC-accountability-slides.pdf=../modules/accountability/overview/slides.pdf
+SRC-accountability-slides.pdf=../modules/accountability/accountability/overview/slides.pdf
 
 DOCUMENTS+=	trustcomp-slides.pdf
-SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
+SRC-trustcomp-slides.pdf=../modules/trustcomp/trustcomp/overview/overview.pdf
 
 DOCUMENTS+=	software-slides.pdf
-SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
+SRC-software-slides.pdf=../modules/software/software/overview/overview-slides.pdf
 
 ### Assignments
 
 DOCUMENTS+=	security-society-seminar.pdf security-society-slides.pdf
-SRC-security-society-seminar.pdf=../modules/ethics/security-society-seminar/notes.pdf
-SRC-security-society-slides.pdf=../modules/ethics/security-society-seminar/slides.pdf
+SRC-security-society-seminar.pdf=../modules/intro/ethics/security-society-seminar/notes.pdf
+SRC-security-society-slides.pdf=../modules/intro/ethics/security-society-seminar/slides.pdf
 
 DOCUMENTS+=	pwdguess.pdf
-SRC-pwdguess.pdf=../modules/auth/passwd/pwdguess/pwdguess.pdf
+SRC-pwdguess.pdf=../modules/auth/auth/passwd/pwdguess/pwdguess.pdf
 
 DOCUMENTS+=	pwdpolicies.pdf
-SRC-pwdpolicies.pdf=../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
+SRC-pwdpolicies.pdf=../modules/auth/auth/passwd/pwdpolicies/pwdpolicies.pdf
 
 DOCUMENTS+=	pricomlab.pdf
-SRC-pricomlab.pdf=../labs/pricomlab/pricomlab.pdf
-
-DOCUMENTS+=	toolslab.pdf
-SRC-toolslab.pdf=../labs/tools/tools.pdf
+SRC-pricomlab.pdf=../modules/ac/pricomlab/pricomlab.pdf
 
 DOCUMENTS+=	drmlab.pdf
-SRC-drmlab.pdf=../modules/trustcomp/drmlab/drm.pdf
+SRC-drmlab.pdf=../modules/trustcomp/trustcomp/drmlab/drm.pdf
 
 DOCUMENTS+=	stacksmashlab.pdf
-SRC-stacksmashlab.pdf=../modules/software/stacksmashlab/stacksmash.pdf
+SRC-stacksmashlab.pdf=../modules/software/software/stacksmashlab/stacksmash.pdf
 
 DOCUMENTS+=	malwarelab.pdf
-SRC-malwarelab.pdf=../modules/software/malwarelab/malware.pdf
+SRC-malwarelab.pdf=../modules/software/software/malwarelab/malware.pdf
+
+DOCUMENTS+=	toolslab.pdf
+SRC-toolslab.pdf=../modules/conclusion/tools/tools.pdf
 
 ### Learning platform
 
-HTML+= introduction.html
-SRC-introduction.html=../learning-platform/introduction.html
+HTML+= intro.html
+SRC-intro.html=../modules/intro/intro.html
 
-HTML+= foundations-usability.html
-SRC-foundations-usability.html=../learning-platform/foundations-usability.html
+HTML+= foundations.html
+SRC-foundations.html=../modules/foundations/foundations.html
 
-HTML+= infotheory-crypto.html
-SRC-infotheory-crypto.html=../learning-platform/infotheory-crypto.html
+HTML+= crypto.html
+SRC-crypto.html=../modules/crypto/crypto.html
 
 HTML+= auth.html
-SRC-auth.html=../learning-platform/auth.html
+SRC-auth.html=../modules/auth/auth.html
 
 HTML+= ac.html
-SRC-ac.html=../learning-platform/ac.html
+SRC-ac.html=../modules/ac/ac.html
 
 HTML+= accountability.html
-SRC-accountability.html=../learning-platform/accountability.html
+SRC-accountability.html=../modules/accountability/accountability.html
 
 HTML+= trustcomp.html
-SRC-trustcomp.html=../learning-platform/trustcomp.html
+SRC-trustcomp.html=../modules/trustcomp/trustcomp.html
 
 HTML+= software.html
-SRC-software.html=../learning-platform/software.html
+SRC-software.html=../modules/software/software.html
 
 HTML+= conclusion.html
-SRC-conclusion.html=../learning-platform/conclusion.html
+SRC-conclusion.html=../modules/conclusion/conclusion.html
 
 HTML+= index.html
-SRC-index.html=../learning-platform/index.html
+SRC-index.html=../modules/index.html
 
 
 .PHONY: print
@@ -118,7 +118,7 @@ define target_rules
 all: $(1)
 
 $(1): ${SRC-$(1)}
-	cp $$^ $$@
+	ln -s $$^ $$@
 
 ${SRC-$(1)}::
 	${MAKE} -C $$(dir $$@) $$(notdir $$@)

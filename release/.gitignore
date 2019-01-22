@@ -23,9 +23,9 @@ toolslab.pdf
 trustcomp-slides.pdf
 usability-slides.pdf
 
-introduction.html
-foundations-usability.html
-infotheory-crypto.html
+intro.html
+foundations.html
+crypto.html
 auth.html
 ac.html
 accountability.html
