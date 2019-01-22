@@ -31,6 +31,9 @@ SRC-crypto-slides.pdf=../modules/crypto/appliedcrypto/overview/overview-slides.p
 DOCUMENTS+=	auth-slides.pdf
 SRC-auth-slides.pdf=../modules/auth/auth/overview/overview.pdf
 
+DOCUMENTS+= protocols-slides.pdf
+SRC-protocols-slides.pdf=../modules/protocols/fverif/intro/intro.pdf
+
 DOCUMENTS+=	ac-slides.pdf
 SRC-ac-slides.pdf=../modules/ac/ac/overview/slides.pdf
 
@@ -86,6 +89,9 @@ SRC-crypto.html=../modules/crypto/crypto.html
 
 HTML+= auth.html
 SRC-auth.html=../modules/auth/auth.html
+
+HTML+= protocols.html
+SRC-protocols.html=../modules/protocols/protocols.html
 
 HTML+= ac.html
 SRC-ac.html=../modules/ac/ac.html
