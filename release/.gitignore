@@ -8,6 +8,7 @@ foundations-slides.pdf
 infotheory-slides.pdf
 malwarelab.pdf
 pricomlab.pdf
+protocols-slides.pdf
 pwdguess.pdf
 pwdpolicies.pdf
 refmon-slides.pdf
@@ -27,6 +28,7 @@ intro.html
 foundations.html
 crypto.html
 auth.html
+protocols.html
 ac.html
 accountability.html
 trustcomp.html
