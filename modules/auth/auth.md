@@ -4,8 +4,10 @@ This learning module consists of two learning sessions:
   - \[[recording](https://connect.sunet.se/p5ka03zd58q/)\]
   - \[[recording](https://connect.sunet.se/p178wpyqg5o/)\]
 
-Then there is one lab, [Password cracking and social engineering][passwd], and 
-one seminar, [Password policies][pwdpolicies].
+These will cover authentication in general. Then there is a lab, [Password 
+cracking and social engineering][passwd], and a seminar, [Password 
+policies][pwdpolicies]. The work done in the lab will inform the discussion in 
+the seminar.
 
 [passwd]: https://ver.miun.se/courses/security/dasak/passwd.pdf
 [pwdpolicies]: https://ver.miun.se/security/dasak/pwdpolicies.pdf
