@@ -1,15 +1,12 @@
--   <div id="yui_3_17_2_1_1547630785660_2408">
+This learning module consists of two learning sessions. The first 
+\[[slides](http://ver.miun.se/courses/security/dasak/ac-slides.pdf)\] 
+\[[recording](https://connect.sunet.se/p9i2dkp78vj/) covers access control in 
+general.
 
-    </div>
+The second 
+\[[slides](http://ver.miun.se/courses/security/dasak/refmon-slides.pdf)\] 
+\[[recording](https://connect.sunet.se/p4ktwqy0cw0/)\] focuses on reference 
+monitors.
 
-    Access Control
-    \[[slides](http://ver.miun.se/courses/security/dasak/ac-slides.pdf)\]
-    \[[recording](https://connect.sunet.se/p9i2dkp78vj/){#yui_3_17_2_1_1547630785660_2420}\]
--   <div id="yui_3_17_2_1_1547630785660_2406">
-
-    </div>
-
-    Reference monitors
-    \[[slides](http://ver.miun.se/courses/security/dasak/refmon-slides.pdf){#yui_3_17_2_1_1547630785660_2418}\]
-    \[[recording](https://connect.sunet.se/p4ktwqy0cw0/)\]
-
+There is also a lab, [Private 
+communication](https://ver.miun.se/courses/security/dasak/pricomlab.pdf).

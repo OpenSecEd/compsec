@@ -1,16 +1,12 @@
--   <div id="yui_3_17_2_1_1547630877964_2444">
+This learning module consists of two sessions. The first on trusted computing 
+\[[slides](http://ver.miun.se/courses/security/dasak/trustcomp-slides.pdf)\] 
+\[[recording](https://connect.sunet.se/p31vyqbq6lu/)\] and the second on side 
+channels 
+\[[slides](http://ver.miun.se/courses/security/dasak/sidechannels-slides.pdf)\] 
+\[[recording](https://connect.sunet.se/p4hztm1vuja/)\] 
+\[[recording](https://connect.sunet.se/p8vqft5bep7/)\].
 
-    </div>
+These are followed by a hackathon lab, [Digital rights management][drm].
 
-    Trusted Computing
-    \[[slides](http://ver.miun.se/courses/security/dasak/trustcomp-slides.pdf){#yui_3_17_2_1_1547630877964_2460}\]
-    \[[recording](https://connect.sunet.se/p31vyqbq6lu/)\]
--   <div id="yui_3_17_2_1_1547631094011_2406">
-
-    </div>
-
-    Side-Channels
-    \[[slides](http://ver.miun.se/courses/security/dasak/sidechannels-slides.pdf)\]
-    \[[recording](https://connect.sunet.se/p4hztm1vuja/){#yui_3_17_2_1_1547631094011_2418}\]
-    \[[recording](https://connect.sunet.se/p8vqft5bep7/){#yui_3_17_2_1_1547631094011_2408}\]
+[drm]: https://ver.miun.se/courses/security/dasak/drm.pdf
 

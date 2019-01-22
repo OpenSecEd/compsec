@@ -1,8 +1,8 @@
--   <div id="yui_3_17_2_1_1547630968958_2403">
+This learning module consists of a learning session on software security 
+\[[slides](http://ver.miun.se/courses/security/dasak/software-slides.pdf)\] 
+\[[recording](https://connect.sunet.se/p58xnj3fxki/)\] and two hackathon labs, 
+[Smashing the stack][stacksmash]
+and [Malware][malware].
 
-    </div>
-
-    Software security
-    \[[slides](http://ver.miun.se/courses/security/dasak/software-slides.pdf){#yui_3_17_2_1_1547630968958_2416}\]
-    \[[recording](https://connect.sunet.se/p58xnj3fxki/){#yui_3_17_2_1_1547630968958_2406}\]
-
+[stacksmash]: https://ver.miun.se/courses/security/dasak/stacksmash.pdf
+[malware]: https://ver.miun.se/courses/security/dasak/malware.pdf
