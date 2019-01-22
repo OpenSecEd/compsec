@@ -17,12 +17,15 @@ You can also use this tool for yourselves too to have meetings in working
 groups, practice for presentations etc.: just start the client and create your 
 own meeting.
 
+However, there will be in-classroom sessions too, like labs, seminars and 
+presentations.
+
 
 ## Asynchronous communication
 
 The best way to get questions answered in the course is to post them in the 
-(relevant) forum. Then any teacher can answer and other students can see that 
-their question has already been asked and answered.
+course forum. Then any teacher can answer and other students can see that their 
+question has already been asked and answered.
 
 ## Times and schedule
 
@@ -38,6 +41,8 @@ To familiarize yourself with the topic and its importance in society, we will
 start the course with a seminar to discuss the role of security: [What's up 
 with security?][security-news].
 Start by creating or signing up to a group (see Working Groups below).
+These groups will be reused throughout the course, whenever group work is 
+required.
 
 
 [zoom]: https://miun-se.zoom.us
