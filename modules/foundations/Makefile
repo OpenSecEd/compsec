@@ -13,6 +13,9 @@ all: ${OUT}
 
 foundations.md: security/security/README.md
 foundations.md: security/scientific-method/README.md
+foundations.md: usability/attacking-humans/README.md
+foundations.md: usability/psychology/README.md
+
 foundations.md:
 	${CAT} $^ > $@
 
@@ -54,4 +57,3 @@ clean:
 INCLUDE_MAKEFILES?=../../makefiles
 include ${INCLUDE_MAKEFILES}/doc.mk
 include ${INCLUDE_MAKEFILES}/subdir.mk
-
