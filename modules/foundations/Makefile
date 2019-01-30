@@ -1,5 +1,12 @@
 OUT+= 	foundations.html
 
+SUBDIR+=security/security
+SUBDIR+=security/scientific-method
+SUBDIR+=usability/attacking-humans
+SUBDIR+=usability/psychology
+
+SUBDIR_GOALS=all clean distclean
+
 
 .PHONY: all
 all: ${OUT}
@@ -41,4 +48,5 @@ clean:
 
 INCLUDE_MAKEFILES?=../../makefiles
 include ${INCLUDE_MAKEFILES}/doc.mk
+include ${INCLUDE_MAKEFILES}/subdir.mk
 
