@@ -16,11 +16,17 @@ DOCUMENTS+=	studyguide.pdf studyguide-slides.pdf
 SRC-studyguide.pdf=../studyguide/studyguide.pdf
 SRC-studyguide-slides.pdf=../studyguide/studyguide-slides.pdf
 
-DOCUMENTS+=	foundations-slides.pdf
-SRC-foundations-slides.pdf=../modules/foundations/security/overview/overview.pdf
+DOCUMENTS+=	foundations-security-slides.pdf
+SRC-foundations-security-slides.pdf=../modules/foundations/security/security/security.pdf
 
-DOCUMENTS+=	usability-slides.pdf
-SRC-usability-slides.pdf=../modules/foundations/usability/overview/overview.pdf
+DOCUMENTS+=	foundations-scientific-method-slides.pdf
+SRC-foundations-scientific-method-slides.pdf=../modules/foundations/security/scientific-method/scientific-method.pdf
+
+DOCUMENTS+=	usability-attacking-humans-slides.pdf
+SRC-usability-slides.pdf=../modules/foundations/usability/attacking-humans/attacking-humans.pdf
+
+DOCUMENTS+=	usability-psychology-slides.pdf
+SRC-usability-psychology-slides.pdf=../modules/foundations/usability/psychology/psychology.pdf
 
 DOCUMENTS+=	infotheory-slides.pdf
 SRC-infotheory-slides.pdf=../modules/crypto/infotheory/basics/basics.pdf
