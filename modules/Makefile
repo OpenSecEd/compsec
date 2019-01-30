@@ -8,10 +8,7 @@ SUBDIR+= trustcomp
 SUBDIR+= software
 SUBDIR+= conclusion
 
-SUBDIR_ALL_GOALS=no
-
-.PHONY: all print clean distclean
-all print clean distclean: ${SUBDIR}
+SUBDIR_GOALS=all print clean distclean
 
 
 INCLUDE_MAKEFILES=../makefiles
