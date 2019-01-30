@@ -22,12 +22,6 @@ SRC-foundations-security-slides.pdf=../modules/foundations/security/security/sec
 DOCUMENTS+=	foundations-scientific-method-slides.pdf
 SRC-foundations-scientific-method-slides.pdf=../modules/foundations/security/scientific-method/scientific-method.pdf
 
-DOCUMENTS+=	usability-attacking-humans-slides.pdf
-SRC-usability-slides.pdf=../modules/foundations/usability/attacking-humans/attacking-humans.pdf
-
-DOCUMENTS+=	usability-psychology-slides.pdf
-SRC-usability-psychology-slides.pdf=../modules/foundations/usability/psychology/psychology.pdf
-
 DOCUMENTS+=	infotheory-slides.pdf
 SRC-infotheory-slides.pdf=../modules/crypto/infotheory/basics/basics.pdf
 
