@@ -5,15 +5,10 @@ SRC=		studyguide.tex preamble.tex contents.tex
 SRC+= 		schedule.tex ladok.tex hand-ins.tex late.tex
 SRC+=		${MODULE_FILES}
 
-MODULE_FILES+= 	foundations-lit.tex foundations.bib
+MODULE_FILES+= 	foundations-abstract.tex foundations.bib
 
-foundations-lit.tex: ../modules/foundations/security/overview/abstract.tex
-foundations.bib: ../modules/foundations/security/overview/overview.bib
-
-MODULE_FILES+= 	usability-lit.tex usability.bib
-
-usability-lit.tex: ../modules/foundations/usability/overview/abstract.tex
-usability.bib: ../modules/foundations/usability/overview/overview.bib
+foundations-abstract.tex: ../modules/foundations/abstract.tex
+foundations.bib: ../modules/foundations/abstract.bib
 
 MODULE_FILES+= 	infotheory-lit.tex infotheory.bib
 
@@ -133,3 +128,6 @@ INCLUDE_BIBSP=../bibsp
 include ${INCLUDE_BIBSP}/bibsp.mk
 INCLUDE_BIBEDU=../bibedu
 include ${INCLUDE_BIBEDU}/bibedu.mk
+
+../%:
+	${MAKE} -C $(dir $@) $(notdir $@)

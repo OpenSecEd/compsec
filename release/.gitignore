@@ -4,7 +4,8 @@ auth-slides.pdf
 crypto-slides.pdf
 drmlab.pdf
 ethics.pdf
-foundations-slides.pdf
+foundations-scientific-method-slides.pdf
+foundations-security-slides.pdf
 infotheory-slides.pdf
 malwarelab.pdf
 pricomlab.pdf
@@ -22,7 +23,8 @@ studyguide.pdf
 studyguide-slides.pdf
 toolslab.pdf
 trustcomp-slides.pdf
-usability-slides.pdf
+usability-attacking-humans-slides.pdf
+usability-psychology-slides.pdf
 
 intro.html
 foundations.html

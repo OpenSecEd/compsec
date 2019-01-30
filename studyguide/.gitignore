@@ -10,7 +10,7 @@ auth.bib
 bibsp.sty
 crypto-lit.tex
 crypto.bib
-foundations-lit.tex
+foundations-abstract.tex
 foundations.bib
 fverif.bib
 infotheory-lit.tex
@@ -52,8 +52,6 @@ sprmindx.sty
 studyguide.pdf
 trustcomp-lit.tex
 trustcomp.bib
-usability-lit.tex
-usability.bib
 
 authmodule.bib
 cryptomodule.bib
