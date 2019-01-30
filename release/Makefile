@@ -64,17 +64,17 @@ SRC-pwdpolicies.pdf=../modules/auth/auth/passwd/pwdpolicies/pwdpolicies.pdf
 DOCUMENTS+=	pricomlab.pdf
 SRC-pricomlab.pdf=../modules/ac/pricomlab/pricomlab.pdf
 
-DOCUMENTS+=	drmlab.pdf
-SRC-drmlab.pdf=../modules/trustcomp/trustcomp/drmlab/drm.pdf
+DOCUMENTS+=	drm.pdf
+SRC-drm.pdf=../modules/trustcomp/trustcomp/drmlab/drm.pdf
 
-DOCUMENTS+=	stacksmashlab.pdf
-SRC-stacksmashlab.pdf=../modules/software/software/stacksmashlab/stacksmash.pdf
+DOCUMENTS+=	stacksmash.pdf
+SRC-stacksmash.pdf=../modules/software/software/stacksmashlab/stacksmash.pdf
 
-DOCUMENTS+=	malwarelab.pdf
-SRC-malwarelab.pdf=../modules/software/software/malwarelab/malware.pdf
+DOCUMENTS+=	malware.pdf
+SRC-malware.pdf=../modules/software/software/malwarelab/malware.pdf
 
-DOCUMENTS+=	toolslab.pdf
-SRC-toolslab.pdf=../modules/conclusion/tools/tools.pdf
+DOCUMENTS+=	tools.pdf
+SRC-tools.pdf=../modules/conclusion/tools/tools.pdf
 
 ### Learning platform
 
