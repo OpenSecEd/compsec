@@ -1,6 +1,6 @@
 This learning module consists of two learning sessions. The first 
 \[[slides](http://ver.miun.se/courses/security/dasak/ac-slides.pdf)\] 
-\[[recording](https://connect.sunet.se/p9i2dkp78vj/) covers access control in 
+\[[recording](https://connect.sunet.se/p9i2dkp78vj/)\] covers access control in 
 general.
 
 The second 
