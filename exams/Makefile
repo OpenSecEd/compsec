@@ -103,7 +103,7 @@ EXAM_DBS+= 		${EXAM_NAME}-140603.tex
 
 PUB_SERVER?= 	ver.miun.se
 PUB_DIR?= 		/srv/web/svn/courses/security/dasak/exams
-PUB_FILES?= 	$(foreach id,${EXAM_IDS}, ${EXAM_NAME}-$id.pdf))
+PUB_FILES?= 	$(foreach id,$(foreach y,${YEARS}, ${EXAM_IDS-$y}), ${EXAM_NAME}-${id}.pdf)
 
 
 ### Generate targets for all years ###
