@@ -100,15 +100,15 @@ EXAM_TAGS+=		sidechannels
 # Questions databases from previously generated exams
 
 EXAM_DBS+=		$(foreach id,${EXAM_IDS}, ${EXAM_QNAME}-${id}.tex)
-EXAM_DBS+=		${EXAM_QNAME}-161024.tex
-EXAM_DBS+= 		${EXAM_NAME}-160822.tex
-EXAM_DBS+= 		${EXAM_NAME}-160603.tex
-EXAM_DBS+=		${EXAM_NAME}-151030.tex
-EXAM_DBS+= 		${EXAM_NAME}-150821.tex
-EXAM_DBS+= 		${EXAM_NAME}-150604.tex
-EXAM_DBS+=		${EXAM_NAME}-141028.tex
-EXAM_DBS+= 		${EXAM_NAME}-140826.tex
-EXAM_DBS+= 		${EXAM_NAME}-140603.tex
+#EXAM_DBS+=		${EXAM_QNAME}-161024.tex
+#EXAM_DBS+= 		${EXAM_NAME}-160822.tex
+#EXAM_DBS+= 		${EXAM_NAME}-160603.tex
+#EXAM_DBS+=		${EXAM_NAME}-151030.tex
+#EXAM_DBS+= 		${EXAM_NAME}-150821.tex
+#EXAM_DBS+= 		${EXAM_NAME}-150604.tex
+#EXAM_DBS+=		${EXAM_NAME}-141028.tex
+#EXAM_DBS+= 		${EXAM_NAME}-140826.tex
+#EXAM_DBS+= 		${EXAM_NAME}-140603.tex
 
 
 PUB_SERVER?= 	ver.miun.se
