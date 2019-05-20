@@ -2,8 +2,10 @@ EXAM_NAME= 		DT145G
 
 YEARS+= 		2019
 EXAM_IDS-2019= 	190322
+EXAM_IDS-2019= 	190612
 
 EXAM_DATE-190322= 	2019-03-22
+EXAM_DATE-190612= 	2019-06-12
 
 
 YEARS+= 		2018
@@ -56,46 +58,21 @@ EXAM_FLAGS?=	-NCEi
 
 EXAM_TAGS+=		A C E
 
-EXAM_DBS+=		infosak-questions.tex
-EXAM_TAGS+=		passwd
+#EXAM_DBS+=		infosak-questions.tex
 
 # Questions databases from learning modules
 
-#EXAM_DBS+=		../modules/foundations/overview/questions.tex
-EXAM_TAGS+=		foundations
+EXAM_DBS+=      $(shell find ../modules -name \*.tex)
 
-#EXAM_DBS+=		../modules/infotheory/basics/questions.tex
-EXAM_TAGS+=		infotheory
-
-#EXAM_DBS+=		../modules/appliedcrypto/overview/questions.tex
-EXAM_TAGS+=		crypto
-
-#EXAM_DBS+=		../modules/auth/overview/questions.tex
-EXAM_TAGS+=		auth
-
-EXAM_DBS+=		../modules/ac/overview/questions.tex
-EXAM_TAGS+=		ac
-
-#EXAM_DBS+=		../modules/ac/refmon/questions.tex
-#EXAM_TAGS+=		refmon
-
-#EXAM_DBS+=		../modules/usability/overview/questions.tex
 EXAM_TAGS+=		usability
-
-#EXAM_DBS+=		../modules/fverif/intro/questions.tex
-#EXAM_TAGS+=		fverif
-
-EXAM_DBS+= 		../modules/accountability/overview/questions.tex
+EXAM_TAGS+=		infotheory
+EXAM_TAGS+=		crypto
+EXAM_TAGS+=		auth passwd
+EXAM_TAGS+=		ac
 EXAM_TAGS+= 	accountability
-
-EXAM_DBS+= 		../modules/software/overview/questions.tex
-EXAM_TAGS+= 	software
-
-EXAM_DBS+= 		../modules/trustcomp/overview/questions.tex
 EXAM_TAGS+= 	trustcomp
-
-EXAM_DBS+=		../modules/sidechannels/overview/questions.tex
-EXAM_TAGS+=		sidechannels
+EXAM_TAGS+= 	software
+#EXAM_TAGS+=		sidechannels
 
 # Questions databases from previously generated exams
 

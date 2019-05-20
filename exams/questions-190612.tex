@@ -1,0 +1,94 @@
+\question[3]\label{q:software}
+% tags: software:trustcomp:E:C:A
+Game consoles is a good example of a class of devices where part of the 
+security is to lock the user out from the highest privileges.
+The classic example is the Sony PlayStation where users at first could choose 
+to run Linux instead, but Sony later changed their mind and disallowed that.
+However, users found ways around that, namely buffer overruns (\eg stack 
+overflows).
+
+Explain, on a conceptual level, how one could exploit a buffer overrun (\eg 
+stack overflow) in the PlayStation operating system to install and run Linux 
+instead.
+
+\begin{solution}
+  The case from reality happened like this:
+
+  Someone found a stack overflow vulnerability in a Zelda game (Twilight 
+  princess?).
+  One could change the name of the pony in a game save (can be done on another 
+  system!) to something very long.
+  The system would not check the length of this name since it was \enquote{not 
+  changeable}.
+  This would cause a stack overflow.
+  In the name one could include executable code which would launch the Linux 
+  installer.
+\end{solution}
+
+
+\question[3]
+  % tags: auth:crypto:E:C:A
+  % proto
+  Alice and Bob wants to communicate securely, \ie through an end-to-end 
+  encrypted and authenticated channel (\eg Signal, Telegram, WhatsApp, 
+  PGP/Protonmail).
+  What do they have to do to make this happen?
+
+  \begin{solution}
+    They would have to create secure keys and store them securely in some 
+    devices.
+    They would have to verify each other's public key: either they verify it 
+    themselves or they must trust someone.
+    \Eg they can trust that Signal's verification of phone numbers work and if 
+    they previously verified the phone numbers, then it should work now too.
+  \end{solution}
+
+
+  
+\question[3]
+  % tags: passwd:infotheory:usability:E:C:A
+  You are asked to analyse two password policies.
+  The policies are the following:
+  \begin{description}
+    \item[basic12]
+      Let \emph{the user choose} at least 12 characters consisting of: upper 
+      and lower case, numbers.
+    \item[randswedict4]
+      \emph{Generate a password for the user} by randomly choosing four words 
+      from the Dictionary of the Swedish Language (SAOL).
+      This dictionary contains approximately 125\,000 words.
+  \end{description}
+  Analyse the two policies: what are the advantages and disadvantages of each, 
+  how do they compare to each other.
+\question[3]
+% tags: ac
+% tags: E:C:A
+What is attribute-based access control (ABAC) and what are its advantages?
+
+\begin{solution}
+  It's an access control model.
+
+  It uses attributes in the security policy: e.g.\ identities, age limits, 
+  times.
+  This requires authenticated attributes.
+
+  This is the most general access control model.
+\end{solution}
+
+
+\question[3]\label{q:accountability}
+% tags: accountability:E:C
+Explain the idea of double-entry book-keeping.
+
+\begin{solution}
+  It originates from banks.
+  Every entry is either a credit or a debit.
+  Every credit must have a corresponding debit, i.e.\ they cancel each other if 
+  added together.
+  This means that when all entries are added together, the final balance should 
+  be zero.
+  Thus, we keep the constant state of zero balance, and when the final balance 
+  is non-zero we know that something is wrong.
+\end{solution}
+
+
