@@ -91,4 +91,26 @@ Explain the idea of double-entry book-keeping.
   is non-zero we know that something is wrong.
 \end{solution}
 
+\question[3]\label{q:software}
+% tags: software:E:C:A
+We have talked about how the users' mental models of how a program (and
+computer) works can endanger the users' security when the mental model and
+reality are not aligned.
+This is true also for developers (we mentioned this when we talked about
+software security), give an example of how the developers' mental models are
+relevant for software security.
+
+\begin{solution}
+  Gollmann talked about broken abstractions.
+  One example is characters: usually we abstract away the encoding and 
+  decoding
+  parts, we see them as characters and not bytes.
+  So encodings like UTF-8 can cause problems since the same character 
+  can be
+  represented by several byte sequences.
+
+  Another is the finite precision arithmetic that we work with in 
+  computers,
+  usually congruences modulo \(2^{32}\) or \(2^{64}\).
+\end{solution}
 
