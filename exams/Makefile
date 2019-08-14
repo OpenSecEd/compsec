@@ -56,7 +56,7 @@ all: ${YEARS}
 -include individuals.mk
 
 
-EXAM_FLAGS?=	-NCEi
+EXAM_FLAGS?=	-NCi
 
 EXAM_TAGS+=		A C E
 
@@ -66,6 +66,7 @@ EXAM_TAGS+=		A C E
 
 EXAM_DBS+=      $(shell find ../modules -name \*.tex)
 
+EXAM_TAGS+= 	foundations
 EXAM_TAGS+=		usability
 EXAM_TAGS+=		infotheory
 EXAM_TAGS+=		crypto
