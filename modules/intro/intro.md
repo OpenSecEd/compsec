@@ -1,35 +1,21 @@
-# About the course
+# First session: Course intro
 
-We start the course by a short introduction to the course and the topic.
-All details about the course can be found in the [study guide][studyguide] --- 
-read it!
+We will start the course with an introduction.
+This will happen [in Zoom][zoom-room], see the [schedule][schedule] for the 
+date and time.
 
-## Teaching and tutoring
-
-Interactive sessions will use [Zoom][zoom], in particular the [this 
-room][zoom-room]. There are clients for the web browser (no installation), the 
-computer (Linux, Mac, Windows) and smartphones (Android, iPhone).
-Note that it is mandatory to have functioning webcam and microphone (anyone 
-with a smartphone has this and so does anyone with a laptop).
+[Zoom][zoom] is a tool for video conferencing. There are clients for the web 
+browser (no installation), the computer (Linux, Mac, Windows) and smartphones 
+(Android, iPhone).
+Note that it is mandatory to have functioning webcam and headset (anyone with a 
+smartphone has this and so does anyone with a laptop).
 
 You can also use this tool for yourselves too to have meetings in working 
 groups, practice for presentations etc.: just start the client and create your 
 own meeting.
 
-However, there will be in-classroom sessions too, like labs, seminars and 
-presentations.
-
-## Group work
-
-Most of the work in the course will be done in a group. Start by creating or 
-signing up to a group (see Working Groups below). These groups will be reused 
-throughout the course, whenever group work is required.
-
-## Asynchronous communication
-
-The best way to get questions answered in the course is to post them in the 
-course forum. Then any teacher can answer and other students can see that their 
-question has already been asked and answered.
+All details covered during this session (and more) can be found in the [study 
+guide][studyguide]. Please make sure to read it.
 
 ## Times and schedule
 
@@ -39,17 +25,16 @@ your [personal schedule in the Student Portal][schedule] and be able to export
 them to the calendar app of your choice.
 
 
-# The first two sessions
+# Second session: What's up with security?
 
-We will have a first introductory session where we go through the course, most 
-of what's in the [study guide][studyguide]. This will be a rather short 
-session.
+To familiarize yourself with the topic and its importance in society, we will 
+start the course with a seminar to discuss the role of security: [What's up 
+with security?][security-news] (see the [schedule][schedule] for the date and 
+time).
 
-The next session is a seminar: [What's up with security?][security-news].
-The aim of the seminar is to familiarize yourself with the topic and its 
-importance in society. You'll need to do some reading before this session, so 
-be sure to read the instruction and prepare. You will prepare in groups, so 
-sign up for a group quickly.
+Create or sign up to a group (see Working Groups below).
+These groups will be reused throughout the course, whenever group work is 
+required.
 
 
 [zoom]: https://miun-se.zoom.us
