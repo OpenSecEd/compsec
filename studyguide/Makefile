@@ -1,104 +1,96 @@
+PUB_FILES+= 	studyguide.pdf
+
+PUB_SERVER?= 	ver.miun.se
+PUB_DIR?= 		/srv/web/svn/courses/security/dasak
+PUB_USER?=
+PUB_GROUP?= 	svn
+
+
 .PHONY: all
 all: studyguide.pdf studyguide-slides.pdf
 
 SRC=		studyguide.tex preamble.tex contents.tex
-SRC+= 		schedule.tex ladok.tex hand-ins.tex late.tex
+SRC+= 		ilo-grading.tex ladok.tex
+SRC+= 		schedule.tex hand-ins.tex late.tex
+SRC+= 		studyguide.bib
 SRC+=		${MODULE_FILES}
 
-MODULE_FILES+= 	foundations-abstract.tex foundations.bib
+MODULE_FILES+= 	intro-abstract.tex
+BIBS+= 			../modules/intro/intro.bib
 
-foundations-abstract.tex: ../modules/foundations/abstract.tex
-foundations.bib: ../modules/foundations/abstract.bib
+intro-abstract.tex: ../modules/intro/intro.tex
 
-MODULE_FILES+= 	infotheory-lit.tex infotheory.bib
+MODULE_FILES+= 	foundations-abstract.tex
+BIBS+= 			../modules/foundations/foundations.bib
 
-infotheory-lit.tex: ../modules/crypto/infotheory/basics/abstract.tex
-infotheory.bib: ../modules/crypto/infotheory/basics/basics.bib
+foundations-abstract.tex: ../modules/foundations/foundations.tex
 
-MODULE_FILES+= 	crypto-lit.tex cryptomodule.bib
+MODULE_FILES+= 	crypto-abstract.tex
+BIBS+= 			../modules/crypto/crypto.bib
 
-crypto-lit.tex: ../modules/crypto/appliedcrypto/overview/abstract.tex
-cryptomodule.bib: ../modules/crypto/appliedcrypto/overview/overview.bib
+crypto-abstract.tex: ../modules/crypto/crypto.tex
 
-MODULE_FILES+= 	auth-lit.tex authmodule.bib
+MODULE_FILES+= 	auth-abstract.tex
+BIBS+= 			../modules/auth/auth.bib
 
-auth-lit.tex: ../modules/auth/auth/overview/abstract.tex
-authmodule.bib: ../modules/auth/auth/overview/overview.bib
+auth-abstract.tex: ../modules/auth/auth.tex
 
-MODULE_FILES+= 	fverif-lit.tex fverif.bib
+MODULE_FILES+= 		pwdeval-abstract.tex
+BIBS+= 				../modules/auth/auth/passwd/pwdeval/pwdeval.bib
 
-fverif-lit.tex: ../modules/protocols/fverif/intro/abstract.tex
-fverif.bib: ../modules/protocols/fverif/intro/intro.bib
+pwdeval-abstract.tex: ../modules/auth/auth/passwd/pwdeval/abstract.tex
 
-MODULE_FILES+= 	accessctrl-lit.tex accessctrl.bib
-#MODULE_FILES+= 	lvlltrl-lit.tex lvlltrl.bib
-MODULE_FILES+= 	refmon-abstract.tex refmon.bib
+MODULE_FILES+= 	proto-abstract.tex
+BIBS+= 			../modules/proto/proto.bib
 
-accessctrl-lit.tex: ../modules/ac/ac/overview/abstract.tex
-accessctrl.bib: ../modules/ac/ac/overview/overview.bib
-#lvlltrl-lit.tex: ../modules/ac/ac/lvlltrl/abstract.tex
-refmon-abstract.tex: ../modules/ac/ac/refmon/abstract.tex
-refmon.bib: ../modules/ac/ac/refmon/refmon.bib
+proto-abstract.tex: ../modules/proto/proto.tex
 
-MODULE_FILES+= 	accountability-lit.tex accountability.bib
+MODULE_FILES+= 	pricomlab-abstract.tex
+BIBS+= 			../modules/proto/pricomlab/pricomlab.bib
 
-accountability-lit.tex: ../modules/accountability/accountability/overview/abstract.tex
-accountability.bib: ../modules/accountability/accountability/overview/overview.bib
+pricomlab-abstract.tex: ../modules/proto/pricomlab/abstract.tex
 
-MODULE_FILES+= 	trustcomp-lit.tex trustcomp.bib
+MODULE_FILES+= 	accessctrl-abstract.tex
+BIBS+= 			../modules/ac/ac.bib
+#MODULE_FILES+= 	lvlltrl-abstract.tex
 
-trustcomp-lit.tex: ../modules/trustcomp/trustcomp/overview/abstract.tex
-trustcomp.bib: ../modules/trustcomp/trustcomp/overview/overview.bib
+accessctrl-abstract.tex: ../modules/ac/ac.tex
+#lvlltrl-abstract.tex: ../modules/ac/lvlltrl/abstract.tex
 
-MODULE_FILES+= 	software-lit.tex software.bib
+MODULE_FILES+= 	accountability-abstract.tex
+BIBS+= 			../modules/accountability/accountability.bib
 
-software-lit.tex: ../modules/software/software/overview/abstract.tex
-software.bib: ../modules/software/software/overview/overview.bib
+accountability-abstract.tex: ../modules/accountability/accountability.tex
 
-### Labs and seminars
+MODULE_FILES+=	diffpriv-abstract.tex
+BIBS+= 			../modules/privacy/privacy.bib
 
-MODULE_FILES+= 	security-society-abstract.tex security-society.bib
+diffpriv-abstract.tex: ../modules/privacy/privacy.tex
 
-security-society-abstract.tex: ../modules/intro/ethics/security-society-seminar/abstract.tex
-security-society.bib: ../modules/intro/ethics/security-society-seminar/security-society-seminar.bib
+MODULE_FILES+= 	trustcomp-abstract.tex
+BIBS+= 			../modules/trustcomp/trustcomp.bib
 
-MODULE_FILES+= 	pricomlab-aim.tex pricomlab-lit.tex pricomlab.bib
+trustcomp-abstract.tex: ../modules/trustcomp/trustcomp.tex
 
-pricomlab-aim.tex: ../modules/ac/pricomlab/aims.tex
-pricomlab-lit.tex: ../modules/ac/pricomlab/literature.tex
-pricomlab.bib: ../modules/ac/pricomlab/pricomlab.bib
+MODULE_FILES+= 	software-abstract.tex
+BIBS+= 			../modules/software/software.bib
 
-MODULE_FILES+= 	pwdguess-aim.tex pwdguess-lit.tex pwdguess.bib
+software-abstract.tex: ../modules/software/software.tex
 
-pwdguess-aim.tex: ../modules/auth/auth/passwd/pwdguess/aims.tex
-pwdguess-lit.tex: ../modules/auth/auth/passwd/pwdguess/literature.tex
-pwdguess.bib: ../modules/auth/auth/passwd/pwdguess/pwdguess.bib
+MODULE_FILES+= 	project-abstract.tex
+BIBS+= 			../modules/conclusion/conclusion.bib
 
-MODULE_FILES+= 	pwdpolicies-aim.tex pwdpolicies-lit.tex pwdpolicies.bib
-
-pwdpolicies-aim.tex: ../modules/auth/auth/passwd/pwdpolicies/aims.tex
-pwdpolicies-lit.tex: ../modules/auth/auth/passwd/pwdpolicies/abstract.tex
-pwdpolicies.bib: ../modules/auth/auth/passwd/pwdpolicies/pwdpolicies.bib
-
-MODULE_FILES+= 	drm-abstract.tex drm.bib
-MODULE_FILES+= 	stacksmash-abstract.tex stacksmash.bib
-MODULE_FILES+= 	malware-abstract.tex malware.bib
-
-drm-abstract.tex: ../modules/trustcomp/trustcomp/drmlab/literature.tex
-drm.bib: ../modules/trustcomp/trustcomp/drmlab/drm.bib
-stacksmash-abstract.tex: ../modules/software/software/stacksmashlab/literature.tex
-stacksmash.bib: ../modules/software/software/stacksmashlab/stacksmash.bib
-malware-abstract.tex: ../modules/software/software/malwarelab/literature.tex
-malware.bib: ../modules/software/software/malwarelab/malware.bib
-
-MODULE_FILES+= 	tools-abstract.tex tools.bib
-
-tools-abstract.tex: ../modules/conclusion/tools/literature.tex
-tools.bib: ../modules/conclusion/tools/tools.bib
+project-abstract.tex: ../modules/conclusion/conclusion.tex
 
 
 ${MODULE_FILES}:
-	ln -s $^ $@
+	ln -sf $^ $@
+
+studyguide.bib: ${BIBS}
+	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
+
+../modules/%:
+	${MAKE} -C $(dir $@) $(notdir $@)
 
 
 studyguide.pdf: ${SRC}
@@ -110,24 +102,20 @@ studyguide-slides.pdf: bibsp.sty assessment.sty
 
 .PHONY: clean
 clean:
-	${RM} studyguide.pdf studyguide-slides.pdf
+	${RM} studyguide.pdf studyguide-slides.pdf studyguide.bib
 
 .PHONY: clean-depends distclean
 clean-depends distclean:
 	${RM} ${MODULE_FILES}
-	${RM} llncs2e.zip
 	${RM} bibsp.sty
-	${RM} -R biblatex-lncs-src
 
 
 ### INCLUDES ###
 
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
+include ${INCLUDE_MAKEFILES}/pub.mk
 INCLUDE_BIBSP=../bibsp
 include ${INCLUDE_BIBSP}/bibsp.mk
 INCLUDE_BIBEDU=../bibedu
 include ${INCLUDE_BIBEDU}/bibedu.mk
-
-../%:
-	${MAKE} -C $(dir $@) $(notdir $@)

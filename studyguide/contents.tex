@@ -38,32 +38,7 @@ mechanisms are treated in the course.
 }
 
 More concretely, the \acp{ILO} of the course are the following.
-After completing the course, you should be able to:
-\begin{frame}
-\mode<presentation>{You should be able to}
-\begin{itemize}
-
-  \item \emph{apply} different cryptosystems and \emph{explain} how these work,
-
-  \item \emph{analyse} problems of authentication, access control and different 
-    solutions,
-
-  \item \emph{explain} how some common attacks on software works and 
-    \emph{analyse} code for security vulnerabilities,
-
-  \item \emph{evaluate} strengths and weaknesses of hardware-based security 
-    such as full-disk encryption, as well as
-
-  \item \emph{value and argue} about different ethical aspects of computer 
-    security.
-
-\end{itemize}
-\end{frame}
-The course has a variety of learning sessions designed to ensure that you learn 
-these \acp{ILO}.
-Each such session has a set of further specified \acp{ILO}:
-\eg the first outcome above refers to \enquote{different cryptosystems}, the 
-\acp{ILO} of a learning session would specify which cryptosystems it covers.
+\input{ilo-grading.tex}
 
 
 \section{Course structure and content overview}%
@@ -94,14 +69,9 @@ Finally, we discuss some ethical implications for computer engineers.
   \begin{frame}
     \begin{itemize}
 
-      \item Teaching consists of several types of learning sessions.
-      \item Most topics are covered only by lectures.
-        
-        \pause
-
-      \item Some are complemented with seminars, hand-ins and labs.
-      \item These are for combined learning and assessment.
-      \item We have hackathon labs.
+      \item The course takes a bit of flipped-classroom approach.
+      \item This means that the bulk of lectures will be recorded.
+      \item Then we'll be more interactive in the classroom.
 
     \end{itemize}
   \end{frame}
@@ -109,21 +79,44 @@ Finally, we discuss some ethical implications for computer engineers.
   \begin{frame}
     \begin{itemize}
 
-      \item Assignments are labelled in consecutive order.
-      \item Labs are prefixed with \enquote{L}.
-      \item Seminars are prefixed with \enquote{S}.
-      \item Memos are prefixed with \enquote{M}.
-      \item Hackathons are prefixed with \enquote{H}.
+      \item We'll use ScalableLearning for the recorded material.
+      \item This allows you to comment during the video.
+      \item There might also be some quizzes to answer during the video.
+
+        \pause
+
+      \item I'll use the results from these to prepare for the classroom.
+
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \begin{itemize}
+
+      \item Some sessions are seminars.
+      \item You must prepare for these, there are instructions.
+      \item Vary from reading papers to do some lab work.
 
     \end{itemize}
   \end{frame}
 }
 
-The course consists of several types of learning sessions:
-lectures, seminars, laboratory work.
+The course takes a flipped-classroom approach.
+This means that there will be pre-recorded lectures and the classroom time will 
+be spent where it is needed the most.
+The videos are available through ScalableLearning.
+There you can post questions related to the content during the video, you might
+answer quizzes in the video \etc.
+These questions and the results to any quizzes will be available to the teacher 
+and the teacher will review these before the classroom session.
+After reviewing any difficulties, the classroom time will be spent working with 
+the material.
+
+Some sessions are mandatory.
+The sessions for seminars are mandatory, you will see this in the assignment 
+instructions.
 All assignments are numbered consecutively prefixed with an \enquote{L} for 
-laboratory assignments, \enquote{S} for seminar assignments, \enquote{M} for 
-memos and \enquote{H} for hackathons.
+laboratory assignments, \enquote{S} for seminar assignments.
 
 \subsection{Schedule}
 
@@ -146,83 +139,62 @@ It is divided by topics and ordered according to progression of the course,
 \cref{Schedule} gives an overview along with a schedule.
 
 \mode<article>{%
-\subsection{S0 What's up with security?}\label{security-society-seminar}
-\input{security-society-abstract.tex}
-}
+%\subsection{L0 Privacy is Dead}
+%\input{privacydead-abstract.tex}
+%
+\subsection{S0 What's up with security?}%
+\label{security-society-seminar}
+\input{intro-abstract.tex}
 
-\mode<article>{%
-\subsection{Foundations and usability}\label{foundations}
+\subsection{Foundations}%
+\label{foundations}
 \input{foundations-abstract.tex}
-}
 
-\mode<article>{%
-\subsection{Information theory}\label{infotheory}
-\input{infotheory-lit.tex}
-}
+\subsection{Cryptography}%
+\label{crypto}
+\input{crypto-abstract.tex}
 
-\mode<article>{%
-\subsection{Cryptography}\label{crypto}
-\input{crypto-lit.tex}
-}
+\subsection{Authentication}%
+\label{auth}
+\input{auth-abstract.tex}
 
-\mode<article>{%
-\subsection{Identification and authentication}\label{auth}
-\input{auth-lit.tex}
-}
+\subsubsection{L1 Evaluating and designing authentication}%
+\label{pwdeval}
+\input{pwdeval-abstract.tex}
 
-\mode<article>{%
-\subsection{L1 Password cracking and social engineering}
-\input{pwdguess-lit.tex}
-}
+\subsection{Protocols}%
+\label{proto}
+\input{proto-abstract.tex}
 
-\mode<article>{%
-\subsection{L2 Private communication}
-\input{pricomlab-lit.tex}
-}
+\subsubsection{L2 Private communication}%
+\label{pricomlab}
+\input{pricomlab-abstract.tex}
 
-\mode<article>{%
-\subsection{S3 Password policies}
-\input{pwdpolicies-lit.tex}
-}
+\subsection{Access control}%
+\label{ac}
+\input{accessctrl-abstract.tex}
 
-\mode<article>{%
-\subsection{Protocols and formal verification}\label{proto}
-\input{fverif-lit.tex}
-}
+\subsection{Accountability}%
+\label{accountability}
+\input{accountability-abstract.tex}
 
-\mode<article>{%
-\subsection{Access control}\label{ac}
-\input{accessctrl-lit.tex}
-}
+\subsection{Trusted computing}%
+\label{trustcomp}
+\input{trustcomp-abstract.tex}
 
-\mode<article>{%
-\subsection{Trusted computing}\label{trustcomp}
-\input{trustcomp-lit.tex}
-}
+\subsection{Software security}%
+\label{software}
+\input{software-abstract.tex}
 
-\mode<article>{%
-\subsection{Accountability}\label{accountability}
-\input{accountability-lit.tex}
-}
-
-\mode<article>{%
-\subsection{Software security}\label{software}
-\input{software-lit.tex}
-}
-
-\mode<article>{%
-\subsection{L7 Tools of the trade}\label{tools}
+\subsection{L3 Tools of the trade}\label{tools}
 \input{tools-abstract.tex}
-}
 
-\mode<article>{%
 \subsection{Course conclusion}\label{conclusion}
-}
 
-During this lecture we will shortly review the course and try to fit things into 
-a bigger picture.
+During this lecture we will shortly review the course and try to fit things 
+into a bigger picture.
+This is also a chance for revision and final questions before the exam.
 
-\mode<article>{%
 \subsection{Final exam}
 
 The final exam will assess how well you have achieved the intended learning 
@@ -231,10 +203,10 @@ Hence, it covers all the content given above.
 
 Each question on the exam covers one topic of the course.
 To pass the exam (and thus the course) you must pass all questions (thus all 
-topics), \ie you must not receive zero on any question.
-
-If you receive a zero on one question you qualify for an oral
-}
+topics), \ie \emph{you must not receive zero on any question}.
+If you receive a \emph{zero on one question} you qualify for complementing that 
+zero orally during a meeting.
+} % mode<article>
 
 
 \section{Assessment}%
