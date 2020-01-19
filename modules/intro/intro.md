@@ -17,13 +17,6 @@ own meeting.
 All details covered during this session (and more) can be found in the [study 
 guide][studyguide]. Please make sure to read it.
 
-## Times and schedule
-
-All scheduled events for this course will be scheduled using the University's 
-central scheduling system.  That means all events should be visible to you in 
-your [personal schedule in the Student Portal][schedule] and be able to export 
-them to the calendar app of your choice.
-
 
 # Second session: What's up with security?
 
