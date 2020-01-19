@@ -17,9 +17,6 @@ foundations.html: foundations.md
 		-o $@ $^
 
 foundations.md: session.md
-foundations.md: security.md
-foundations.md: attacking-humans.md psychology.md
-foundations.md: scientific-method.md
 
 foundations.md:
 	${RM} $@
