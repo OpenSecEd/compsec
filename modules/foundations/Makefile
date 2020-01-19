@@ -23,7 +23,7 @@ foundations.md: scientific-method.md
 
 foundations.md:
 	${RM} $@
-	for f in $^; do ${CAT} $$f >> $@; echo -n >> $@; done
+	for f in $^; do ${CAT} $$f >> $@; echo '\n\n' >> $@; done
 
 security.md: security/security/README.md
 scientific-method.md: security/scientific-method/README.md
@@ -71,7 +71,7 @@ session/% security/% usability/%:
 
 .PHONY: clean
 clean:
-	${RM} foundations.html
+	${RM} foundations.html foundations.md
 	${RM} security.md scientific-method.md attacking-humans.md psychology.md
 	${RM} foundations.tex foundations.bib
 	${RM} foundations-session.pdf
