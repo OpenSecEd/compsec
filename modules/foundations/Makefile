@@ -52,8 +52,8 @@ foundations.tex:
 
 foundations.bib: security/security/security.bib
 foundations.bib: security/scientific-method/scientific-method.bib
-foundations.bib: usability/attacking-humans/attacking-humans.bib
-foundations.bib: usability/psychology/psychology.bib
+foundations.bib: usability/attacking-humans/bibliography.bib
+foundations.bib: usability/psychology/bibliography.bib
 
 foundations.bib:
 	${BIBTOOL} ${BIBTOOLFLAGS} -o $@ $^
