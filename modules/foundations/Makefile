@@ -1,59 +1,92 @@
-OUT+= 	foundations.html
+PUB_FILES+= 	foundations.html
+PUB_FILES+= 	foundations-session.pdf
 
-SUBDIR+=security/security
-SUBDIR+=security/scientific-method
-SUBDIR+=usability/attacking-humans
-SUBDIR+=usability/psychology
-
-SUBDIR_GOALS=all clean distclean
+PUB_SERVER?= 	ver.miun.se
+PUB_DIR?= 		/srv/web/svn/courses/security/dasak
+PUB_USER?=
+PUB_GROUP?= 	svn
 
 
 .PHONY: all
-all: ${OUT}
+all: ${PUB_FILES}
 
-foundations.md: security/security/README.md
-foundations.md: security/scientific-method/README.md
-foundations.md: usability/attacking-humans/README.md
-foundations.md: usability/psychology/README.md
+foundations.html: foundations.md
+	pandoc -s \
+		--metadata pagetitle="Foundations" \
+		--metadata title="" \
+		-o $@ $^
+
+foundations.md: session.md
+foundations.md: security.md
+foundations.md: attacking-humans.md psychology.md
+foundations.md: scientific-method.md
 
 foundations.md:
-	${CAT} $^ > $@
+	${RM} $@
+	for f in $^; do ${CAT} $$f >> $@; echo -n >> $@; done
+
+security.md: security/security/README.md
+scientific-method.md: security/scientific-method/README.md
+attacking-humans.md: usability/attacking-humans/README.md
+psychology.md: usability/psychology/README.md
+
+security.md scientific-method.md attacking-humans.md psychology.md:
+	${LN} $< $@
 
 
 .PHONY: all
-all: abstract.tex abstract.bib
+all: foundations.tex foundations.bib
 
-abstract.tex: security/security/abstract.tex
-abstract.tex: security/scientific-method/abstract.tex
-abstract.tex: usability/attacking-humans/abstract.tex
-abstract.tex: usability/psychology/abstract.tex
+foundations.tex: security/security/abstract.tex
+foundations.tex: security/scientific-method/abstract.tex
+foundations.tex: usability/attacking-humans/abstract.tex
+foundations.tex: usability/psychology/abstract.tex
 
-abstract.tex:
-	${RM} abstract.tex
-	echo "\\paragraph{What is security?}" >> abstract.tex
-	cat security/security/abstract.tex >> abstract.tex
-	echo "\\paragraph{The scientific method}" >> abstract.tex
-	cat security/scientific-method/abstract.tex >> abstract.tex
-	echo "\\paragraph{Attacking humans}" >> abstract.tex
-	cat usability/attacking-humans/abstract.tex >> abstract.tex
-	echo "\\paragraph{Psychology}" >> abstract.tex
-	cat usability/psychology/abstract.tex >> abstract.tex
+foundations.tex:
+	${RM} $@
+	echo "\\paragraph{What is security?}" >> $@
+	cat security/security/abstract.tex >> $@
+	echo "\\paragraph{The scientific method}" >> $@
+	cat security/scientific-method/abstract.tex >> $@
+	echo "\\paragraph{Attacking humans}" >> $@
+	cat usability/attacking-humans/abstract.tex >> $@
+	echo "\\paragraph{Psychology}" >> $@
+	cat usability/psychology/abstract.tex >> $@
 
-abstract.bib: security/security/security.bib
-abstract.bib: security/scientific-method/scientific-method.bib
-abstract.bib: usability/attacking-humans/attacking-humans.bib
-abstract.bib: usability/psychology/psychology.bib
+foundations.bib: security/security/security.bib
+foundations.bib: security/scientific-method/scientific-method.bib
+foundations.bib: usability/attacking-humans/attacking-humans.bib
+foundations.bib: usability/psychology/psychology.bib
 
-abstract.bib:
-	${CAT} $^ > $@
+foundations.bib:
+	${BIBTOOL} ${BIBTOOLFLAGS} -o $@ $^
+
+foundations-session.pdf: session/slides.pdf
+	${LN} $^ $@
+
+
+session/% security/% usability/%:
+	${MAKE} -C $(dir $@) $(notdir $@)
 
 
 .PHONY: clean
 clean:
-	${RM} ${OUT}
-	${RM} abstract.tex
+	${RM} foundations.html
+	${RM} security.md scientific-method.md attacking-humans.md psychology.md
+	${RM} foundations.tex foundations.bib
+	${RM} foundations-session.pdf
+	${MAKE} -C security clean
+	${MAKE} -C usability clean
+	${MAKE} -C session clean
+
+.PHONY: distclean
+distclean:
+	${MAKE} -C security distclean
+	${MAKE} -C usability distclean
+	${MAKE} -C session distclean
 
 
 INCLUDE_MAKEFILES?=../../makefiles
 include ${INCLUDE_MAKEFILES}/doc.mk
-include ${INCLUDE_MAKEFILES}/subdir.mk
+include ${INCLUDE_MAKEFILES}/pub.mk
+include ${INCLUDE_MAKEFILES}/tex.mk
