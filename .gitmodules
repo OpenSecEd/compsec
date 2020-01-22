@@ -66,3 +66,9 @@
 [submodule "modules/fverif"]
 	path = modules/protocols/fverif
 	url = https://github.com/OpenSecEd/fverif.git
+[submodule "modules/proto/pricomlab"]
+	path = modules/proto/pricomlab
+	url = https://github.com/OpenSecEd/pricomlab.git
+[submodule "modules/proto/protocols"]
+	path = modules/proto/protocols
+	url = https://github.com/OpenSecEd/protocols.git
