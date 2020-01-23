@@ -7,3 +7,4 @@ There are also reading instructions in the [study guide][studyguide], Section
 
 [schedule]: https://miun.se/schema
 [studyguide]: https://ver.miun.se/courses/security/dasak/studyguide.pdf
+[SL-ac]: https://www.scalable-learning.com/#/courses/3659/modules/16793/courseware
