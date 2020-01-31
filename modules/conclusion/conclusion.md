@@ -1,8 +1,10 @@
-The course concludes with the presentations from the lab [Tools of the 
-trade][tools] and a [summary of the course in 
-Zoom](https://miun-se.zoom.us/my/dbosk) as preparation for the final exam.
+The teaching of the course concludes with two sessions.
+First, the presentations from the [Tools of the trade lab][tools].
+Second and finally, a session to summarize the course and a Q&A for the exam.
+(See the [schedule][schedule] for date and time.)
 
-For the exam there are a few old exams available [here][old-exams]
+There are a few old exams available [here][exams].
 
 [tools]: https://ver.miun.se/courses/security/dasak/tools.pdf
-[old-exams]: https://ver.miun.se/courses/security/dasak/exams
+[schedule]: https://miun.se/schema
+[exams]: https://ver.miun.se/courses/security/dasak/exams
