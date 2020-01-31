@@ -20,16 +20,7 @@
 \subsection{What is security?}
 
 \begin{frame}
-  \begin{question}
-    \begin{itemize}
-      \item What was difficult/ambiguous/unclear?
-      \item How would you summarize the contents?
-    \end{itemize}
-  \end{question}
-\end{frame}
-
-\begin{frame}
-  \begin{block}{summary}
+  \begin{block}{Summary}
     \begin{itemize}
       \item Security vs reliability: evaluation.
 
@@ -51,15 +42,6 @@
 \subsection{The scientific method}
 
 \begin{frame}
-  \begin{question}
-    \begin{itemize}
-      \item What was difficult/ambiguous/unclear?
-      \item How would you summarize the contents?
-    \end{itemize}
-  \end{question}
-\end{frame}
-
-\begin{frame}
   \begin{block}{Summary}
     \begin{itemize}
       \item Deduction: maths, proofs.
@@ -70,15 +52,6 @@
 \end{frame}
 
 \subsection{Usability}
-
-\begin{frame}
-  \begin{question}
-    \begin{itemize}
-      \item What was difficult/ambiguous/unclear?
-      \item How would you summarize the contents?
-    \end{itemize}
-  \end{question}
-\end{frame}
 
 \begin{frame}
   \begin{block}{Summary}
@@ -95,11 +68,78 @@
 \end{frame}
 
 
-\section{Some exercises}
+\section{The scientific method}
 
-\subsection{The scientific method}
+\subsection{More deduction: \acs{OTP}}
 
 \begin{frame}
+  \begin{example}
+    \begin{itemize}
+      \item Messages \(m\in \M\), ciphetexts \(c\in \C\), keys \(k\in \K\).
+      \item \(|\M| = |\C| = |\K|\).
+      \item \(c\gets \Enc_k(m) = m\oplus k\)
+    \end{itemize}
+  \end{example}
+
+  \begin{theorem}
+    \begin{itemize}
+      \item If \(\Pr[k] = \Pr[k'] = \frac{1}{|\K|}\), then
+        \[\Pr_{k\in\K}[c = \Enc_k(m)] = \Pr_{k'\in\K}[c = \Enc_{k'}(m')].\]
+    \end{itemize}
+  \end{theorem}
+\end{frame}
+
+\subsection{The model of password-based authentication}
+
+\begin{frame}
+  \begin{example}[A simple model]
+    \begin{itemize}
+      \item There is a channel through which to communicate with Alice.
+      \item Alice does not know who is on the other end.
+      \item The adversary cannot eavesdrop on the channel and is 
+        computationally limited\footnote{\Ie a polynomial-time Turing 
+          machine.}.
+    \end{itemize}
+  \end{example}
+
+  \begin{example}[Security properties]
+    \begin{itemize}
+      \item Alice believes she is talking to Bob \emph{if and only if} she is 
+        in fact talking to Bob.
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{example}[Password-based authentication]
+    \begin{itemize}
+      \item Bob says (through the channel): \enquote{Hey, it's me, Bob!}.
+      \item Alice replies: \enquote{Prove it!}.
+      \item Bob says: \enquote{My password is p4ssw0rd}.
+    \end{itemize}
+  \end{example}
+
+  \pause
+
+  \begin{question}
+    \begin{enumerate}
+      \item Is this protocol secure in our model?
+      \item Is this protocol secure in reality? (\Ie is it a good model?)
+    \end{enumerate}
+  \end{question}
+\end{frame}
+
+\subsection{Induction}
+
+\begin{frame}
+  \begin{question}
+    \begin{itemize}
+      \item Can we use induction to test security?
+    \end{itemize}
+  \end{question}
+
+  \pause
+
   \begin{exercise}
     \begin{itemize}
       \item What problems do you see about evaluating security?
@@ -107,31 +147,38 @@
   \end{exercise}
 \end{frame}
 
-\subsection{Usability}
+\subsection{What research method?}
 
 \begin{frame}
   \begin{exercise}
     \begin{itemize}
-      \item Shortly reflect on some of the services you use: do they protect 
-        well against \enquote{human errors}?
+      \item We have a password policy.
+      \item How good passwords do the users create under this password policy?
+    \end{itemize}
+  \end{exercise}
+
+  \pause
+
+  \begin{exercise}
+    \begin{itemize}
+      \item Why do they create such bad passwords despite our best efforts?
     \end{itemize}
   \end{exercise}
 \end{frame}
 
-
-\section{For the future}
-
 \begin{frame}
-  \begin{question}
+  \begin{exercise}
     \begin{itemize}
-      \item How would you like to use this time to improve your learning?
+      \item We have a firewall that blocks attack traffic.
+      \item How well does it perform?
+      \item \enquote{How secure is it?}
     \end{itemize}
-  \end{question}
+  \end{exercise}
 \end{frame}
 
 
 %%% REFERENCES %%%
 
 \begin{frame}[allowframebreaks]
-  \printbibliography{}
+  \printbibliography
 \end{frame}

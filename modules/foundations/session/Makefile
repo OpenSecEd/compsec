@@ -4,6 +4,8 @@ all: slides.pdf
 SRC+=		preamble.tex
 SRC+=		contents.tex
 
+DEPENDS+= 	bibsp.sty
+
 slides.pdf: slides.tex
 slides.pdf: ${SRC}
 
@@ -15,3 +17,5 @@ clean:
 
 INCLUDE_MAKEFILES=../../../makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
+INCLUDE_BIBSP=../../../bibsp
+include ${INCLUDE_BIBSP}/bibsp.mk
