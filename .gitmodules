@@ -63,9 +63,6 @@
 [submodule "bibsp"]
 	path = bibsp
 	url = https://github.com/dbosk/bibsp.git
-[submodule "modules/fverif"]
-	path = modules/protocols/fverif
-	url = https://github.com/OpenSecEd/fverif.git
 [submodule "modules/proto/pricomlab"]
 	path = modules/proto/pricomlab
 	url = https://github.com/OpenSecEd/pricomlab.git
