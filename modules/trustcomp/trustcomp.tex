@@ -1,0 +1,50 @@
+\emph{Summary:}
+One can only do so much with software.
+One problem with software and general purpose processors is that the software 
+can be modified and the processor will still execute it.
+Another is that, that running software cannot evaluate the processing 
+environment which executes it.
+
+Some examples: Alice had her laptop in her bag as it passed through the 
+security check.
+While she was busy with the scans, one customs official booted the laptop from 
+a USB stick and installed a different boot loader.
+Or, how can Alice even trust the computer when it is brand new?
+Another aspect of this is to protect parts of the system from Alice herself, 
+\eg this is what \ac{DRM} is all about.
+We also have the compartmentalization of apps in a smartphone.
+If Alice accidentally installs a malicious app, it shouldn't be able to 
+compromize the banking app.
+Here we will explore how to ensure the integrity of the computer system.
+
+\emph{Intended learning outcomes:}
+More concretely, after this session you should be able to
+\begin{itemize}
+  \item \emph{understand} the problem of trusted computing, its approaches to 
+    solutions, the underlying assumptions and its limitations.
+  \item \emph{analyse} different approaches to trusted computing and their 
+    limitations and \emph{apply} them in a solution to a given problem.
+\end{itemize}
+
+\emph{Reading:}
+We touch on the topics in Chapters
+\begin{itemize}
+  \item 4 (4.2.11--4.4.1),
+  \item 16,
+  \item 17,
+  \item 18 (read until and including 18.2.1) and
+  \item 23 (23.1--23.2)
+\end{itemize}
+in \citetitle{Anderson2008sea}~\cite{Anderson2008sea}.
+
+For root-of-trust, there is the 
+paper~\cite{EstablishRootOfTrustUnconditionally} by 
+\citeauthor{EstablishRootOfTrustUnconditionally}.
+Sections I and II are enough (we don't need more than an overview).
+\Textcite{HDDmalware,USBmalware,BIOSmalware} provides some examples of 
+real-world problems in this area.
+
+For trusted execution-environments, we use Intel SGX as an example.
+This is introduced by \textcite{IntelSGXTutorial}.
+(For a very detailed exposition on SGX, see the work by 
+\textcite{IntelSGXExplained}.)
