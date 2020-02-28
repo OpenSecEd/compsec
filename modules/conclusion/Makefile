@@ -12,6 +12,9 @@ all: ${PUB_FILES}
 
 conclusion.html: conclusion.md
 
+conclusion.bib:
+	touch $@
+
 tools.pdf: tools/tools.pdf
 	${LN} $< $@
 

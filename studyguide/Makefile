@@ -62,11 +62,6 @@ BIBS+= 			../modules/accountability/accountability.bib
 
 accountability-abstract.tex: ../modules/accountability/accountability.tex
 
-MODULE_FILES+=	diffpriv-abstract.tex
-BIBS+= 			../modules/privacy/privacy.bib
-
-diffpriv-abstract.tex: ../modules/privacy/privacy.tex
-
 MODULE_FILES+= 	trustcomp-abstract.tex
 BIBS+= 			../modules/trustcomp/trustcomp.bib
 
