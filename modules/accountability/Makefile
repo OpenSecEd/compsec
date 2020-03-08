@@ -10,7 +10,8 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
-accountability.html: video.html reading.html session.html
+#accountability.html: video.html reading.html session.html
+accountability.html: session.html
 	pandoc -s \
 		--metadata pagetitle="Accountability" \
 		--metadata title="" \
@@ -21,7 +22,6 @@ video.md: accountability/logging/README.md
 
 video.md:
 	${RM} $@
-	echo "# Non-interactive sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 reading.html: reading.md accountability.bib
@@ -33,6 +33,7 @@ reading.html: reading.md accountability.bib
 #	${RM} $@
 #	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
+accountability.bib: bibliography.bib
 accountability.bib: accountability/book-keeping/book-keeping.bib
 accountability.bib: accountability/logging/logging.bib
 
