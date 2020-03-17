@@ -1,0 +1,32 @@
+\section*{The assignment}
+
+You should design the architecture for an online banking app.
+This means the design of the app internals and the server-side API\@.
+
+The app should provide the following features:
+\begin{enumerate}
+  \item Create an account.
+    For money-laundering purposes, the account must be tied to a real identity.
+
+  \item See the account balance and transaction history.
+    Only the account holder should be able to do this.
+
+  \item Transfer money from one account to another.
+
+  \item Anonymous payments (think Swish, but better).
+    The money should be untraceable:
+    the recipient will not learn who paid (\eg the account),
+    the bank will not learn who paid to whom (\eg from which account to which 
+    account),
+    the sender will not learn the account of the recipient.
+\end{enumerate}
+
+You can see the last one as optional for a higher grade than E.
+
+Solving this assignment will touch upon almost every topic in the course.
+Make sure to base your designs on the theory of the course, add references, 
+that will help you (remember that's a part of the grading criteria).
+\enquote{This feels secure} is not a convincing argument.
+Likewise, \enquote{all connections should use TLS} will not cut it either; why 
+do you want TLS, what properties do you need and which of those will TLS 
+provide and why?

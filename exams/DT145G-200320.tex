@@ -1,0 +1,129 @@
+% Author:  Daniel Bosk <daniel.bosk@miun.se>
+\documentclass{miunasgn}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish,english]{babel}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{prettyref,varioref}
+\usepackage{subfigure}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{authblk}
+\usepackage[all]{foreign}
+
+\usepackage{acro}
+\DeclareAcronym{ILO}{%
+  short = ILO,
+  short-indefinite = an,
+  long = intended learning outcome,
+  long-indefinite = an,
+}
+
+\usepackage{csquotes}
+\MakeBlockQuote{<}{|}{>}
+\EnableQuotes
+
+\usepackage[natbib,style=alphabetic,maxbibnames=99]{biblatex}
+\addbibresource{literature.bib}
+
+%\printanswers
+
+\courseid{DT145G}
+\course{Computer Security}
+\assignmenttype{Final exam}
+\title{A small case}
+\date{2020-03-20}
+\author{%
+  Daniel Bosk
+}
+\affil{%
+  Department of Information Systems and Technology,\\
+  Mid Sweden University, SE-851\,70 Sundsvall\\
+  Email: \href{mailto:daniel.bosk@miun.se}{daniel.bosk@miun.se}\\
+  Phone: 010-142\,8709
+}
+
+\begin{document}
+\maketitle
+\thispagestyle{foot}
+
+\section*{Instructions}%
+\label{sec:Instructions}
+You will be given a small assignment.
+You should solve this assignment in groups, with no limit on resources.
+The group will write up the solution in \emph{one report per group} and hand it 
+in before the deadline.
+
+To provide a \enquote{proof of knowledge}, everyone will book a timeslot for a 
+15-minute individual meeting in Zoom.
+During this meeting I will ask you
+\begin{enumerate}
+  \item if there's anything you'd like to change in the solution (you might not 
+    agree fully with the group);
+  \item about some selected details of the solution.
+\end{enumerate}
+Note that during this meeting you \emph{must have a working webcam and 
+microphone and a valid ID}.
+
+I strongly advice you to ensure that everyone is involved in every part of the 
+report.
+For instance, write the report in a joint Google Docs or Overleaf document 
+while everyone participates over Zoom (or similar).
+(To make it easier for everyone to navigate the editing, it might be good to 
+name someone secretary and that person shares the screen.
+The secretary position doesn't have to be fixed, it can rotate every now and 
+then.)
+
+Also, write your own notes about various design decisions during the work in 
+the group, particularly those that you disagree with.
+
+
+\section*{Grading criteria}
+
+The relevant \acp{ILO} are: that you are able to
+\begin{itemize}
+  \item \emph{apply} different cryptographic primitives and \emph{explain} how 
+    these work (on a high level);
+
+  \item \emph{analyse} problems of authentication, access control, 
+    accountability and different solutions;
+
+  \item \emph{explain} how some common attacks on software works and 
+    \emph{analyse} code for security vulnerabilities;
+
+  \item \emph{evaluate} strengths and weaknesses of hardware-based security 
+    such as full-disk encryption.
+\end{itemize}
+
+The grades will be based on the following grading criteria.
+\begin{description}
+  \item[Grade E] You fulfil all the \acp{ILO} above.
+    You should have identified a relevant problem, and given a solution to it.
+    It must be a viable solution, however gaps and mistakes are allowed, if 
+    they don't render your solution unusable.
+
+  \item[Grade C] You fulfil the criteria for E.
+    Additionally, your evaluations and designs are \emph{good} with \emph{some 
+      base} in theory and, where applicable, the research literature.
+    Gaps and errors are allowed if they only render your solution less optimal.
+
+  \item[Grade A] You fulfil the criteria for C.
+    However, your evaluations and designs must be \emph{extensive} (in detail) 
+    and \emph{well-founded} in theory and, where applicable, the research 
+    literature.
+    Gaps and errors are not allowed in the solution unless they have been 
+    properly addressed and you have given a suggestion for an approach to how 
+    to start resolve the issue.
+\end{description}
+The grades B and D are intermediary grades.
+
+
+\clearpage
+\input{questions-200320.tex}
+
+
+\printbibliography
+\end{document}
+
