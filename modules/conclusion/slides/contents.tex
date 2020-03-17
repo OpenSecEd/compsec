@@ -32,6 +32,39 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \begin{block}{Security}
+    \begin{itemize}
+      \item Policy (goals)
+      \item Enforcement through mechanisms.
+
+        \pause
+
+      \item System model
+      \item Adversary model
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Scientific method}
+    \begin{itemize}
+      \item Inductive (experiments)
+      \item Deductive (proofs)
+      \item Quantitative (statistics)
+      \item Qualitative (details of why)
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Usability}
+    \begin{itemize}
+      \item If you don't give your users usability, you make them your enemy.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
 \subsection{Info theory and crypto}
 
 \begin{frame}
@@ -41,19 +74,62 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \begin{block}{Info theory}
+    \begin{itemize}
+      \item Entropy (measure unpredictability)
+    \end{itemize}
+  \end{block}
+
+  \begin{example}
+    \begin{itemize}
+      \item Gussability for passwords
+      \item Identifiability of users (tracking)
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Crypto}
+    \begin{itemize}
+      \item Shared-key encryption
+      \item One-way functions and message authentication
+
+        \pause
+
+      \item Key exchange
+      \item Public-key encryption
+      \item Digital signatures
+
+        \pause
+
+      \item Secure multiparty computation
+      \item Zero-knowledge proofs-of-knowledge
+    \end{itemize}
+  \end{block}
+\end{frame}
+
 \subsection{Authentication}
 
 \begin{frame}
   \begin{itemize}
-    \item Authentication
+    \item Bootstrapping authentication
+    \item User-to-machine authentication
+    \item Something-you-know (passwords)
+    \item Something-you-have (HW, keys?)
+    \item Machine-to-user authentication
   \end{itemize}
 \end{frame}
 
-\subsection{Protocols and formal verification}
+\subsection{Protocols}
 
 \begin{frame}
   \begin{itemize}
-    \item Protocols and formal verification
+    \item What's a protocol? (Putting things together)
+    \item Modelling protocols to analyse security properties
+    \item Cheating on an exam
+    \item Stealing a Tesla
+    \item Challenge--response
   \end{itemize}
 \end{frame}
 
@@ -61,9 +137,9 @@
 
 \begin{frame}
   \begin{itemize}
-    \item Access control
-    \item Reference monitors
-    \item Private communication (lab)
+    \item Access control models
+    \item Multi-level security
+    \item Multi-lateral security
   \end{itemize}
 \end{frame}
 
@@ -71,7 +147,10 @@
 
 \begin{frame}
   \begin{itemize}
-    \item Accountability
+    \item Book-keeping
+    \item Clark-Wilson security policy model
+    \item Logging
+    \item DLTs
   \end{itemize}
 \end{frame}
 
@@ -79,6 +158,9 @@
 
 \begin{frame}
   \begin{itemize}
+    \item DRM
+    \item Root of trust
+    \item Secure enclaves (SGX)
     \item Trusted computing
     \item Side channels
     \item Digital rights management (DRM hackathon)
@@ -89,12 +171,33 @@
 
 \begin{frame}
   \begin{itemize}
-    \item Software security
-    \item Smashing the stack
-    \item Malware
+    \item Smashing the stack \etc
   \end{itemize}
 \end{frame}
 
+
+\section{Exercise}
+
+\subsection{From the news}
+
+\begin{frame}
+  \begin{figure}
+    \includegraphics[height=0.8\textheight]{McDo-heist.png}
+  \end{figure}
+  \url{https://www.vice.com/en_au/article/4agvdw/mcdonalds-hack-free-food}
+\end{frame}
+
+\subsection{Proper security for food app}
+
+\begin{frame}
+  \begin{exercise}[Design app]
+    \begin{itemize}
+      \item Order food
+      \item Pick-up food
+      \item Discount coupons
+    \end{itemize}
+  \end{exercise}
+\end{frame}
 
 \section{The exam}
 
